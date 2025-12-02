@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/echart/echarts.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <main class="content dashboard-wrap" aria-labelledby="content">
+            <div class="dash-board-info">
+              <div class="connection-info">
+                  <span class="txt">현재 접속자 수 :</span>
+                  <div class="num"><b>21,245</b><span class="unit">명</span></div>
+                </div>
+               <div class="base-time"><b>데이터 기준 시각 :</b><em>2025-10-3 10:30:11</em> <button type="button" class="btn-reset"></button></div>
+            </div>
+              <div class="pannel-wrap">
+                <div class="left-pannel">
+                  <div class="total-status-wrap">
+                    
+                    <div class="status-box-wrap">
+                      <div class="status-box">
+                        <dl>
+                          <dt>
+                            <i class="icon"><i class="ico-status-chat"></i></i>채팅 건수 </dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>54,456</b>
+                              <span class="unit">건</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate up">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-feedback"></i></i>총 피드백 수</dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>125</b>
+                              <span class="unit">건</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate up">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!--  -->
+                      <div class="status-box">
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-doc"></i></i>문서 업로드 건수</dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>125</b>
+                              <span class="unit">건</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate up">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-star"></i></i>평균 별점</dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>4.5</b>
+                              <span class="unit">점</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate">5점 기준</div>
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!--  -->
+                      <div class="status-box">
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-time"></i></i>평균 응답 시간 </dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>125</b>
+                              <span class="unit">건</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate up">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-negative"></i></i>부정 피드백 수</dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>21</b>
+                              <span class="unit">건</span>
+                              <span class="sub">(4.5%)</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate up">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!--  -->
+                      <div class="status-box">
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-ai"></i></i>AI 응답 오류 건수</dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>125</b>
+                              <span class="unit">건</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate down">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt><i class="icon"><i class="ico-status-change"></i></i>피드백 전환율 </dt>
+                          <dd>
+                            <div class="numeric">
+                              <b>4.5</b>
+                              <span class="unit">%</span>
+                            </div>
+                            <div class="rate">
+                              <div class="change-rate down">0.00%</div>
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <!-- // status-box-wrap -->
+                  </div>
+                    <div class="widget-wrap">
+                      <div class="widget-box auto">
+                        <div class="tit-wrap">
+                          <h2 class="tit">시간대별 트래픽 추이</h2>
+                        </div>
+                        <div class="chart-wrap">
+                          <div class="chart" id="time-traffic">
+                          </div>
+                        </div>
+                        <div class="legend">
+                          <span class="item"><i style="background-color:#246BEB;"></i><span class="txt">AI 채팅</span></span>
+                          <span class="item"><i style="background-color:#37D9D1;"></i><span class="txt">문서 업로드</span></span>
+                        </div>
+                      </div>
+                      <!--  -->
+                      <div class="widget-box" style="width:22vw;min-width: 400px;">
+                        <div class="tit-wrap">
+                          <h2 class="tit">별점 분포 <span class="sub">기준: 2025-10-13~2025-10-20</span></h2>
+                        </div>
+                        <div class="chart-wrap">
+                          <div class="chart" id="star-rating">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // widget-wrap -->
+                </div>
+                <div class="right-pannel" style="width: 23vw;min-width: 440px;">
+                  <div class="widget-wrap">
+                    <div class="widget-box">
+                      <div class="tit-wrap">
+                        <h2 class="tit">만족도 평가 <span class="sub">기준: 2025-10-13~2025-10-20</span></h2>
+                      </div>
+                      <div class="chart-wrap">
+                        <div class="gage-chart-wrap" id="chart-satisfaction">
+                
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // widget-wrap -->
+                </div>
+              </div>
+              <div class="widget-wrap">
+                <!--  -->
+                <div class="widget-box auto">
+                  <div class="tit-wrap">
+                    <h2 class="tit">소속별 이용량 Top N</h2>
+                  </div>
+                  <div class="chart-wrap">
+                    <div class="chart" id="Department-topN">
+          
+                    </div>
+                  </div>
+                  <div class="legend">
+                    <span class="item"><i style="background-color:#246BEB;"></i><span class="txt">AI 채팅</span></span>
+                    <span class="item"><i style="background-color:#37D9D1;"></i><span class="txt">문서 업로드</span></span>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="widget-box" style="width:22vw;min-width: 400px;">
+                  <div class="tit-wrap">
+                    <h2 class="tit">파일 크기 구간별 업로드 분포</h2>
+                  </div>
+                  <div class="chart-wrap">
+                    <div class="chart" id="file-upload">
+          
+                    </div>
+                  </div>
+                  <div class="legend">
+                    <span class="item"><i style="background-color:#1D56BC;"></i><span class="txt">0~5MB</span></span>
+                    <span class="item"><i style="background-color:#1C4EFC;"></i><span class="txt">5~20MB</span></span>
+                    <span class="item"><i style="background-color:#8F54E1;"></i><span class="txt">20~50MB</span></span>
+                    <span class="item"><i style="background-color:#09CC87;"></i><span class="txt">50MB</span></span>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="widget-box" style="width: 23vw;min-width: 440px;">
+                    <div class="tit-wrap">
+                      <h2 class="tit">주간 오류 로그 <span class="sub">기준: 2025-10-13~2025-10-20</span></h2>
+                    </div>
+                    <div class="data-type1 st2 st-sm scroll">
+                      <table style="min-width: 700px;">
+                        <caption>주간 오류 로그</caption>
+                          <colgroup>
+                            <col style="width: auto;min-width: 170px;">
+                            <col style="width: 10%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                          </colgroup>
+                        <thead>
+                            <tr>
+                              <th scope="col">시간</th>
+                              <th scope="col">구분</th>
+                              <th scope="col">로그</th>
+                              <th scope="col">로그</th>
+                              <th scope="col">로그</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr style="cursor:pointer">
+                              <td>2025-10-15 10:35:35</td>
+                              <td>AI</td>
+                              <td class="align-l">응답 지연 발생 <br>(서울 고등 법원)</td>
+                              <td class="align-l">응답 지연 발생</td>
+                              <td class="align-l">응답 지연 발생</td>
+                            </tr>
+                            <tr style="cursor:pointer">
+                              <td>2025-10-15 10:35:35</td>
+                              <td>AI</td>
+                              <td class="align-l">응답 지연 발생 <br>(서울 고등 법원)</td>
+                              <td class="align-l">응답 지연 발생</td>
+                              <td class="align-l">응답 지연 발생</td>
+                            </tr>
+                            <tr style="cursor:pointer">
+                              <td>2025-10-15 10:35:35</td>
+                              <td>AI</td>
+                              <td class="align-l">응답 지연 발생 <br>(서울 고등 법원)</td>
+                              <td class="align-l">응답 지연 발생</td>
+                              <td class="align-l">응답 지연 발생</td>
+                            </tr>
+                            <tr style="cursor:pointer">
+                              <td>2025-10-15 10:35:35</td>
+                              <td>AI</td>
+                              <td class="align-l">응답 지연 발생 <br>(서울 고등 법원)</td>
+                              <td class="align-l">응답 지연 발생</td>
+                              <td class="align-l">응답 지연 발생</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <!-- // data-type1 -->
+                    <div class="pagination-wrap">
+                      <div class="pagination">
+                          <button type="button"class="btn-prev"></button>
+                          <ul>
+                            <li class="on"><button type="button">1</button></li>
+                            <li><button type="button">2</button></li>
+                            <li><button type="button">3</button></li>
+                            <li><button type="button">4</button></li>
+                            <li><button type="button">5</button></li>
+                          </ul>
+                          <button type="button" class="btn-next"></button>
+                      </div>
+                      <!-- // pagination -->
+                    </div>
+                  </div>
+              </div>
+              <!-- // widget-wrap -->                
+            <!-- // dashboard-wrap -->
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+
+    <script>
+
+      // 시간대별 트래픽 추이
+      createCharts("time-traffic", {
+        tooltip: { 
+          trigger: 'axis',
+          formatter: function (params) {
+            let html = ``;
+            return  `
+              <div class="chart-tooltip">
+                <dl>
+                  <dt>시간</dt>
+                  <dd><b>14:00~14:59</b></dd>
+                </dl>
+                <dl>
+                  <dt>AI 채팅 건수</dt>
+                  <dd><b>${params[0].data}</b>건</dd>
+                </dl>
+                <dl>
+                  <dt>문서 업로드 건수</dt>
+                  <dd><b>${params[1].data}</b>건</dd>              
+                </dl>
+                <dl>
+                  <dt>전일 동시간 대비</dt>
+                  <dd><b>+15</b>%</dd>              
+                </dl>
+              </div>`;
+          }
+        },
+        xAxis: createCharts.baseXAxis(Array.from({ length: 25 }, (_, i) => i)),
+        series: [
+          {
+            name:'AI',
+            type: 'line',
+            showSymbol: false,
+            symbolSize: 14, 
+            emphasis: {  
+              itemStyle: {
+                color: '#00c084',
+                borderWidth: 4,
+                borderColor:'#fff'
+              },
+            },
+            smooth: true,
+            data: [150, 60, 120, 90, 80, 110, 140, 130, 150, 160, 200, 300, 600, 550, 400, 250, 280, 230, 100, 40, 20, 10, 5, 3, 0],
+
+            lineStyle: { color: '#00c084', width: 3 }
+          },
+          {
+            name:'문서',
+            type: 'line',
+            symbolSize: 14, 
+            emphasis: {  
+              itemStyle: {
+                color: '#0056ff',
+                borderWidth: 4,
+                borderColor:'#fff'
+              },
+            },      
+            smooth: true,
+            data: [130, 250, 90, 10, 60, 220, 30, 20, 30, 250, 270, 350, 450, 90, 150, 200, 250, 280, 290, 260, 200, 150, 100, 150, 300],
+            showSymbol: false,
+            lineStyle: { color: '#0056ff', width: 3 }
+          }
+        ]
+      });
+
+
+    // 별점 분포
+    createCharts("star-rating", {
+      tooltip: { trigger: 'item',
+        formatter: function(params) {
+            return `
+              <div class="chart-tooltip">
+                <dl class="full row">
+                  <dt>별점</dt>
+                  <dd>
+                    <span class="star-grade-sm">
+                      <i class="on low" data-val="1"></i>
+                      <i class="on low" data-val="2"></i>
+                      <i class="on" data-val="3"></i>
+                      <i class="" data-val="4"></i>
+                      <i class="" data-val="5"></i>
+                    </span>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>건수</dt>
+                  <dd><b>${params.value}</b>건</dd>             
+                </dl>
+                <dl>
+                  <dt>비율</dt>
+                  <dd><b>50</b>%</dd>              
+                </dl>
+              </div>
+            `;
+          }
+       },
+      xAxis: createCharts.baseXAxis(['1', '2', '3', '4', '5']),
+      series: [
+        {
+          type: 'bar',
+          data: [50, 70, 120, 200, 160],
+          barWidth: 32,
+          itemStyle: {
+            borderRadius: [5, 5, 0, 0],
+            color: function (params) {
+              const colors = ['#D50136', '#D50136', '#246BEB', '#246BEB', '#246BEB'];
+              return colors[params.dataIndex];
+            }
+          }
+        }
+      ]
+    });
+
+
+    // 소속별 이용량 Top N
+    createCharts("Department-topN", {
+      tooltip: {
+        trigger: 'axis',
+        formatter: function (params) {
+          let html = ``;
+          return  `
+            <div class="chart-tooltip">
+              <dl class="full">
+                <dt>소속</dt>
+                <dd><b>서울 고등 법원</b></dd>
+              </dl>
+              <dl>
+                <dt>AI 채팅 건수</dt>
+                <dd><b>${params[0].data}</b>건</dd>
+              </dl>
+              <dl>
+                <dt>문서 업로드 건수</dt>
+                <dd><b>${params[1].data}</b>건</dd>              
+              </dl>
+              <dl>
+                <dt>평균 별점</dt>
+                <dd><b>3.2</b>점</dd>              
+              </dl>
+              <dl>
+                <dt>부정 피드백</dt>
+                <dd><b>2</b>건</dd>              
+              </dl>
+            </div>`;
+        }
+      },
+      xAxis: createCharts.baseXAxis(['소속#10','소속#9','소속#8','소속#7','소속#6','소속#5','소속#4','소속#3','소속#2','소속#1']),
+      series: [
+        {
+          name: 'AI 채팅',
+          type: 'bar',
+          data: [140, 20, 120, 110, 20, 80, 160, 120, 140, 60],
+          itemStyle: {borderRadius: [2, 2, 0, 0], color: '#0056ff' },
+          barWidth: 12
+        },
+        {
+          name: '문서 업로드',
+          type: 'bar',
+          data: [100, 120, 60, 40, 80, 20, 70, 90, 130, 40],
+          itemStyle: {borderRadius: [2, 2, 0, 0], color: '#3FD898' },
+          barWidth: 12
+        }
+      ]
+    });
+
+
+
+
+    // 파일 크기 구간별 업로드 분포
+    createCharts("file-upload", {
+
+      tooltip: {
+        trigger: 'item',
+        formatter: function(params) {
+            return `
+              <div class="chart-tooltip">
+                <dl>
+                  <dt>파일 크기</dt>
+                  <dd><b>5</b>MB ~ <b>20</b>MB</dd>
+                </dl>
+                <dl>
+                  <dt>업로드 건수</dt>
+                  <dd><b>210</b>건</dd>
+                </dl>
+                <dl>
+                  <dt>평균 파일 크기</dt>
+                  <dd><b>${params.value}</b>MB</dd>             
+                </dl>
+                <dl>
+                  <dt>비중</dt>
+                  <dd><b>${params.percent}</b>%</dd>              
+                </dl>
+              </div>
+            `;
+          }
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['40%', '80%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            // borderRadius: 5,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          label: { show: false },
+          labelLine: { show: false },
+          data: [
+            { value: 25, name: 'A', itemStyle: { color: '#1D56BC' } },
+            { value: 20, name: 'B', itemStyle: { color: '#1C4EFC' } },
+            { value: 15, name: 'C', itemStyle: { color: '#8F54E1' } },
+            { value: 10, name: 'D', itemStyle: { color: '#09CC87' } }
+          ]
+        }
+      ]
+    });      
+
+
+    // 만족도 평가
+    let tempData = [
+      {label:'틀린 답변을 제공함', value:3000},
+      {label:'최신 법률 데이터가 반영되지 않음', value:9000},
+      {label:'잘못된 법률 정보를 인용함', value:1310},
+      {label:'도움이 되지 않거나 관련성 없는 답변이 제공됨', value:940},
+      {label:'질의에 충실하지 않은 부실한 답변 제공', value:693},
+      {label:'오류로 인해 답변이 생성되지 않음', value:80},
+      {label:'기타', value:7531}
+    ]
+
+    function gageChart(data){
+      let html = ``;
+      let maxValue = Math.max(...data.map(item => item.value));
+      let max = Math.ceil((maxValue / 0.95) / 10) * 10;
+
+      for(let i=0;i<data.length;i++){
+        let percent = ((data[i].value / max) * 100).toFixed(1); // 소수 1자리
+
+        html += `<div class="gage-chart">
+              <div class="label">${data[i].label}</div>
+              <div class="chart">
+                <div class="gage-wrap">
+                  <div class="gage">
+                    <div class="bar" style="--target-width: ${data[i].value / max * 100}%;"></div>
+                  </div>
+                </div>
+                <div class="number">
+                  <span class="num"><b>${data[i].value}</b><span class="unit">건</span></span>
+                  <span class="per">(${percent}%)</span>
+                </div>
+              </div>
+            </div>`;
+      }
+
+      $('#chart-satisfaction').append(html);
+    }
+
+    gageChart(tempData)
+
+    </script>
+  
+</body>
+</html>

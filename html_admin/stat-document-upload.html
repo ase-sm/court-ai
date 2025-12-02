@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">문서 업로드 통계</h2>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label class="label" for="date">기간선택</label>
+                          <div class="input-date">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD">
+                              <span class="dash">-</span>
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                          </div>
+                          <div class="date-range-menu" data-evt="date-menu">
+                            <label>
+                                <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                            </label>
+                          </div>
+                          
+                          <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                  <div class="right">
+                    <button type="button" class="btn-nm st-gray-line" onclick="popOpen('#excelDown');"> 
+                        <i class="ico-excel"></i>
+                        <span>엑셀 다운로드</span>
+                        <i class="ico-download"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>문서 업로드 통계 목록</caption>
+                       <colgroup>
+                        <col style="width: auto;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 12%;">
+                        <col style="width: 10%;">
+                        <col style="width: 14%;">
+                      </colgroup>
+                      <thead>
+                         <tr>
+                            <th scope="col">일자</th>
+                            <th scope="col">업로드 건수</th>
+                            <th scope="col">성공 건수</th>
+                            <th scope="col">실패 건수</th>
+                            <th scope="col">성공률(%)</th>
+                            <th scope="col">사용자 수</th>
+                            <th scope="col">1인당 평균 업로드 건수</th>
+                            <th scope="col">평균 파일 크기(MB)</th>
+                            <th scope="col">총 업로드 용량(GB)</th>
+                          </tr>
+                        </thead>
+                      <tbody>
+                         <tr>
+                            <td>2025-10-13</td>
+                            <td>1,242</td>
+                            <td>60</td>
+                            <td>61</td>
+                            <td>95.1%</td>
+                            <td>230</td>
+                            <td>5.2</td>
+                            <td>1.8</td>
+                            <td>2.1</td>
+                          </tr>
+                         <tr>
+                            <td>2025-10-13</td>
+                            <td>1,242</td>
+                            <td>60</td>
+                            <td>61</td>
+                            <td>95.1%</td>
+                            <td>230</td>
+                            <td>5.2</td>
+                            <td>1.8</td>
+                            <td>2.1</td>
+                          </tr>
+                         <tr>
+                            <td>2025-10-13</td>
+                            <td>1,242</td>
+                            <td>60</td>
+                            <td>61</td>
+                            <td>95.1%</td>
+                            <td>230</td>
+                            <td>5.2</td>
+                            <td>1.8</td>
+                            <td>2.1</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-front-ui.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <main class="content" aria-labelledby="content">
+
+            <div class="title-wrap">
+                <h2 class="title-page">프롬프트 공유 게시판</h2>
+            </div>
+
+
+            <div class="data-header">
+              <span class="total"><span>총</span><em class="num">316,000개</em>의 글</span>
+              <div class="right">
+                <div class="input-search">
+                  <input type="text" placeholder="채팅 검색"
+                        onfocus="this.closest('.input-search').classList.add('focus')"
+                        onblur="this.closest('.input-search').classList.remove('focus')">
+                  <button class="btn-search"></button>
+                </div>
+              </div>
+            </div>
+            <div class="data-type1">
+              <table>
+                <caption>프롬프트 공유 게시판 목록</caption>
+                    <colgroup>
+                    <col style="width: 7%;"> 
+                    <col style="width: auto;">
+                    <col style="width: 12%;">
+                    <col style="width: 18%;">
+                    <col style="width: 10%;">
+                  </colgroup>
+                  <thead>
+                      <tr>
+                        <th scope="col">NO</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">등록일</th>
+                        <th scope="col">조회수</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                    <tr>
+                      <td>10</td>
+                      <td><a href="javascript:void(0);" class="title"><span class="ellips">복잡한 사실관계를 쟁점별로 분리 요청하는 팁</span></a></td>
+                      <td>홍길동</td>
+                      <td>2025-10-13</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td><a href="javascript:void(0);" class="title"><span class="ellips">보안 점검 안내 보안 점검 안내보안 점검 안내보안 점검 안내보안 점검 안내 보안 점검 안내 보안 점검 안내보안 점검 안내보안 점검 안내보안 점검 안내</span></a></td>
+                      <td>홍길동</td>
+                      <td>2025-10-13</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td><a href="javascript:void(0);" class="title"><span class="ellips">LLM 관리자만 접속 가능</span></a></td>
+                      <td>홍길동</td>
+                      <td>2025-10-13</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <!-- // data-type1 -->
+
+            <div class="pagination-wrap">
+              <div class="pagination">
+                  <button type="button"class="btn-prev">이전</button>
+                  <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button"><i class="ico-dot"></i></button></li>
+                    <li><button type="button">99</button></li>
+                  </ul>
+                  <button type="button" class="btn-next">다음</button>
+              </div>
+              <!-- // pagination -->
+            </div>       
+
+          </main>
+      </div>
+  </div>
+  <!-- // wrap -->
+
+
+</body>
+</html>
+
+

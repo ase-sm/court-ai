@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">서비스 개선 의견 관리</h2>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="keyword" class="label">검색어</label>
+                          <div class="select-ui" id="keyword"></div>
+                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px">
+                          <label for="status" class="label">상태</label>
+                          <div class="select-ui" id="status"></div>   
+                      </div>
+                      <div class="row">
+                          <label class="label" for="date">기간선택</label>
+                          <div class="input-date">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD" id="date">
+                              <span class="dash">-</span>
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                          </div>
+                          <div class="date-range-menu" data-evt="date-menu">
+                          <label>
+                              <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                          </label>
+                        </div>
+                          
+                        <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>서비스 개선 의견 관리</caption>
+                       <colgroup>
+                        <col style="width: 8%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: auto;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                      </colgroup>
+                     <thead>
+                        <tr>
+                          <th scope="col">NO</th>
+                          <th scope="col">상태</th>
+                          <th scope="col">이름</th>
+                          <th scope="col">아이디</th>
+                          <th scope="col">소속</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="tag st-blue-line">답변 완료</span></td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td>
+                              <div class="title"><span class="ellips line2">안녕하세요. 서비스 이용에 문의사항이 있습니다. AI 채팅을 진행하다 보니 [OOO]이라는 검색어를 작성할 때 결과가 조금 늦어지는 부분이 있어 확인 요청 드리고자 합니다.</span></div>
+                            </td>
+                            <td>2025-10-13</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#feedbackDetail');">상세</button>
+                              </div>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="tag st-blue-line">답변 완료</span></td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td>
+                              <div class="title"><span class="ellips line2">안녕하세요. 서비스 이용에 문의사항이 있습니다. AI 채팅을 진행하다 보니 [OOO]이라는 검색어를 작성할 때 결과가 조금 늦어지는 부분이 있어 확인 요청 드리고자 합니다.</span></div>
+                            </td>
+                            <td>2025-10-13</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#feedbackDetail');">상세</button>
+                              </div>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="tag st-red-line">답변 대기</span></td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td>
+                              <div class="title"><span class="ellips line2">안녕하세요. 서비스 이용에 문의사항이 있습니다. AI 채팅을 진행하다 보니 [OOO]이라는 검색어를 작성할 때 결과가 조금 늦어지는 부분이 있어 확인 요청 드리고자 합니다.</span></div>
+                            </td>
+                            <td>2025-10-13</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#feedbackDetail');">상세</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="no-hover">
+                            <td colspan="8">
+                              <div class="no-data">데이터가 없습니다.</div>
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+  <!-- 서비스 개선 의견 관리 상세 팝업 -->
+  <div class="popup-wrap st-side" id="feedbackDetail">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">서비스 개선 의견 관리 상세</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="board-header">
+            <div class="category">
+              <span class="tag-cate st-blue">{LADP Name}</span>
+              <span class="tag-cate st-pupple">{LADP ID}</span>
+              <div class="right">
+                <span class="tag-cate st-navy">{LADP 소속명}</span>
+              </div>
+            </div>
+            <h3 class="title-board"><b>AI 채팅 정확도를 높이고 싶어요.</b></h3>
+            <div class="board-info">
+              <span>등록일 : <span>2025-10-22</span></span>
+            </div>
+          </div>
+          <div class="board-body">
+              <div class="board-form">
+                <div class="row">
+                  <label for="status2">상태</label>
+                  <div class="form">
+                    <div class="select-ui" id="status2" style="width:240px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="board-view">
+                <div class="view">
+                  안녕하세요. 서비스 이용에 문의사항이 있습니다.
+                  <br>AI 채팅을 진행하다 보니 [OOO]이라는 검색어를 작성할 때 결과가 조금 늦어지는 
+                  <br>부분이 있어 확인 요청 드리고자 합니다.
+                </div>
+              </div>
+              
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="sidePopClose('#feedbackDetail')">목록</button>
+              <button type="button" class="btn-popup st-blue" onclick="sidePopClose('#feedbackDetail')">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // 커스텀셀렉트
+      const data = {
+        placeholder: ".",
+        options: [
+          { value: "total", label: "전체" },
+          { value: "select1", label: "선택1" },
+          { value: "select2", label: "선택2" },
+          { value: "select3", label: "선택2", disabled: true },
+          { value: "select4", label: "선택4" }
+        ],
+        selected: null
+      };
+
+      const select1 = selectUi('keyword', data);
+      select1.value = "total";
+      const select2 = selectUi('status', data);
+      select2.value = "total";
+      const select3 = selectUi('status2', data);
+      select3.value = "total";
+
+  </script>
+
+    
+</body>
+</html>

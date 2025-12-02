@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">사용자 활동 로그</h2>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="keyword" class="label">회원검색</label>
+                          <div class="input-set">
+                            <input type="text" placeholder="검색어를 입력해주세요." style="width:215px">
+                            <button type="button" class="btn-md st-navy-blue" onclick="popOpen('#memberSearch');"><span>회원검색</span></button>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <label class="label" for="date">기간선택</label>
+                          <div class="input-date">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD">
+                              <span class="dash">-</span>
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                          </div>
+                          <div class="date-range-menu" data-evt="date-menu">
+                            <label>
+                                <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                            </label>
+                          </div>
+                          
+                          <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+
+                
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                  <div class="right">
+                    <button type="button" class="btn-nm st-gray-line" onclick="popOpen('#memberSearch');"> 
+                        <i class="ico-excel"></i>
+                        <span>엑셀 다운로드</span>
+                        <i class="ico-download"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>사용자 활동 로그 목록</caption>
+                      <colgroup>
+                          <col style="width: auto;">
+                          <col style="width: 10%;">
+                          <col style="width: 15%;">
+                          <col style="width: 15%;">
+                          <col style="width: 20%;">
+                          <col style="width: 20%;">
+                        </colgroup>
+                      <thead>
+                        <tr>
+                            <th scope="col">발생일시</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">소속</th>
+                            <th scope="col">활동 유형</th>
+                            <th scope="col">IP 주소</th>
+                          </tr>
+                        </thead>
+                      <tbody>
+                         <tr>
+                          <td>2025-10-13 10:30:15</td>
+                          <td>{LDAP ID}</td>
+                          <td>{LDAP Name}</td>
+                          <td>{LDAP 소속명}</td>
+                          <td>로그인</td>
+                          <td>192.168.10.315</td>
+                        </tr>
+                         <tr>
+                          <td>2025-10-13 10:30:15</td>
+                          <td>{LDAP ID}</td>
+                          <td>{LDAP Name}</td>
+                          <td>{LDAP 소속명}</td>
+                          <td>로그인</td>
+                          <td>192.168.10.315</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+  <!-- 회원 검색 -->
+  <div class="popup-wrap" id="memberSearch">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">회원 검색</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="text">
+            <p class="txt">검색하고자 하는 회원의 이름 입력하신 후 해당하는 회원을 선택해주세요. </p>
+          </div>
+          <div class="form-box">
+            <div class="form-set">
+                <div class="row">
+                    <label for="name" class="label">이름 <i class="required"><span class="hidden">필수</span></i></label>
+                    <div class="form">
+                        <input type="text" id="name" placeholder="이름을 입력해주세요.">
+                      </div>
+                    <div class="menu">
+                        <button class="btn">검색</button>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+          <h2 class="title-popup">검색 결과</h2>          
+            <div class="data-type1">
+              <table>
+                <caption>검색 결과 목록</caption>
+                    <colgroup>
+                      <col style="width: auto;">
+                      <col style="width: auto;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">소속명</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr class="no-hover">
+                        <td colspan="2">
+                          <div class="no-data">
+                            검색된 데이터가 없습니다. <br>이름, 아이디를 다시 한번 확인해주세요.
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div class="pagination-wrap">
+              <div class="pagination">
+                  <button type="button"class="btn-prev"></button>
+                  <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button">5</button></li>
+                  </ul>
+                  <button type="button" class="btn-next"></button>
+              </div>
+              <!-- // pagination -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+
+</body>
+</html>

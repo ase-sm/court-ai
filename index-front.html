@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+
+</head>
+<!-- style -->
+<style type="text/css">
+  *{margin:0;padding:0;}
+  body {padding:20px; font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+  h1 {color:#000; letter-spacing:-2px;}
+  h2 {margin-top:20px;padding-left:10px;letter-spacing:-2px;position:relative;font-size:18px;}
+  h2:before{content:'';display:block;position:absolute;top:50%;left:0;width:5px;height:5px;background:#333;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+  .currentsite {display:block; position:absolute; right:40px; top:20px;}
+  .mwork table {width:100%; border-collapse:collapse; border:0px solid #666;margin-top:10px;}
+  .mwork caption {text-align:left; font-size:200%; color:#999;}
+  .mwork th {padding:6px; border:1px solid #fff; color:#fff; font-size:110%; background-color:#1F5DBE;}
+  .mwork td {height:16px; padding:4px; padding-left:10px; border:1px solid #666;}
+  .mwork a,
+  .mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+  .mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+  .mwork td:hover {background-color:#ddd !important;}
+  
+
+  .title td{background:#eee;}
+
+</style>
+<!-- //style -->
+<!-- html body -->
+<script>
+  $(function(){
+    let data = [
+      // 공통
+      ["공통", "title", "", "", ""],
+      ["", "로딩", "", "", "html_front/loading.html", "", "", ""],
+      ["", "얼럿", "", "", "html_front/alert.html", "", "", ""],
+      ["", "로그인", "", "", "html_front/login.html", "", "", ""],
+      ["", "에러", "404", "", "html_front/error-404.html", "", "", ""],
+      ["", "", "권한", "", "html_front/error-auth.html", "", "", ""],
+      ["", "", "서버", "", "html_front/error-server.html", "", "", ""],
+      ["", "", "시스템", "", "html_front/error-system.html", "", "", ""],
+      ["", "", "네트워크", "", "html_front/error-network.html", "", "", ""],
+      ["", "", "세션", "", "html_front/error-session.html", "", "", ""],
+      
+      ["AI", "title", "",  "", ""],
+      ["", "AI 채팅", "", "", "html_front/ai-chat.html", "", "", ""],
+      ["", "문서 보관함", "", "", "html_front/document-storage.html", "", "", ""],
+      ["사용자 관리", "title", "", "", ""],
+      ["", "프롬프트 공유 게시판", "", "", "html_front/ai-knowhow.html", "", "", ""],
+      ["", "", "등록", "", "html_front/ai-knowhow-regist.html", "", "", ""],
+      ["", "", "상세", "", "html_front/ai-knowhow-detail.html", "", "", ""],
+      ["", "공지사항", "", "", "html_front/notice.html", "", "", ""],
+      ["", "", "상세", "", "html_front/notice-detail.html", "", "", ""],
+      ["", "자주묻는 질문", "", "", "html_front/faq.html", "", "", ""],
+      ["", "서비스 개선 의견", "", "", "내부팝업", "", "", ""],
+      // ["", "이용 가이드", "", "", "html_front/use-guide.html", "", "", ""],
+
+    ];
+
+
+
+    for(var i = 0 ; i<= data.length -1 ; i++){
+      if(data[i][1] == 'title'){
+        $('tbody').append('<tr class="title">'+
+          '<td>'+data[i][0]+'</td>' + 
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>')
+      }else{
+        $('tbody').append('<tr>'+
+          '<td>'+data[i][0]+'</td>' +
+          '<td>'+data[i][1]+'</td>' +
+          '<td>'+data[i][2]+'</td>' +
+          '<td>'+data[i][3]+'</td>' +
+          ((data[i][4]).includes('html') ? '<td><a href="'+data[i][4]+'">'+data[i][4]+'</a></td>' :'<td>'+ data[i][4] +'</td>') +
+          ((data[i][5]).includes('html') ? '<td><a href="javascript:void(0);" onclick="window.open(\'' + data[i][4] + '?popup\', \'_blank\', \'resizable=no,scrollbars=no\')">' + data[i][5] + '</a></td>' : '<td>'+ data[i][5] +'</td>') +
+          '<td>'+data[i][6]+'</td>' +
+        '</tr>')
+      }
+    }
+
+  });
+
+
+
+
+</script>
+</head>
+<body>
+<!-- sheet -->
+<h1>Publishing Work Sheet </h1>
+
+<div class="mwork">
+  <table>
+    <colgroup>
+			<col style="width:120px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:250px" />
+			<col style="width:200px" />
+			<col style="width:auto" />
+    </colgroup>
+
+    <thead>
+      <tr>
+				<th scope="col">Category</th>
+				<th scope="col">1Depth</th>
+				<th scope="col">2Depth</th>
+				<th scope="col">3Depth</th>
+				<th scope="col">FileName/Link</th>
+				<th scope="col">window popup</th>
+				<th scope="col">Memo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+<!-- //sheet -->
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+      <a href="#content" class="skip-nav">본문 바로가기</a>
+
+      <header class="header">
+        <button class="btn-collapse" aria-label="메뉴 접기"></button>
+        <h1><a href="index.html" aria-label="메인으로 이동"><img src="../images/logo.svg" alt=""></a></h1>
+        <nav class="gnb-nav" aria-label="주 메뉴">
+            <ul class="gnb">
+                <li class="on">
+                    <a href="javascript:void(0);">
+                        <i class="ico-gnb-dashboard"></i>
+                        <span class="txt">AI 채팅</span>
+                    </a>
+                </li>
+                <li class="selected">
+                    <a href="javascript:void(0);">
+                        <i class="ico-gnb-document"></i>
+                        <span class="txt">문서보관함</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="chat-history-wrap">
+            <h2 class="tit">채팅기록</h2>
+            <button type="button" class="btn-history-search" onclick="popOpen('#popChagSearch')"><span class="hidden">채팅기록 찾기</span></button>
+            <ul class="menu-list">
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고 유류분 청구소송과 사건  사고</a><button class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고 유류분 청구소송과 사건  사고</a><button class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고 유류분 청구소송과 사건  사고</a><button class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고 유류분 청구소송과 사건  사고</a><button class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+                <li><a href="javascript:void(0);">유류분 청구소송과 사건  사고</a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>
+            </ul>
+        </div>
+        <div class="bottom-area">
+            <button type="button" class="btn-toggle" data-evt="toggle-folding-menu"></button>
+            <div class="folding-menu" style="display: none;">
+              <div class="fa-prompt-wrap">
+                  <a href="javascript:void(0);" class="fa-prompt-header" data-evt="toggle-fa-prompt">
+                    <h2 class="tit">자주 쓰는 프롬프트</h2>
+                  </a>
+                  <ul class="menu-list" style="display: none;">
+                      <li><a href="javascript:void(0);">문서요약</a></li>
+                      <li><a href="javascript:void(0);">법률 서면 초안 작성용 문서같은</a></li>
+                      <li><a href="javascript:void(0);">피고인의 심신미약 양상은 어쩌고저쩌고</a></li>
+                  </ul>
+              </div>
+              <ul class="ai-menu">
+                  <li class="on"><a href="javascript:void(0);" onclick="popOpen('#popMyPrompt');"><i class="ico-menu-prompt"></i><span>나의 프롬프트 관리</span></a></li>
+                  <li><a href="javascript:void(0);"><i class="ico-menu-ai"></i><span>프롬프트 공유 게시판</span></a></li>
+              </ul>
+              <ul class="admin-menu">
+                  <li class="on"><a href="javascript:void(0);">공지사항</a></li>
+                  <li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+                  <li><a href="javascript:void(0);" onclick="popOpen('#popServiceOpinion');initByteFields();">서비스 개선 의견</a></li>
+                  <li><a href="javascript:void(0);">이용 가이드</a></li>
+              </ul>
+            </div>
+            <!-- // folding-menu -->
+            <div class="external-link">
+                <a href="javascript:void(0);" class="btn-portal-admin"><span>포털 관리자</span></a>
+                <a href="javascript:void(0);" class="btn-ai-admin"><span>AI 관리자</span></a>
+            </div>
+            
+            <div class="user-meu">
+                <div class="user-info">
+                <span class="user"><b>홍길동</b> 님</span>
+                <span class="time">23:30</span>
+                <button type="button" class="btn"><span>연장</span></button>
+                </div>
+                <div class="logout">
+                   <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- // bottom-area -->
+     </header>
+
+     <button class="btn-header-open" aria-label="메뉴 열기"></button>
+
+
+
+     <div class="dropdown-menu-layer" id="chatHistoryMenu" style="display: none;">
+        <ul>
+            <li><button type="button"><span>수정</span></button></li>
+            <li><button type="button" class="btn-delete"><span>삭제</span></button></li>
+        </ul>
+    </div>
+
+
+
+
+  <!-- 채팅 검색 -->
+  <div class="popup-wrap" id="popChagSearch">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">채팅 검색</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+            <div class="form-box">
+              <div class="input-search">
+                <input type="text" placeholder="채팅 검색"
+                      onfocus="this.closest('.input-search').classList.add('focus')"
+                      onblur="this.closest('.input-search').classList.remove('focus')">
+                <button class="btn-search"></button>
+              </div>
+            </div>
+            <div class="history-list">
+                <h3 class="title">채팅 기록</h3>
+                <ul>
+                <li>
+                    <div class="item"><a href="javascript:void(0);"><p class="ellips">양육비 산정 기준 및 인정 범위 (링크필요시)</p></a></div>
+                    <div class="date">2025-10-12</div>
+                </li>
+                <li>
+                    <div class="item"><a href="javascript:void(0);"><p class="ellips">양육비 산정 기준 및 인정 범위 (링크필요시)</p></a></div>
+                    <div class="date">2025-10-12</div>
+                </li>
+                <li>
+                    <div class="item"><p class="ellips">양육비 산정 기준 및 인정 범위양육비 산정 기준 및 인정 범위양육비 산정 기준 및 인정 범위양육비 산정 기준 및 인정 범위양육비 산정 기준 및 인정 범위양육비 산정 기준 및 인정 범위</p></div>
+                    <div class="date">2025-10-12</div>
+                </li>
+                <li>
+                    <div class="item"><p class="ellips">양육비 산정 기준 및 인정 범위</p></div>
+                    <div class="date">2025-10-12</div>
+                </li>
+              </ul>
+            </div>            
+            <!-- // history-list -->
+
+            <div class="history-list">
+                <div class="result"><em>‘개인정보’</em> 에 대한 검색 결과 <em>256개</em></div>
+                <ul>
+                    <li>
+                        <div class="item">
+                        <b class="tit"><em>개인정보</em>보호조치 중 기술적 보호 조치</b>
+                        <p class="ellips txt-sm"><em>개인정보</em>보호법과 관련 법령에서  규정하고 있는 기술적 보호조치는 다음과 규정하고 있는 기술적 보호조치는 다음과 규정하고 있는 기술적 보호조치는 다음과 규정하고 있는 기술적 보호조치는 다음과</p>
+                        </div>
+                        <div class="date">2025-10-12</div>
+                    </li>
+                    <li>
+                        <div class="item">
+                        <a href="javascript:void(0);">
+                            <b class="tit">협의이혼 양육비 관련 (링크추가되어있음)</b>
+                            <p class="ellips txt-sm">협의이혼 시 가정법원에서 양육비부담 조사서… 개인정보…별도의 재판 절차</p>
+                        </a>
+                        </div>
+                        <div class="date">2025-10-12</div>
+                    </li>
+                    <li>
+                        <div class="item">
+                        <a href="javascript:void(0);">
+                            <b class="tit">협의이혼 양육비 관련 (링크추가되어있음)</b>
+                            <p class="ellips txt-sm">협의이혼 시 가정법원에서 양육비부담 조사서… 개인정보…별도의 재판 절차</p>
+                        </a>
+                        </div>
+                        <div class="date">2025-10-12</div>
+                    </li>
+                    <li>
+                        <div class="item">
+                        <b class="tit"><em>개인정보</em>보호조치 중 기술적 보호 조치</b>
+                        <p class="ellips txt-sm"><em>개인정보</em>보호법과 관련 법령에서 규정하고 있는 기술적 보호조치는 다음과</p>
+                        </div>
+                        <div class="date">2025-10-12</div>
+                    </li>
+                    <li>
+                        <div class="item">
+                        <b class="tit">협의이혼 양육비 관련</b>
+                        <p class="ellips txt-sm">협의이혼 시 가정법원에서 양육비부담 조사서… 개인정보…별도의 재판 절차</p>
+                        </div>
+                        <div class="date">2025-10-12</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- // history-list -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 서비스 개선 의견 -->
+  <div class="popup-wrap" id="popServiceOpinion">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">서비스 개선 의견</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+            <h2 class="title-popup">재판업무 지원 AI 플랫폼 서비스 이용에 <em>불편한 점 혹은 개선 아이디어</em>가 <br>있다면 의견을 보내주세요.</h2>
+            <p class="txt-pop">보내주신 의견은 확인 후 더 나은 서비스 제공을 위해 참고하도록 하겠습니다.</p>
+            <div class="form-box">
+              <div class="form-set">
+                    <div class="row">
+                        <div class="form">
+                            <input type="text" placeholder="의견을 입력해주세요." data-evt="byte" data-byte="100">
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popServiceOpinion')">취소</button>
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popServiceOpinion')">전송</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 나의 프롬프트 관리 -->
+  <div class="popup-wrap" id="popMyPrompt">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" style="width:920px">
+        <div class="pop-header">
+          <h2 class="tit">나의 프롬프트 관리</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+
+            <div class="noti-box">
+              <strong class="tit">AI가 나의 업무 스타일을 이해할 수 있도록 설정해주세요</strong>
+              <div class="text">
+                <p class="txt">자주 사용하는 요청문을 프롬프트로 등록하면 AI가 사용자의 직무와 목적에 맞는 답변을 제공합니다</p>
+                <p class="txt-ps">(예: 법률 검토 의견형식으로 작성해줘. 민법 관련 데이터를 기준으로 비교해주고, 보다 자세하고 정확한 데이터를 위주로 제안해줘)</p>
+              </div>
+              
+            </div>
+
+            <div class="my-prompt-list">
+              <ul>
+                <li>
+                  <a href="javascript:void(0);" class="card">
+                    <dt>법률 검토 의견 형식으로 작성해줘 (링크일경우)</dt>
+                    <dd><p class="txt">업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능 업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능</p></dd>
+                    <dd class="menu">
+                      <div class="btns">
+                        <button type="button" class="btn-del" aria-label="삭재"></button>
+                        <span class="bar"></span>
+                        <button type="button" class="btn-modify" aria-label="수정"></button>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-favorite" onclick="this.classList.toggle('on')"></button>
+                      </div>
+                    </dd>
+                  </a>
+                </li>
+                <li>
+                  <div class="card">
+                    <dt>법률 검토 의견 형식으로 작성해줘</dt>
+                    <dd><p class="txt">업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능 업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능</p></dd>
+                    <dd class="menu">
+                      <div class="btns">
+                        <button type="button" class="btn-del" aria-label="삭재"></button>
+                        <span class="bar"></span>
+                        <button type="button" class="btn-modify" aria-label="수정"></button>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-favorite" onclick="this.classList.toggle('on')"></button>
+                      </div>
+                    </dd>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <dt>법률 검토 의견 형식으로 작성해줘</dt>
+                    <dd><p class="txt">업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능 업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능</p></dd>
+                    <dd class="menu">
+                      <div class="btns">
+                        <button type="button" class="btn-del" aria-label="삭재"></button>
+                        <span class="bar"></span>
+                        <button type="button" class="btn-modify" aria-label="수정"></button>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-favorite on" onclick="this.classList.toggle('on')"></button>
+                      </div>
+                    </dd>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <dt>법률 검토 의견 형식으로 작성해줘</dt>
+                    <dd><p class="txt">업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능 업로드하는 문서 내용을 정확하게 비교, 요약해주는 기능</p></dd>
+                    <dd class="menu">
+                      <div class="btns">
+                        <button type="button" class="btn-del" aria-label="삭재"></button>
+                        <span class="bar"></span>
+                        <button type="button" class="btn-modify" aria-label="수정"></button>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-favorite on" onclick="this.classList.toggle('on')"></button>
+                      </div>
+                    </dd>
+                  </div>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" class="regist" onclick="$('#promptForm').show();">
+                    <span>프롬프트 등록</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- // my-prompt-list -->
+
+            <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev"></button>
+                    <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next"></button>
+                </div>
+                <!-- // pagination -->
+            </div>       
+            
+            <div class="prompt-form" id="promptForm" style="display: none;">
+                <div class="pop-header">
+                <h2 class="tit">프롬프트 등록/수정</h2>
+                <div class="right">
+                    <button class="btn-x" onclick="$('#promptForm').hide();"><i class="ico-x"></i></button>
+                </div>
+                </div>
+                <div class="form-box-wrap">
+                    <div class="form-box">
+                      <div class="form-set">
+                        <div class="row">
+                            <label for="prompt-name" class="label">
+                            프롬프트 이름 <i class="required"><span class="hidden">필수</span></i>
+                            </label>
+                            <div class="form">
+                            <input type="text" id="prompt-name" placeholder="프롬프트 이름을 입력해주세요.">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="prompt-description" class="label">
+                            설명 <i class="required"><span class="hidden">필수</span></i>
+                            </label>
+                            <div class="form">
+                            <input type="text" id="prompt-description" placeholder="설명을 입력해주세요.">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label for="prompt-content" class="label">
+                            내용 <i class="required"><span class="hidden">필수</span></i>
+                            <p class="ps">나의 관심사, 기억해 두어야 할 선호 사항 등을 입력해주세요.</p>
+                            </label>
+                            <div class="form">
+                            <textarea id="prompt-content" style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100"></textarea>
+                            </div>
+                      </div>
+                     </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popMyPrompt')">취소</button>
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popMyPrompt')">저장</button>
+          </div>
+        </div>
+               
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 
+    $('[data-evt="toggle-folding-menu"]').on('click', function(e){
+      e.preventDefault();
+
+      const $wrap = $(this).closest('.bottom-area');
+      const $menu = $wrap.find('.folding-menu');
+
+      $wrap.toggleClass('on');
+
+      if ($wrap.hasClass('on')) {
+        $menu.stop().slideDown(200);
+      } else {
+        $menu.stop().slideUp(200);
+      }
+    });
+    // 자주 쓰는 프롬프트
+    $('[data-evt="toggle-fa-prompt"]').on('click', function(e){
+      e.preventDefault();
+
+      const $wrap = $(this).closest('.fa-prompt-wrap');
+      const $menu = $wrap.find('.menu-list');
+
+      $wrap.toggleClass('on');
+
+      if ($wrap.hasClass('on')) {
+        $menu.stop().slideDown(200);
+      } else {
+        $menu.stop().slideUp(200);
+      }
+    });
+  </script>

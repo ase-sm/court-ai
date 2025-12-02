@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-front-ui.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
+      <div class="contents error-contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <main class="content" aria-labelledby="content">
+            
+            <div class="error-wrap">
+              <i class="ico-error-system"></i>
+              <div class="error-text">
+                <strong>현재 시스템 점검 중입니다.</strong>
+                <p>더 나은 서비스를 위해 일시적으로 서비스가 중단되었습니다.<br>잠시 후 다시 이용해 주시기 바랍니다.</p>
+                <div class="btn-wrap">
+                  <button type="button" class="btn-lg st-blue">홈으로 이동</button>
+                </div>
+              </div>
+            </div>
+
+          </main>
+      </div>
+  </div>
+  <!-- // wrap -->
+
+
+</body>
+</html>
+
+

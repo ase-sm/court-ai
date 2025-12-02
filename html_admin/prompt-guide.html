@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">프롬프트 가이드 관리</h2>
+                  <div class="right">
+                    <button class="btn-lg st-blue" onclick="sidePopOpen('#promptRegist');">프롬프트 등록</button>
+                  </div>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="keyword" class="label">검색어</label>
+                          <div class="select-ui" id="keyword"></div>
+                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px">
+                          <label for="status" class="label">상태</label>
+                          <div class="select-ui" id="status"></div>   
+
+                          <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>프롬프트 가이드 관리</caption>
+                       <colgroup>
+                        <col style="width: 8%;">
+                        <col style="width: 10%;">
+                        <col style="width: auto;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 14%;">
+                      </colgroup>
+                     <thead>
+                        <tr>
+                          <th scope="col">NO</th>
+                          <th scope="col">게시여부</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">작성자</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="tag st-blue">게시</span></td>
+                            <td>
+                              <div class="title"><span class="ellips">건축 하자 관련 보증금 반환 청구 대응 전략 수립</span></div>
+                            </td>
+                            <td>{LDAP Name}</td>
+                            <td>2025-10-13</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#promptDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="tag st-gray-line">게시 안함</span></td>
+                            <td>
+                              <div class="title"><span class="ellips">건축 하자 관련 보증금 반환 청구 대응 전략 수립 건축 하자 관련 보증금 반환 청구 대응 전략 수립건축 하자 관련 보증금 반환 청구 대응 전략 수립</span></div>
+                            </td>
+                            <td>{LDAP Name}</td>
+                            <td>2025-10-13</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#promptDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+
+  <!-- 등록 팝업 -->
+  <div class="popup-wrap st-side" id="promptRegist">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">프롬프트 등록</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="form-list-wrap">
+            <dl class="full">
+              <dt>제목<i class="required"><span class="hidden">필수</span></i></dt>
+              <dd>
+                <input type="text" style="width:100%;" placeholder="제목을 입력해주세요.">
+              </dd>
+            </dl>
+            <dl class="full">
+              <dt>제목<i class="required"><span class="hidden">필수</span></i></dt>
+              <dd>
+                <input type="text" class="error" style="width:100%;" placeholder="제목을 입력해주세요.">
+                <p class="txt-error">제목을 입력해주세요.</p>
+              </dd>
+            </dl>
+            <dl class="full">
+              <dt>간략 내용<i class="required"><span class="hidden">필수</span></i></dt>
+              <dd>
+                <textarea style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100"></textarea>
+              </dd>
+            </dl>
+            <dl class="full">
+              <dt>간략 내용<i class="required"><span class="hidden">필수</span></i></dt>
+              <dd>
+                <textarea class="error" style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100"></textarea>
+                <p class="txt-error">내용을 입력해주세요.</p>
+              </dd>
+            </dl>
+            <dl>
+              <dt>게시 여부</dt>
+              <dd>
+                <div class="min-wrap">
+                  <span class="txt-toggle" id="txtToggle">게시 안함</span>
+                  <label class="inp-toggle" >
+                      <input type="checkbox" onchange="$(this).is(':checked') ? $('#txtToggle').text('게시') : $('#txtToggle').text('게시 안함')">
+                      <i></i>
+                  </label>
+                </div>
+              </dd>
+            </dl>
+          </div>
+          <div class="board-info-box">
+            <div class="left">
+              <span class="txt">등록일 : <span>2025-10-22</span></span>
+            </div>
+            <div class="right">
+              <span class="txt">작성자 : <span>홍길동</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="sidePopClose('#noticeRegist')">목록</button>
+              <button type="button" class="btn-popup st-blue">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 상세 팝업 -->
+  <div class="popup-wrap st-side" id="promptDetail">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">프롬프트 상세</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="board-header">
+            <h3 class="title-board"><b>관리인의 무단 계약에 대한 집주인의 책임 범위</b></h3>
+            <div class="right">
+              <span class="tag st-blue">게시</span>
+              <span class="tag st-gray-line">게시 안함</span>
+            </div>
+            <div class="board-info">
+              <span>등록일 : <span>2025-10-22</span></span>
+              <div class="right"><span>작성자 : <span>홍길동</span></span></div>
+            </div>
+          </div>
+          <div class="board-body">
+              <div class="board-view">
+                <div class="view">
+                  집주인이 관리인에게 월세계약을 맡겼고, 계약을 맡은 관리인은 마치 본인이 집주인인양 임차인과 전세계약을 체결하여 전세보증금을 편취했다면 이 경우 집주인이 임차인에게 책임을 져야하니?
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="sidePopClose('#promptDetail')">목록</button>
+              <button type="button" class="btn-popup st-blue" onclick="sidePopClose('#promptDetail')">수정</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 커스텀셀렉트
+      const data = {
+        placeholder: ".",
+        options: [
+          { value: "total", label: "전체" },
+          { value: "select1", label: "선택1" },
+          { value: "select2", label: "선택2" },
+          { value: "select3", label: "선택2", disabled: true },
+          { value: "select4", label: "선택4" }
+        ],
+        selected: null
+      };
+
+      const select1 = selectUi('keyword', data);
+      select1.value = "total";
+      const select2 = selectUi('status', data);
+      select2.value = "total";
+
+  </script>
+
+    
+</body>
+</html>

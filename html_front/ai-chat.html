@@ -1,0 +1,899 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-front-ui.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
+      <div class="contents">
+        <button class="btn-ref-open" aria-label="참조문서 영역 열기"></button>
+        
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+
+          <main class="ai-content">
+            <div class="noti-banner" >
+              <div class="banner-tag">공지</div>
+              <div class="banner" id="bannerSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                </div>
+              </div>
+              <div class="banner-menu">
+                <button type="button" class="btn-prev"><span class="hidden">이전</span></button>
+                <button type="button" class="btn-next"><span class="hidden">다음</span></button>
+              </div>
+            </div>
+            <!-- // noti-banner -->
+
+            <!-- ai-answers-section -->
+            <section class="ai-answers-section">
+              <div class="ai-answer-wrap">
+                  <!-- 질문단위 -->
+                  <div class="ai-answer-comp">
+                    <div class="ai-question">
+                      <div class="chat">
+                        <div class="text">얼마 전 건문(자산) 매입할 때 발생한 대출 연장을 위해 2020년 재무제표를 회계법인에 요청하였는데, 회계 법인의 잘못된 회계처리로 은행 대출 연장을 받지 못하게 되어있어. 이런 경우처럼 회계 법인을 대상으로 소송하여 승소한 사례가 있니?</div>
+                      </div>
+                    </div>
+
+                    <div class="ai-error">
+                      <div class="text">현재 시스템에 일시적인 오류가 발생하여 답변을 처리할 수 없습니다.<br>잠시 후 다시 시도해 주시기 바랍니다.</div>
+                    </div>
+
+                    
+                    <div class="ai-loader">
+                      <p class="tit-txt"> <i class="dot-spinner"> <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <defs> <!-- Gradient 정의 --> <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2D8DFF"/> <stop offset="100%" stop-color="#8F54E1"/> </linearGradient> </defs> <!-- 원을 gradient로 채우기 --> <circle cx="4" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_jObz" begin="0;spinner_vwSQ.end-0.25s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="12" cy="12" r="3" fill="url(#grad)"> <animate begin="spinner_jObz.end-0.6s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="20" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_vwSQ" begin="spinner_jObz.end-0.45s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> </svg> </i> <span>답변을 준비하는 중입니다</span></p>
+                      <div class="loader-status">
+                        <p class="txt-ing">
+                          <i class="loader-sm"> <span class="loader-circular"> <svg class="circular" viewBox="25 25 50 50"> <defs> <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2E7AFD" /> <stop offset="100%" stop-color="#6B3BE9" /> </linearGradient> </defs> <circle class="circular-path" cx="50" cy="50" r="20" fill="none" stroke="url(#gradientStroke)" stroke-width="8" /> </svg> </span></i>
+                          <span>요청사항에 필요한 작업을 분석하고 있습니다.</span>
+                        </p>
+                        <p class="txt-complete"><i class="ico-complete"></i><span>답변 생성을 위해 데이터베이스를 검색하고 있습니다.</span></p>
+                        <p class="txt-complete"><i class="ico-complete"></i><span>요청사항에 필요한 작업을 분석하고 있습니다.</span></p>
+                      </div>
+                    </div>
+                    
+
+                    <div class="ai-answer-stop">
+                      <p class="tit-txt"><i class="ico-stop"></i><span>사용자의 요청으로 답변이 중지되었습니다.</span></p>
+                      <button class="btn-stop"><i class="ico-stop"></i><span>답변중지</span></button>
+                    </div>
+
+                    <!-- 답변영역 -->
+                    <article class="ai-answer">
+                      <h1 class="tit-article">회계법인 부실 회계처리로 인한 손해배상 소송 사례 분석</h1>
+                      <h2>1. 회계법인 손해배상 소송 승소 사례</h2>
+                      <h3>가. 회계법인의 부실감사로 인한 손해배상 인정 사례</h3>
+                      <p style="color:#8A949E"><span style="color:#246BEB">(서울북부지방법원 2023.2.14. 선고 2021가단127344판결)</span> 에서는 세무사가 양도 소득세 신고 대행업무를 처리하면서 관련 법령 개정사실을 파악하지 못하여 잘못된 세무 신고를 한 경우, <span style="color:#246BEB">(서울고등법원 2006.9.13. 선고 2006나14648 판결)</span>에서는 분석회계에 의한 배무제표에 대한 회계감사를 실시하지 않은 주식회사의 감사가 그 재무제표에 근거한 신용평가기관의 신용평가에 기초하여 회사채를 매입한 금융기관에 대하여 <b>상법 제 414조 제2항</b>에 의한 손해배상책임이 있다고 판단하였습니다.</p>
+                      <h2>2. 회계법인 손해배상책임의 법적 근거</h2>
+                      <h3>가. 위임계약상 선관주의 의무 위반</h3>
+                      <p>
+                        회계법인은 위임계약에 따라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다.
+                        특히 회계전문가로서 다음과 같은 의무를 져야 합니다.
+                        <br>
+                        관련 회계기준 및 법령의 정확한 적용 
+                        회계처리의 적정성 검토
+                        재무제표 작성 시 충분한 주의 및 검증
+                      </p>
+                      <h3>나. 불법행위로 인한 손해배상 책임</h3>
+                      <p>서울중앙지방법원 <b>2019.회계법인은 위임계약</b>에 다라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다. <br>특히 회게전문가로서 다음과 같은 의무를 져야 합니다.</p>
+                      <h3>다. 유사 사례</h3>
+
+                      <!-- table -->
+                      <div class="st-table">
+                      <table>
+                         <caption>테이블 제목 필요</caption>
+                          <colgroup>
+                              <col style="width:auto" />
+                              <col style="width:33%" />
+                              <col style="width:33%" />
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th>사례 이름/ 요지</th>
+                                  <th>주요내용</th>
+                                  <th>결과/판례 의미</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                                <tr>
+                                  <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                  <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                  <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                </tr>
+                                <tr>
+                                  <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                  <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                  <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                </tr>
+                          </tbody>
+                      </table>
+                      </div>
+                      <!-- //table -->
+                    </article>
+                    <!-- // 답변영역 -->
+
+                    <div class="ai-answer-menu">
+                      <div class="menu-box">
+                        <div class="satisfaction-evaluation">
+                          <b class="label">답변에 대한 만족도를 평가해주세요.</b>
+                          <div class="satisfaction">
+                              <span class="star-grade">
+                                <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
+                                <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
+                                <button type="button" data-val="3"><span class="hidden">3점</span></button>
+                                <button type="button" data-val="4"><span class="hidden">4점</span></button>
+                                <button type="button" data-val="5"><span class="hidden">5점</span></button>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="menu">
+                          <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사"  onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+                          <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 질문단위 -->
+              </div>
+            </section>
+            <!-- // ai-answers-section -->
+
+            <!-- prompt-section -->
+            <section class="prompt-section">
+              <div class="prompt-guide-wrap">
+                <div class="main-text">
+                  <h1 class="tit">재판업무 지원  AI 플랫폼</h1>
+                  <div class="txt"><b>법률에 대한 모든 것</b>을 질문해주세요.</div>
+                </div>
+                <div class="prompt-toggle">
+                  <button type="button" class="btn on" onclick="togglePromptGuide(this)">프롬프트 가이드</button>
+                </div>
+                <div class="prompt-guide">
+                  <div class="prompt-menu">
+                    <ul>
+                       <li><button class="btn-menu on">전체</button></li>
+                       <li><button class="btn-menu">민사</button></li>
+                       <li><button class="btn-menu">형사</button></li>
+                       <li><button class="btn-menu">자문</button></li>
+                       <li><button class="btn-menu">가사</button></li>
+                       <li><button class="btn-menu">특허</button></li>
+                    </ul>
+                    <div class="right">
+                      <button class="btn-rest" area-label="초기화"></button>
+                    </div>
+                  </div>
+                  <!-- // prompt-menu -->
+                  <div class="prompt-guide-list-wrap">
+                    <div class="prompt-guide-list">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                              <dl>
+                                <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
+                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                              </dl>
+                            </a>
+                          </div>
+                          <!--  -->
+                          <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                              <dl>
+                                <dt>최근 3년내 전원합의체 판결중 가장 많이 인용된 판례를 찾아줘</dt>
+                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
+                              </dl>
+                            </a>
+                          </div>
+                          <!--  -->
+                          <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                              <dl>
+                                <dt>자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요</dt>
+                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                              </dl>
+                            </a>
+                          </div>
+                          <!--  -->
+                          <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                              <dl>
+                                <dt>주거침입죄 관련한 최신 대법원 판례 찾아줘</dt>
+                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
+                              </dl>
+                            </a>
+                          </div>
+                          <!--  -->
+                          <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                              <dl>
+                                <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
+                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                              </dl>
+                            </a>
+                          </div>
+                          <!--  -->
+                        </div>
+                    </div>
+                    <button type="button" class="swiper-button-prev"><span class="hidden">이전</span></button>
+                    <button type="button" class="swiper-button-next"><span class="hidden">다음</span></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // prompt-guide-wrap -->
+              <div class="prompt-input-wrap">
+                  
+                <div class="prompt-chat">
+                  <div class="prompt-inner">
+                    <div class="ai-upload-file-list">
+                      <ul class="swiper-wrapper">
+                        <!-- 첨부파일 영역 -->
+                      </ul>
+                    </div>
+                    <div class="textarea">
+                      <textarea placeholder="요청하실 내용을 입력해주세요.&#10;예) 오픈채팅방을 통해 한 대화가 명예훼손과 관련하여 문제된 사례가 없는지 찾아줘."></textarea>
+                    </div>
+                    <div class="chat-menu">
+                      <div class="left">
+                        <button type="button" class="btn-upload" data-evt="tooltip-menu" data-id="fileUploadMenu"><span class="hidden">파일 업로드</span></button>
+                      </div>
+                      <div class="right"><button type="button" class="btn-send" aria-label="질문 보내기" onclick="document.querySelector('.ai-content').classList.add('mode-chat');answerEffect();" ></button></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="txt-msg">재판업무 지원 AI가 부정확한 답변을 제공할 수 있습니다. 답변은 재차 확인해주세요.</p>
+              </div>
+            </section>
+            <!-- // prompt-section -->
+
+          </main> 
+          <!-- // ai-content -->
+      </div>
+
+      <!-- 참조문서 -->
+      <aside class="reference-document-wrap closed">
+        <div class="ref-header">
+          <h2 class="ref-title">참조문서</h2>
+          <button type="button" class="btn-collapse" aria-label="참조문서 영역 닫기"></button>
+        </div>
+        <div class="ref-question">
+          <h3 clss="tit">질문 내역</h3>
+          <p class="ref-question-text" data-evt="more-view">피고는 ‘C’라는 영업표지로 실내운전연습장 운영업, 이와 관련된 사업지원서비스업, 프랜차이즈업 등을 영위하는 주식회사로서 가맹사업거래의 공정화에 관한 법률(이하 ‘가맹사업법’이라</p>
+        </div>
+        <div class="ref-documents">
+          <ol class="ref-doc-list">
+            <!-- 문서 1 -->
+            <li class="ref-doc-item">
+              <dl class="ref-doc">
+                <dt><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></dt>
+                <dd>
+                  <div class="doc-txt">
+                    <div class="txt">
+                      피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
+                      사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
+                      가맹사업거래가
+                    </div>
+                  </div>
+                    <button type="button" class="btn-toggle"
+                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
+                      더보기
+                  </button>
+                </dd>
+              </dl>
+            </li>
+            <!-- 문서 2 -->
+            <li class="ref-doc-item">
+              <dl class="ref-doc">
+                <dt><i class="ref-num">2</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></dt>
+                <dd>
+                  <div class="doc-txt">
+                    <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
+                  </div>
+                    <button type="button" class="btn-toggle"
+                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
+                      <span>더보기</span>
+                  </button>
+                </dd>
+              </dl>
+            </li>
+            <!-- 문서 3 -->
+            <li class="ref-doc-item">
+              <dl class="ref-doc">
+                <dt><i class="ref-num">3</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기 선고 2024나2000854 판결 [손해배상(기)])]</div></dt>
+                <dd>
+                  <div class="doc-txt">
+                    <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
+                  </div>
+                  <button type="button" class="btn-toggle"
+                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
+                      <span>더보기</span>
+                  </button>
+                </dd>
+              </dl>
+            </li>
+          </ol>
+          <div class="pagination-wrap">
+            <div class="pagination sm">
+                <button type="button"class="btn-prev"></button>
+                <ul>
+                  <li class="on"><button type="button">1</button></li>
+                  <li><button type="button">2</button></li>
+                  <li><button type="button">3</button></li>
+                  <li><button type="button">4</button></li>
+                  <li><button type="button">5</button></li>
+                </ul>
+                <button type="button" class="btn-next"></button>
+            </div>
+            <!-- // pagination -->
+          </div>
+        </div>
+        <!-- // ref-documents -->
+         <div class="relative-link-list">
+          <h3 class="tit">관련 포털 바로가기</h3>
+          <ul>
+            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털 사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털</span></a></li>
+            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
+            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
+            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
+            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
+          </ul>
+         </div>
+      </aside>
+      <!-- // 참조문서 -->
+  </div>
+  <!-- // wrap -->
+
+  <!-- 파일업로드 툴팁메뉴 -->
+  <div class="dropdown-menu-layer" id="fileUploadMenu" style="display: none;">
+    <ul>
+        <li><button type="button" onclick="popOpen('#popFileUpload')"><span>파일 업로드</span></button></li>
+        <li><button type="button" onclick="popOpen('#popDocStorage')"><span>문서 보관함</span></button></li>
+    </ul>
+  </div>
+
+
+  <!-- 파일업로드 인풋 -->
+  <input type="file" id="fileInput" multiple style="display:none;" accept=".pdf,.hwp,.doc,.ppt, .pptx,.xlsx,.txt" class="hidden">
+
+  <!-- 파일 업로드 유의사항 -->
+  <div class="popup-wrap" id="popFileUpload">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">파일 업로드 유의사항</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="agree-checks">
+            <div class="check-box">
+              <div class="input-choice">
+                <input type="checkbox" id="allAgree" value="all" name="agree" data-evt="all-check">
+                <i></i>
+                <label for="allAgree">전체 동의합니다.</label>
+              </div>
+            </div>
+            <ul class="check-list">
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="1" name="agree">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont"><em class="txt-require">[필수]</em>타인의 동의 없는 개인정보 제공 및 직무상 취득한 타인의 비밀정보가 없음을 확인하였습니다.</div>
+              </li>
+                <li class="item">
+                  <div class="check">
+                    <div class="input-choice">
+                      <input type="checkbox" value="2" name="agree">
+                      <i></i>
+                    </div>
+                  </div>
+                  <div class="cont"><em class="txt-select">[선택]</em>선택한 파일은 ‘문서 보관함’에 저장합니다. </div>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popFileUpload')">닫기</button>
+              <button type="button" class="btn-popup st-blue"
+                  onclick="
+                    const required = document.querySelectorAll('.agree-checks input[value=\'1\']');
+                    let valid = true;
+
+                    required.forEach(chk => {
+                      if (!chk.checked) valid = false;
+                    });
+
+                    if (!valid) {
+                      alert('필수 약관을 선택해주세요.');
+                      return;
+                    }else{
+                      aiFileUpload();
+                      popClose('#popFileUpload');
+                    }
+                  "
+                >확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 문서 보관함에서 불러오기 -->
+  <div class="popup-wrap" id="popDocStorage">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">문서 보관함에서 불러오기</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="data-type1">
+            <table>
+              <caption>문서 보관함에서 불러오기</caption>
+                  <colgroup>
+                    <col style="width: 60px;">
+                    <col style="width: auto;">
+                    <col style="width: 80px;">
+                    <col style="width: 180px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                      <th scope="col">
+                        <div class="input-choice">
+                          <input type="checkbox" value="all" name="chk" id="allAgree" data-evt="all-check">
+                          <i></i>
+                        </div>
+                      </th>
+                      <th scope="col">파일명</th>
+                      <th scope="col">크기</th>
+                      <th scope="col">업데이트 날짜</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                    <tr>
+                      <td><div class="input-choice">
+                          <input type="checkbox" value="1" name="chk">
+                          <i></i>
+                        </div></td>
+                      <td><div class="title"><span class="ellips">홍길동 전세사기 사건.hwp 홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp</span></div></td>
+                      <td>0KB</td>
+                      <td>2025-09-30&nbsp; 10:30</td>
+                    </tr>
+                    <tr>
+                      <td><div class="input-choice">
+                          <input type="checkbox" value="1" name="chk">
+                          <i></i>
+                        </div></td>
+                      <td><div class="title"><span class="ellips">홍길동 전세사기 사건.hwp 홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp</span></div></td>
+                      <td>0KB</td>
+                      <td>2025-09-30&nbsp; 10:30</td>
+                    </tr>
+                    <tr>
+                      <td><div class="input-choice">
+                          <input type="checkbox" value="1" name="chk">
+                          <i></i>
+                        </div></td>
+                      <td><div class="title"><span class="ellips">홍길동 전세사기 사건.hwp 홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp</span></div></td>
+                      <td>0KB</td>
+                      <td>2025-09-30&nbsp; 10:30</td>
+                    </tr>
+                    <tr>
+                      <td><div class="input-choice">
+                          <input type="checkbox" value="1" name="chk">
+                          <i></i>
+                        </div></td>
+                      <td><div class="title"><span class="ellips">홍길동 전세사기 사건.hwp 홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp홍길동 전세사기 사건.hwp</span></div></td>
+                      <td>0KB</td>
+                      <td>2025-09-30&nbsp; 10:30</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <div class="pagination-wrap">
+            <div class="pagination">
+                <button type="button"class="btn-prev"></button>
+                <ul>
+                  <li class="on"><button type="button">1</button></li>
+                  <li><button type="button">2</button></li>
+                  <li><button type="button">3</button></li>
+                  <li><button type="button">4</button></li>
+                  <li><button type="button">5</button></li>
+                </ul>
+                <button type="button" class="btn-next"></button>
+            </div>
+            <!-- // pagination -->
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popDocStorage')">닫기</button>
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popDocStorage')">선택</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 답변 만족도 평가 -->
+  <div class="popup-wrap" id="popSatisfaction">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">답변 만족도 평가</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <h3 class="title-popup">서비스 이용에 아쉬웠던 점을 선택해주세요. <em>(복수 선택 가능)</em></h3>
+          <ul class="check-list">
+            <li class="item">
+              <div class="check">
+                <div class="input-choice">
+                  <input type="checkbox" value="1" name="satisfaction">
+                  <i></i>
+                </div>
+              </div>
+              <div class="cont">틀린 답변은 제공함</div>
+            </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="2" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">최신 법률 데이터가 반영되지 않음</div>
+              </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="3" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">잘못된 법률 정보를 인용함</div>
+              </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="4" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">도움이 되지 않거나 관련성 없는 답변이 제공됨</div>
+              </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="5" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">질의에 충실하지 않음 부실한 답변 제공</div>
+              </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="6" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">오류로 인해 답변이 생성되지 않음</div>
+              </li>
+              <li class="item">
+                <div class="check">
+                  <div class="input-choice">
+                    <input type="checkbox" value="7" name="satisfaction">
+                    <i></i>
+                  </div>
+                </div>
+                <div class="cont">
+                    <div class="form-set">
+                      <div class="row">
+                        <label for="reason" class="label">기타</label>
+                          <div class="form">
+                              <input type="text" placeholder="기타 사유를 입력해주세요." data-evt="byte" data-byte="100">
+                          </div>
+                      </div>  
+                    </div>
+                </div>
+              </li>
+          </ul>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popSatisfaction')">취소</button>
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popSatisfaction')">전송</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 세션 만료 사전 안내 -->
+  <div class="popup-wrap" id="popNotificationPre">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" style="width:560px;">
+        <div class="pop-header">
+          <h2 class="tit">세션 만료 사전 안내</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <h3 class="title-popup"><i class="ico-noti"></i><span>보안을 위해 현재 로그인 세션이 <em>5분후 만료될 예정</em>입니다.</span></h3>
+          <div class="noti-box st2">
+            <div class="text">
+              <p class="txt">계속 이용하시려면 <em>로그인 연장</em> 버튼을 눌러주세요.</p>
+              <p class="txt">연장하지 않으면 자동으로 <em>로그아웃</em> 됩니다.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popNotificationPre')">로그아웃</button>
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popNotificationPre')">로그인 연장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 세션 만료 안내 -->
+  <div class="popup-wrap" id="popNotification">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" style="width:560px;">
+        <div class="pop-header">
+          <h2 class="tit">세션 만료 안내</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <h3 class="title-popup">보안을 위해 로그인이 만료되어 <em>자동 로그아웃 처리</em> 되었습니다. <br>계속 이용하시려면 <em>다시 로그인 해주세요.</em></h3>
+          
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popNotification')">로그인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  // popOpen('#popNotification')
+  // popOpen('#popNotificationPre')
+
+  // 호출
+  layoutEvt();
+
+
+  // 상단 배너 슬라이드
+    topBannerSlider();
+    function topBannerSlider(){
+      var bannerSwiper = new Swiper("#bannerSwiper", {
+        direction: "vertical", // 슬라이드가 위로 올라가게
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".btn-next",
+          prevEl: ".btn-prev"
+        }
+      });
+    }
+
+
+
+  // 프롬프트 가이드
+  promptGuideSlide()
+  function promptGuideSlide(){
+      const slideNum = $('.prompt-guide-list .swiper-slide').length;
+      if(slideNum <= 3) return;
+      if(slideNum >= 4 && slideNum <= 8){
+        $('.prompt-guide-list .swiper-wrapper').append($('.prompt-guide-list .swiper-wrapper').clone().html());
+      }
+      const promptGuideSlider = new Swiper('.prompt-guide-list', {
+        loop: true,
+        autoplay:{
+          dealy: 300,
+          disableOnInteraction : false
+        },
+        speed:550,
+        loopedSlides: 3,
+        // centeredSlides: true,
+        spaceBetween: 16,
+        slidesPerView: 'auto',
+        navigation: {
+          nextEl: ".prompt-guide-list-wrap .swiper-button-next",
+          prevEl: ".prompt-guide-list-wrap .swiper-button-prev",
+        }, 
+      });
+    }  
+
+  // 프롬프트 입력창
+   promptEvt();
+
+  function promptEvt(){
+
+    const wrapper = document.querySelector('.prompt-input-wrap');
+    const textarea = wrapper.querySelector('.textarea textarea');
+
+    function autoResize() {
+      textarea.style.height = 'auto';
+      const newHeight = textarea.scrollHeight;
+      textarea.style.height = newHeight <= 50 ? '' : newHeight + 'px';
+    }
+
+    textarea.addEventListener('input', autoResize);
+    textarea.addEventListener('focus', () => wrapper.classList.add('active'));
+    textarea.addEventListener('blur', () => wrapper.classList.remove('active'));
+  }
+
+
+  // 파일 업로드
+  function aiFileUpload(){
+  const fileInput = document.getElementById('fileInput');
+  const fileListWrap = document.querySelector('.ai-upload-file-list'); 
+  const fileListUl = fileListWrap.querySelector('ul');
+
+  const allowedTypes = ['pdf','hwp','doc', 'ppt', 'pptx','xlsx','txt'];
+  const maxFileSize = 50 * 1024 * 1024;
+  const maxFiles = 10;
+
+  let uploadFileSlider = new Swiper('.ai-upload-file-list', {
+    spaceBetween: 8,
+    slidesPerView: 'auto',
+  });
+
+  // 👇 파일 리스트가 비었는지 체크하여 숨김/보임 처리
+  function toggleFileListVisibility() {
+    if (fileListUl.children.length === 0) {
+      fileListWrap.style.display = 'none';
+    } else {
+      fileListWrap.style.display = 'block';
+    }
+  }
+
+  // 최초 숨김
+  toggleFileListVisibility();
+
+  fileInput.click();
+
+  fileInput.addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    const currentFileCount = fileListUl.querySelectorAll('li').length;
+
+    if (currentFileCount + files.length > maxFiles) {
+      customAlert(`최대 ${maxFiles}개의 파일만 업로드할 수 있습니다.`, "alert");
+      return;
+    }
+
+    files.forEach(file => {
+      const fileExt = file.name.split('.').pop().toLowerCase();
+      if(!allowedTypes.includes(fileExt)) {
+        customAlert(`${file.name}는 허용되지 않는 파일 형식입니다.`, "alert");
+        return;
+      }
+      if(file.size > maxFileSize) {
+        customAlert(`${file.name} 파일은 최대 업로드 용량을 초과했습니다.`, "alert");
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.classList.add('swiper-slide');
+      li.innerHTML = `
+        <div class="file">
+          <i class="ico-file-${fileExt}"></i>
+          <div class="desc">
+            <div class="name">${file.name.replace(/\.[^/.]+$/, "")}</div>
+            <div class="info">
+              <span class="type">${fileExt.toUpperCase()}</span>
+              <span class="size">${(file.size / 1024 / 1024).toFixed(2)} MB</span>
+            </div>
+          </div>
+          <button class="btn-del" aria-label="삭제"></button>
+        </div>
+      `;
+      fileListUl.appendChild(li);
+
+      // 삭제 버튼
+      li.querySelector('.btn-del').addEventListener('click', () => {
+        li.remove();
+        uploadFileSlider.update();
+        toggleFileListVisibility();
+      });
+    });
+
+    uploadFileSlider.update();
+    toggleFileListVisibility();
+
+    fileInput.value = '';
+  });
+}
+
+
+
+//  프롬프트 가이드 숨기기
+ function togglePromptGuide(btn){
+    btn.classList.toggle('on');
+
+    const guide = document.querySelector('.prompt-guide');
+    if (!guide) return;
+
+    if (guide.style.display === 'none'){
+      guide.style.display = 'block';
+    } else {
+      guide.style.display = 'none';
+    }
+  }
+
+
+
+  // 답변영역 효과
+  function answerEffect(){
+      const reveals = document.querySelectorAll(".ai-answer > *, .ai-answer-menu");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+
+            const index = [...reveals].indexOf(entry.target);
+            entry.target.style.transitionDelay = `${index * 0.08}s`;
+
+            entry.target.classList.add("active");
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      reveals.forEach(el => observer.observe(el));
+  }
+
+</script>
+
+
+
+</body>
+</html>
+
+

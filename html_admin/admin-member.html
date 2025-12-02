@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">관리자 회원 목록</h2>
+                  <div class="right">
+                    <button type="button" class="btn-lg st-blue" onclick="sidePopOpen('#adminRegist');">관리자 등록</button>
+                  </div>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="keyword" class="label">검색어</label>
+                          <div class="select-ui" id="keyword"></div>
+                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px">
+                          <label for="auth" class="label">권한</label>
+                          <div class="select-ui" id="auth"></div>                          
+                          <label for="account" class="label">계정상태</label>
+                          <div class="select-ui" id="account"></div>
+                      </div>
+                      <div class="row">
+                          <label class="label" for="date">기간선택</label>
+                          <div class="input-date">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD" id="date">
+                              <span class="dash">-</span>
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                          </div>
+                          <div class="date-range-menu" data-evt="date-menu">
+                          <label>
+                              <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                          </label>
+                          <label>
+                              <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                          </label>
+                        </div>
+                          
+                        <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                  <div class="right">
+                    <button type="button" class="btn-nm st-gray-line" onclick="popOpen('#excelDown');"> 
+                        <i class="ico-excel"></i>
+                        <span>엑셀 다운로드</span>
+                        <i class="ico-download"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>관리자 회원 목록</caption>
+                       <colgroup>
+                        <col style="width: 12%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: auto;">
+                        <col style="width: auto;">
+                        <col style="width: 12%;">
+                      </colgroup>
+                     <thead>
+                        <tr>
+                          <th scope="col">권한</th>
+                          <th scope="col">이름</th>
+                          <th scope="col">아이디</th>
+                          <th scope="col">소속</th>
+                          <th scope="col">계정상태</th>
+                          <th scope="col">생성일</th>
+                          <th scope="col">최근 접속일</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>슈퍼 관리자</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td><span class="tag st-blue">활성</span></td>
+                            <td>2025-10-13 10:30:30</td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#adminDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>슈퍼 관리자</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td><span class="tag st-gray-line">비활성</span></td>
+                            <td>2025-10-13 10:30:30</td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#adminDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>슈퍼 관리자</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td><span class="tag st-blue">활성</span></td>
+                            <td>2025-10-13 10:30:30</td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#adminDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                        <tr>
+                            <td>슈퍼 관리자</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td><span class="tag st-gray-line">비활성</span></td>
+                            <td>2025-10-13 10:30:30</td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#adminDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="no-hover">
+                            <td colspan="8">
+                              <div class="no-data">데이터가 없습니다.</div>
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+
+  <!-- 관리자 회원 등록 팝업 -->
+  <div class="popup-wrap st-side" id="adminRegist">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">관리자 회원 등록</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="text">
+            <p class="txt">회원 검색을 통해 관리자 회원을 선택하신 후 관리자를 등록해주세요.</p>
+          </div>
+          
+          <h2 class="title-popup">회원 검색</h2>
+            <div class="form-box">
+              <div class="form-set">
+                  <div class="row">
+                      <label for="name" class="label">이름 <i class="required"><span class="hidden">필수</span></i></label>
+                      <div class="form">
+                          <input type="text" id="name" placeholder="이름을 입력해주세요.">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <label for="id" class="label">아이디 <i class="required"><span class="hidden">필수</span></i></label>
+                      <div class="form">
+                          <input type="text" class="error" id="id" placeholder="아이디를 입력해주세요.">
+                          <p class="txt-error">아이디를 입력해주세요.</p>
+                      </div>
+                  </div>
+                  <div class="menu">
+                      <button class="btn">회원 검색</button>
+                  </div>
+              </div>
+            </div>
+
+          <h2 class="title-popup">관리자 회원 정보</h2>
+          <div class="data-type2">
+            <table>
+              <caption>관리자 회원 정보</caption>
+                  <colgroup>
+                  <col style="width: 130px;">
+                  <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">권한</th>
+                    <td>
+                       <div class="select-ui" id="auth2" style="width:240px;"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">이름</th>
+                    <td>LDAP 이름</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">아이디</th>
+                    <td>LDAP ID</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">소속</th>
+                    <td>LDAP 소속명</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">접속 IP</th>
+                    <td>
+                      <input type="text" placeholder="접속 ip를 입력해주세요." style="width:100%;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">계정 상태</th>
+                    <td>
+                      <label class="inp-toggle" >
+                        <input type="checkbox" checked onchange="$(this).is(':checked') ? $('#txtToggle').text('활성') : $('#txtToggle').text('비활성')">
+                        <i></i>
+                      </label>
+                      <span class="txt-toggle" id="txtToggle">활성</span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="sidePopClose('#adminRegist')">취소</button>
+              <button type="button" class="btn-popup st-blue">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 관리자 회원 상세 팝업 -->
+  <div class="popup-wrap st-side" id="adminDetail">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">관리자 회원 상세</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="member-info-box">
+            <span class="name">홍길동</span>
+            <span class="position">슈퍼관리자</span>
+            <div class="right">
+              <span class="tag st-blue">활성</span>
+              <span class="tag st-gray-line">비활성</span>
+            </div>
+          </div>
+
+          <div class="tab-type1">
+            <ul>
+                <li class="on"><a href="javascript:void(0);" data-tab-id="tab1">정보</a></li>
+                <li><a href="javascript:void(0);" data-tab-id="tab2">활동이력</a></li>
+            </ul>
+          </div>
+          
+          <!-- 탭 정보 -->
+          <div class="tab-content" id="tab1">
+            <div class="data-type2">
+              <table>
+                <caption>관리자 회원 정보</caption>
+                    <colgroup>
+                    <col style="width: 130px;">
+                    <col style="width: auto;">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">권한</th>
+                      <td>
+                         <div class="select-ui" id="auth3" style="width:240px;"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">이름</th>
+                      <td>LDAP 이름</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">아이디</th>
+                      <td>LDAP ID</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">소속</th>
+                      <td>LDAP 소속명</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">접속 IP</th>
+                      <td>192.000.00.0</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">계정 상태</th>
+                      <td>
+                        <label class="inp-toggle" >
+                          <input type="checkbox" checked onchange="$(this).is(':checked') ? $('#txtToggle').text('활성') : $('#txtToggle').text('비활성')">
+                          <i></i>
+                        </label>
+                        <span class="txt-toggle" id="txtToggle">활성</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">생성일</th>
+                      <td>2025-10-26 10:30:30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">최근 접속일</th>
+                      <td>2025-10-26 10:30:30</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- 탭 활동이력 -->
+          <div class="tab-content" id="tab2" style="display: none;">
+            <div class="data-type1 st2">
+              <table>
+                <caption>관리자 회원 활동이력</caption>
+                    <colgroup>
+                    <col style="width: 35%;">
+                    <col style="width: auto;">
+                    <col style="width: 25%;">
+                    <col style="width: 15%;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">일시</th>
+                      <th scope="col">활동 유형</th>
+                      <th scope="col">접속 IP</th>
+                      <th scope="col">상태</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025-10-15 10:35:35</td>
+                      <td>문서 업로드</td>
+                      <td>192.168.0.9</td>
+                      <td><span class="status-success">성공</span></td>
+                    </tr>
+                    <tr>
+                      <td>2025-10-15 10:35:35</td>
+                      <td>문서 업로드</td>
+                      <td>192.168.0.9</td>
+                      <td><span class="status-fail">실패</span></td>
+                    </tr>
+                    <tr>
+                      <td>2025-10-15 10:35:35</td>
+                      <td>문서 업로드</td>
+                      <td>192.168.0.9</td>
+                      <td><span class="status-success">성공</span></td>
+                    </tr>
+                    <tr>
+                      <td>2025-10-15 10:35:35</td>
+                      <td>문서 업로드</td>
+                      <td>192.168.0.9</td>
+                      <td><span class="status-fail">실패</span></td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div class="pagination-wrap">
+              <div class="pagination">
+                  <button type="button"class="btn-prev"></button>
+                  <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button">5</button></li>
+                  </ul>
+                  <button type="button" class="btn-next"></button>
+              </div>
+              <!-- // pagination -->
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue" onclick="sidePopClose('#adminDetail')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 엑셀 다운로드 사유 입력 팝업 -->
+  <div class="popup-wrap" id="excelDown">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">엑셀 다운로드 사유 입력</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="text">
+            <p class="txt">개인정보 및 주요 정보 보호를 위해 다운로드 사유를 선택해주세요.</p>
+            <p class="txt-ps">(입력된 사유는 검사 로그로 저장됩니다.) </p>
+          </div>
+          <div class="form-box">
+            <div class="form-set">
+                <div class="row">
+                    <label for="reason" class="label">사유선택</label>
+                    <div class="form">
+                        <div class="select-ui" id="reason"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="reason" class="label">사유선택</label>
+                    <div class="form">
+                        <div class="select-ui error" id="reason2"></div>
+                        <p class="txt-error">사유를 선택해주세요.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form">
+                        <input type="text" placeholder="기타 사유를 입력해주세요." data-evt="byte" data-byte="100">
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#excelDown')">취소</button>
+              <button type="button" class="btn-popup st-blue">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // 커스텀셀렉트
+      const data = {
+        placeholder: ".",
+        options: [
+          { value: "total", label: "전체" },
+          { value: "select1", label: "선택1" },
+          { value: "select2", label: "선택2" },
+          { value: "select3", label: "선택2", disabled: true },
+          { value: "select4", label: "선택4" }
+        ],
+        selected: null
+      };
+
+      const select1 = selectUi('keyword', data);
+      select1.value = "total";
+      const select2 = selectUi('account', data);
+      select2.value = "total";
+      const select3 = selectUi('auth', data);
+      select3.value = "total";
+      const auth2 = selectUi('auth2', data);
+      auth2.value = "total";
+      const auth3 = selectUi('auth3', data);
+      auth3.value = "total";
+
+      data.placeholder = '사유를 선택해주세요.'
+      const reason = selectUi('reason', data);
+      const reason2 = selectUi('reason2', data);
+
+
+  </script>
+
+    
+</body>
+</html>

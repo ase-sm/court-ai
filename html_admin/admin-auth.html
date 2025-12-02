@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">권한 목록</h2>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="auth" class="label">권한</label>
+                          <div class="select-ui" id="auth"></div>
+                          <label for="use" class="label">사용 여부</label>
+                          <div class="select-ui" id="use"></div>
+
+                          <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>관리자 회원 목록</caption>
+                       <colgroup>
+                        <col style="width: 17%;">
+                        <col style="width: auto;">
+                        <col style="width: 12%;">
+                        <col style="width: 10%;">
+                        <col style="width: 17%;">
+                        <col style="width: 12%;">
+                      </colgroup>
+                     <thead>
+                        <tr>
+                          <th scope="col">권한</th>
+                          <th scope="col">설명</th>
+                          <th scope="col">권한 그룹 인원</th>
+                          <th scope="col">사용여부</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <td>슈퍼 관리자</td>
+                            <td class="align-l">포털, ai 관리자 모두 접속 가능</td>
+                            <td>00명</td>
+                            <td><span class="tag st-blue">사용</span></td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#authDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                         <tr>
+                            <td>슈퍼 관리자</td>
+                            <td class="align-l">포털, ai 관리자 모두 접속 가능</td>
+                            <td>00명</td>
+                            <td><span class="tag st-gray-line">사용 안함</span></td>
+                            <td>2025-10-26 10:30:30</td>
+                            <td>
+                              <div class="menus">
+                                <button type="button" class="btn-sm st-blue-line" onclick="sidePopOpen('#authDetail');">상세</button>
+                                <button type="button" class="btn-sm st-gray-line2">삭제</button>
+                              </div>
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button"class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+  <!-- 권한 상세 팝업 -->
+  <div class="popup-wrap st-side" id="authDetail">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">권한 상세</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="member-info-box">
+            <span class="position">슈퍼관리자</span>
+            <div class="right">
+              <span class="tag st-blue">사용</span>
+              <span class="tag st-gray-line">사용안함</span>
+            </div>
+          </div>
+          
+          <div class="data-type2">
+            <table>
+              <caption>권한 상세</caption>
+                  <colgroup>
+                  <col style="width: 130px;">
+                  <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">권한</th>
+                    <td>슈퍼 관리자</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">이름</th>
+                    <td><input type="text" style="width:100%;" placeholder="포털, ai 관리자 모두 접속 가능"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">등록일</th>
+                    <td>2025.10.13 10:30:30</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">권한 그룹 인원</th>
+                    <td>00명</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">생성일</th>
+                    <td>
+                      <label class="inp-toggle" >
+                        <input type="checkbox" checked onchange="$(this).is(':checked') ? $('#txtToggle').text('사용') : $('#txtToggle').text('사용 안함')">
+                        <i></i>
+                      </label>
+                      <span class="txt-toggle" id="txtToggle">사용</span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue" onclick="sidePopClose('#authDetail')">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // 커스텀셀렉트
+      const data = {
+        placeholder: "",
+        options: [
+          { value: "total", label: "전체" },
+          { value: "select1", label: "선택1" },
+          { value: "select2", label: "선택2" },
+          { value: "select3", label: "선택2", disabled: true },
+          { value: "select4", label: "선택4" }
+        ],
+        selected: null
+      };
+
+      const select1 = selectUi('auth', data);
+      select1.value = "total";
+      const select2 = selectUi('use', data);
+      select2.value = "total";
+   
+  </script>
+
+    
+</body>
+</html>

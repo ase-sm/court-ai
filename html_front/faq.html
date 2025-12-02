@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-front-ui.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <main class="content" aria-labelledby="content">
+
+            <div class="title-wrap no-line">
+                <h2 class="title-page">자주 묻는 질문</h2>
+            </div>
+
+
+              <ul class="faq-list">
+                <li>
+                    <div class="faq-box">
+                        <button type="button" class="faq-heading on">
+                            <i class="ico-q"></i>
+                            <div class="desc">
+                              <span class="tag-cate st-blue">AI 채팅</span>
+                              <b>문의사항이 있을 경우에는 어떻게 해야 하나요?</b>
+                            </div>
+                        </button>
+                        <div class="faq-answer" style="display: block;">
+                            <div class="answer">
+                                <i class="ico-a"></i>
+                                <div class="answer-txt">재판 업무 지원 AI 플랫폼을 사용하시면서 문의 사항이나 서비스 개선을 위해 의견을 주시려고 할 때는 아래와 같은 순서로 문의 주시면 됩니다. <br>어려움이 있을 경우 내선 번호 000으로 연락주세요.</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="faq-box">
+                        <button type="button" class="faq-heading ">
+                            <i class="ico-q"></i>
+                            <div class="desc">
+                              <span class="tag-cate st-pupple">서비스 이용</span>
+                              <b>문의사항이 있을 경우에는 어떻게 해야 하나요?</b>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="answer">
+                                <i class="ico-a"></i>
+                                <div class="answer-txt">재판 업무 지원 AI 플랫폼을 사용하시면서 문의 사항이나 서비스 개선을 위해 의견을 주시려고 할 때는 아래와 같은 순서로 문의 주시면 됩니다. <br>어려움이 있을 경우 내선 번호 000으로 연락주세요.</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="faq-box">
+                        <button type="button" class="faq-heading ">
+                            <i class="ico-q"></i>
+                            <div class="desc">
+                              <span class="tag-cate st-blue">AI 채팅</span>
+                              <b>문의사항이 있을 경우에는 어떻게 해야 하나요?</b>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="answer">
+                                <i class="ico-a"></i>
+                                <div class="answer-txt">재판 업무 지원 AI 플랫폼을 사용하시면서 문의 사항이나 서비스 개선을 위해 의견을 주시려고 할 때는 아래와 같은 순서로 문의 주시면 됩니다. <br>어려움이 있을 경우 내선 번호 000으로 연락주세요.</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="faq-box">
+                        <button type="button" class="faq-heading ">
+                            <i class="ico-q"></i>
+                            <div class="desc">
+                              <span class="tag-cate st-pupple">서비스 이용</span>
+                              <b>문의사항이 있을 경우에는 어떻게 해야 하나요?</b>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="answer">
+                                <i class="ico-a"></i>
+                                <div class="answer-txt">재판 업무 지원 AI 플랫폼을 사용하시면서 문의 사항이나 서비스 개선을 위해 의견을 주시려고 할 때는 아래와 같은 순서로 문의 주시면 됩니다. <br>어려움이 있을 경우 내선 번호 000으로 연락주세요.</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+              </ul>
+
+          </main>
+      </div>
+  </div>
+  <!-- // wrap -->
+
+
+  <script>
+    // 자주묻는질문
+    faq() 
+    function faq(){
+      $('.faq-list .faq-heading').on('click', function() {
+          $answer = $(this).next('.faq-answer');
+          if ($answer.is(':hidden')) {
+              $(this).addClass('on');
+              $answer.slideDown()
+          } else {
+              $(this).removeClass('on');
+              $answer.slideUp()
+          }
+      })  
+    }
+
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-front-ui.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <main class="content" aria-labelledby="content">
+
+            <div class="title-wrap no-line">
+                <h2 class="title-page">공지사항</h2>
+            </div>
+
+            
+            <article class="board-view-wrap">
+              <header class="board-header">
+                <h3>[공지] 9월 30일 업데이트 안내</h3>
+                <div class="board-info">
+                  <spna class="info">등록일 : <span>2025-10-22</span></spna>
+                  <spna class="info">조회수 : <span>10 </span></spna>
+                  <spna class="info">작성자 : <span>홍길동</span></spna>
+                </div>
+                <div class="upload-file-list">
+                  <div class="info">
+                      <button type="button" class="btn-toggle" aria-label="펌부 파일 토글"></button>
+                      <span class="num">첨부<b><em>3</em>개</b></span>
+                      <span class="byte">21.3MB</span>
+                  </div>
+                  <ul class="file-ul" style="display: none;">
+                      <li>
+                          <div class="file-name">
+                              <span class="name">VPN 사용자 매뉴얼 (1).pptx</span>
+                              <span class="file-info">5.3MB</span>
+                          </div>
+                          <div class="file-menu">
+                              <button type="button" class="btn-download" data-idx="1"><span class="hidden">다운로드</span></button>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="file-name">
+                              <span class="name">VPN 사용자 매뉴얼 .pptx</span>
+                              <span class="file-info">5.3MB</span>
+                          </div>
+                          <div class="file-menu">
+                              <button type="button" class="btn-download" data-idx="1"><span class="hidden">다운로드</span></button>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="file-name">
+                              <span class="name">VPN 사용자 매뉴얼 .pptx</span>
+                              <span class="file-info">5.3MB</span>
+                          </div>
+                          <div class="file-menu">
+                              <button type="button" class="btn-download" data-idx="1"><span class="hidden">다운로드</span></button>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+                
+              </header>
+              <div class="board-view">내용
+                   <br>*
+                   <br>0/100
+                   <br>Hint Message
+                   <br>안녕하세요.
+                   <br>재판 지원 AI 프롬프트 심화 게시글을 연재하고 있는 홍길동입니다.
+                   <br>
+
+                   <br>오늘은 [프롬프트 심화] 복잡한 사실관계를 쟁점별로 분리 요청하는 팁 에 대해 작성해보고자 합니다.
+                   <br>아래 프롬프트 내용을 참고하셔서 응용 해보시기 바랍니다.
+                   <br>
+
+                   <br>### 문제 제기: 긴 문서의 정보 손실 
+                   <br>방대한 문서를 빠르게 파악하기 위해서는 많은 시간이 소요됩니다. 이 시간을 줄이고 업무를 효율적으로 진행하기 위해서는…..
+                   <br>
+
+                   <br>### 핵심 프롬프트 
+                   <br>“다음 쟁점 3가지에 대해 각각의 법률적 근거를 제시하고 답변하라”
+              </div>
+
+                <div class="page-menu-wrap">
+                    <div class="right"><button type="button" class="btn-lg st-blue-line">목록</button></div>
+                </div>
+            </article>
+            <!-- // board-view-wrap -->
+
+          </main>
+      </div>
+  </div>
+  <!-- // wrap -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const toggles = document.querySelectorAll('.upload-file-list .btn-toggle');
+
+    toggles.forEach(btn => {
+        btn.addEventListener('click', function() {
+        const uploadList = this.closest('.upload-file-list');
+        const fileUl = uploadList.querySelector('.file-ul');
+
+        this.classList.toggle('on');
+
+        if (fileUl.style.display === 'none' || fileUl.style.display === '') {
+            fileUl.style.display = 'flex';
+        } else {
+            fileUl.style.display = 'none';
+        }
+        });
+    });
+    });
+</script>
+</body>
+</html>
+
+
