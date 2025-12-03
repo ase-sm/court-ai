@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="format-detection" content="telephone=no"/>
-<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
 
-<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
 <link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../css/front-style.css" />
+<link type="text/css" rel="stylesheet" href="../css/front-style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
@@ -17,20 +17,42 @@
 </head>
 <body>
   
-
-<script>
-
-// confirm 버튼 팝업
-  customAlert("저장하시겠습니까?", "confirm").then(result => {
+<button type="button" class="btn-nm st-gray-line" 
+onclick='customAlert("정상적으로 처리 되었습니다.").then(result => {
     if (result) alert("확인 클릭");
     else alert("취소 클릭");
-  });
+  });'>기본</button>
+  
+<button type="button" class="btn-nm st-gray-line" 
+onclick='customAlert("정상적으로 처리 되었습니다.", "", "st-ic-complate").then(result => {
+    if (result) alert("확인 클릭");
+    else alert("취소 클릭");
+  });'>정상</button>
 
-  // 확인 버튼 팝업
-  // customAlert("정상적으로 처리 되었습니다.", "alert").then(() => {
-  //   alert("확인 클릭");
-  // });  
-</script>
+<button type="button" class="btn-nm st-gray-line" 
+onclick=' customAlert("정보입니다.", "confirm", "st-ic-info").then(result => {
+    if (result) alert("확인 클릭");
+    else alert("취소 클릭");
+  });'>정보</button>
+
+<button type="button" class="btn-nm st-gray-line" 
+onclick=' customAlert("저장하시겠습니까?", "confirm", "st-ic-question").then(result => {
+    if (result) alert("확인 클릭");
+    else alert("취소 클릭");
+  });'>질문</button>
+
+<button type="button" class="btn-nm st-gray-line" 
+onclick='customAlert("시스템 오류", "confirm", "st-ic-error").then(result => {
+    if (result) alert("확인 클릭");
+    else alert("취소 클릭");
+  });'>오류</button>
+
+<button type="button" class="btn-nm st-gray-line" 
+onclick='customAlert("확인을 누르면 내용이 삭제됩니다.", "confirm", "st-ic-warning").then(result => {
+    if (result) alert("확인 클릭");
+    else alert("취소 클릭");
+  });'>경고</button>
+
 
 </body>
 </html>

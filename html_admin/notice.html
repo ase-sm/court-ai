@@ -1,14 +1,12 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="format-detection" content="telephone=no"/>
-<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
 
-<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../js/pub-admin-ui.js"></script>
@@ -37,32 +35,32 @@
               <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
                   <div class="search-wrap">
                       <div class="row">
-                          <label for="keyword" class="label">검색어</label>
+                          <span class="label">검색어</span>
                           <div class="select-ui" id="keyword"></div>
-                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px">
-                          <label for="post" class="label">게시 여부</label>
+                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px" title="검색어">
+                          <span class="label">게시 여부</span>
                           <div class="select-ui" id="post"></div>
                       </div>
                       <div class="row">
-                          <label class="label" for="date">기간선택</label>
+                          <span class="label">기간선택</span>
                           <div class="select-ui" id="date"></div>
                           <div class="input-date">
-                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD" title="시작일">
                               <span class="dash">-</span>
-                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD" title="종료일">
                           </div>
                           <div class="date-range-menu" data-evt="date-menu">
                             <label>
-                                <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                                <input type="radio" name="btn_item" value="today" title="오늘" ><span>오늘</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                                <input type="radio" name="btn_item" value="threeDay" title="3일"><span>3일</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                                <input type="radio" name="btn_item" value="oneWeek" title="7일"><span>7일</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                                <input type="radio" name="btn_item" value="oneMonth" title="1개월"><span>1개월</span>
                             </label>
                           </div>
                           
@@ -158,7 +156,7 @@
 
               <div class="pagination-wrap">
                 <div class="pagination">
-                    <button type="button"class="btn-prev">이전</button>
+                    <button type="button" class="btn-prev">이전</button>
                     <ul>
                       <li class="on"><button type="button">1</button></li>
                       <li><button type="button">2</button></li>
@@ -202,26 +200,26 @@
             <dl class="full">
               <dt>제목<i class="required"><span class="hidden">필수</span></i></dt>
               <dd>
-                <input type="text" style="width:100%;" placeholder="제목을 입력해주세요.">
+                <input type="text" style="width:100%;" placeholder="제목을 입력해주세요." title="제목">
               </dd>
             </dl>
             <dl class="full">
               <dt>제목<i class="required"><span class="hidden">필수</span></i></dt>
               <dd>
-                <input type="text" class="error" style="width:100%;" placeholder="제목을 입력해주세요.">
+                <input type="text" class="error" style="width:100%;" placeholder="제목을 입력해주세요." title="제목">
                 <p class="txt-error">제목을 입력해주세요.</p>
               </dd>
             </dl>
             <dl class="full">
               <dt>내용<i class="required"><span class="hidden">필수</span></i></dt>
               <dd>
-                <textarea style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100"></textarea>
+                <textarea style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100" title="내용"></textarea>
               </dd>
             </dl>
             <dl class="full">
               <dt>내용<i class="required"><span class="hidden">필수</span></i></dt>
               <dd>
-                <textarea class="error" style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100"></textarea>
+                <textarea class="error" style="height: 124px;" placeholder="내용을 입력해주세요." data-evt="byte" data-byte="100" title="내용"></textarea>
                 <p class="txt-error">내용을 입력해주세요.</p>
               </dd>
             </dl>
@@ -243,9 +241,9 @@
               <dt>게시 기간</dt>
               <dd>
                 <div class="input-date">
-                    <input type="text" class="datepicker start-date" placeholder="YYYY.MM.DD">
+                    <input type="text" class="datepicker start-date" placeholder="YYYY.MM.DD" title="시작일">
                     <span class="dash">-</span>
-                    <input type="text" class="datepicker end-date" placeholder="YYYY.MM.DD">
+                    <input type="text" class="datepicker end-date" placeholder="YYYY.MM.DD" title="종료일">
                 </div>                    
               </dd>                
             </dl>
@@ -255,7 +253,7 @@
                 <div class="min-wrap">
                   <span class="txt-toggle" id="txtToggle">게시 안함</span>
                   <label class="inp-toggle" >
-                      <input type="checkbox" onchange="$(this).is(':checked') ? $('#txtToggle').text('게시') : $('#txtToggle').text('게시 안함')">
+                      <input type="checkbox" onchange="$(this).is(':checked') ? $('#txtToggle').text('게시') : $('#txtToggle').text('게시 안함')" title="게시 여부">
                       <i></i>
                   </label>
                 </div>
@@ -265,7 +263,7 @@
               <dt>첨부파일</dt>
               <dd>
                 <div class="file-upload">
-                    <input type="file" id="add-file" multiple class="file-input" />
+                    <input type="file" id="add-file" multiple class="file-input" title="첨부파일" />
                     <div class="file-info"><span class="num">최대 <em>10</em>개</span><span class="byte"><em>100MB</em>가능</span></div>
                     <button class="btn-upload">파일선택</button>
                 </div>

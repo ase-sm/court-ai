@@ -1,14 +1,12 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="format-detection" content="telephone=no"/>
-<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
 
-<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../js/pub-admin-ui.js"></script>
@@ -34,24 +32,24 @@
               <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
                   <div class="search-wrap">
                       <div class="row">
-                          <label class="label" for="date">기간선택</label>
+                          <label for="date">기간선택</label>
                           <div class="input-date">
-                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD">
+                              <input type="text" id="date" class="datepicker auto start-date" placeholder="YYYY.MM.DD" title="시작일">
                               <span class="dash">-</span>
-                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD" title="종료일">
                           </div>
                           <div class="date-range-menu" data-evt="date-menu">
                             <label>
-                                <input type="radio" name="btn_item" value="today" ><span>오늘</span>
+                                <input type="radio" name="btn_item" value="today" title="오늘" ><span>오늘</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="threeDay"><span>3일</span>
+                                <input type="radio" name="btn_item" value="threeDay" title="3일"><span>3일</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="oneWeek"><span>7일</span>
+                                <input type="radio" name="btn_item" value="oneWeek" title="7일"><span>7일</span>
                             </label>
                             <label>
-                                <input type="radio" name="btn_item" value="oneMonth"><span>1개월</span>
+                                <input type="radio" name="btn_item" value="oneMonth" title="1개월"><span>1개월</span>
                             </label>
                           </div>
                           
@@ -80,6 +78,7 @@
                     <caption>AI 채팅 통계 목록</caption>
                        <colgroup>
                         <col style="width: auto;">
+                        <col style="width: 10%;">
                         <col style="width: 10%;">
                         <col style="width: 10%;">
                         <col style="width: 10%;">
@@ -143,7 +142,7 @@
 
               <div class="pagination-wrap">
                 <div class="pagination">
-                    <button type="button"class="btn-prev">이전</button>
+                    <button type="button" class="btn-prev">이전</button>
                     <ul>
                       <li class="on"><button type="button">1</button></li>
                       <li><button type="button">2</button></li>

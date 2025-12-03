@@ -104,8 +104,8 @@ function dateSet(){
 }
 
 // 커스텀 셀렉트 생성 함수
-function selectUi(id, data) {
-    const container = document.getElementById(id);
+function selectUi(containerEl, data) {
+    const container = typeof containerEl === "string" ? document.getElementById(containerEl) : containerEl;
     container.innerHTML = `
       <div class="select-head" aria-haspopup="listbox" aria-expanded="false">
         <button type="button" class="placeholder">${data.placeholder}</button>
@@ -246,8 +246,9 @@ function selectUi(id, data) {
       }
     });
 
-    document.querySelectorAll(`label[for="${id}"]`).forEach(label =>
-      label.addEventListener("click", () => focusVisibleButton(container))
+    // span.label 클릭 시 버튼 포커스
+    container.querySelectorAll("span.label").forEach(span =>
+      span.addEventListener("click", () => focusVisibleButton(container))
     );
 
     const root = container;
@@ -260,11 +261,8 @@ function selectUi(id, data) {
 
       btn.addEventListener("blur", () => {
         setTimeout(() => {
-          // head도 아니고 dropdown도 아니면 focus 제거
-          if (
-            !root.contains(document.activeElement) &&
-            !(dropdownEl?.contains(document.activeElement))
-          ) {
+          if (!root.contains(document.activeElement) &&
+              !(dropdownEl?.contains(document.activeElement))) {
             root.classList.remove("focus");
           }
         }, 10);
@@ -744,7 +742,7 @@ const createCharts = (function () {
 
 
 // 얼럿
-function customAlert(message, type = "") {
+function customAlert(message, type, icon = "") {
   return new Promise((resolve) => {
     $(".alert-popup").remove();
 
@@ -753,7 +751,9 @@ function customAlert(message, type = "") {
         <div class="dim"></div>
         <div class="popup" role="document" tabindex="-1" aria-modal="true" aria-labelledby="alert-title" aria-describedby="alert-desc">
           <div class="pop-body">
-            <p id="alert-desc" class="alert-txt">${message}</p>
+            <div class="alert-txt ${icon}">
+              <p id="alert-desc">${message}</p>
+            </div>
           </div>
           <div class="pop-footer"> 
             <div class="btn-wrap">
@@ -767,7 +767,7 @@ function customAlert(message, type = "") {
           </div>
         </div>
       </section>
-    `);
+    `); 
 
     $("body").append($popup);
     $popup.find(".popup").focus();
@@ -783,6 +783,7 @@ function customAlert(message, type = "") {
     });
   });
 }
+
 
       
 

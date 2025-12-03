@@ -633,7 +633,7 @@ function trimToMaxByte(str, maxByte) {
 }
 
 // 얼럿
-function customAlert(message, type = "") {
+function customAlert(message, type, icon = "") {
   return new Promise((resolve) => {
     $(".alert-popup").remove();
 
@@ -642,7 +642,9 @@ function customAlert(message, type = "") {
         <div class="dim"></div>
         <div class="popup" role="document" tabindex="-1" aria-modal="true" aria-labelledby="alert-title" aria-describedby="alert-desc">
           <div class="pop-body">
-            <p id="alert-desc" class="alert-txt">${message}</p>
+            <div class="alert-txt ${icon}">
+              <p id="alert-desc">${message}</p>
+            </div>
           </div>
           <div class="pop-footer"> 
             <div class="btn-wrap">
@@ -656,7 +658,7 @@ function customAlert(message, type = "") {
           </div>
         </div>
       </section>
-    `);
+    `); 
 
     $("body").append($popup);
     $popup.find(".popup").focus();
@@ -671,6 +673,39 @@ function customAlert(message, type = "") {
       resolve(true);
     });
   });
+}
+
+function tabEvt(){
+  let tabs = [];
+  $(document).on('click', '[data-tab-id]', function(e){
+    e.stopPropagation();
+    let tabid = $(this).data('tab-id');
+
+    tabs = [];
+    tabs.push(tabid);
+
+    $(this).parents('li').addClass('on');
+    $(this).parents('li').siblings().find('[data-tab-id]').each(function(){
+      $(this).parents('li').removeClass('on');
+      tabs.push($(this).data('tab-id'));
+    });
+
+    if (tabid === "total") {
+      tabs.forEach(function(v){
+        $('#' + v).show();
+      });
+    } else {
+      tabs.forEach(function(v){
+        $('#' + v).hide();
+      });
+      $('#' + tabid).show();
+    }
+
+    if($(this).parents('.tab-condition').length > 0){
+      let $selectd = $(this).parents('.tab-condition').find('.selected');
+      $selectd.find('button').text($(this).text())
+    }
+  })
 }
 
 
@@ -700,6 +735,7 @@ $(function(){
   tooltipOver();
   tooltipMenu();
   allCheck();
+  tabEvt();
   popoverMoreView();
   initByteFields();
 })

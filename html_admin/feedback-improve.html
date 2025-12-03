@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="format-detection" content="telephone=no"/>
-<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
 
-<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="../css/admin-style.css" />
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../js/pub-admin-ui.js"></script>
@@ -34,18 +34,18 @@
               <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
                   <div class="search-wrap">
                       <div class="row">
-                          <label for="keyword" class="label">검색어</label>
+                          <span class="label">검색어</span>
                           <div class="select-ui" id="keyword"></div>
-                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px">
-                          <label for="status" class="label">상태</label>
+                          <input type="text" placeholder="검색어를 입력해주세요." style="width:360px" title="검색어">
+                          <span class="label">상태</span>
                           <div class="select-ui" id="status"></div>   
                       </div>
                       <div class="row">
                           <label class="label" for="date">기간선택</label>
                           <div class="input-date">
-                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD" id="date">
+                              <input type="text" class="datepicker auto start-date" placeholder="YYYY.MM.DD" id="date" title="시작일">
                               <span class="dash">-</span>
-                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD">
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD" title="종료일">
                           </div>
                           <div class="date-range-menu" data-evt="date-menu">
                           <label>
@@ -162,7 +162,7 @@
 
               <div class="pagination-wrap">
                 <div class="pagination">
-                    <button type="button"class="btn-prev">이전</button>
+                    <button type="button" class="btn-prev">이전</button>
                     <ul>
                       <li class="on"><button type="button">1</button></li>
                       <li><button type="button">2</button></li>
@@ -208,7 +208,7 @@
           <div class="board-body">
               <div class="board-form">
                 <div class="row">
-                  <label for="status2">상태</label>
+                  <span>상태</span>
                   <div class="form">
                     <div class="select-ui" id="status2" style="width:240px;"></div>
                   </div>
