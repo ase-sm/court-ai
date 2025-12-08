@@ -9,11 +9,11 @@
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
 <link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../css/front-style.css">
+<link type="text/css" rel="stylesheet" href="../css/user-style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
-<script src="../js/pub-front-ui.js"></script>
+<script src="../js/pub-user-ui.js"></script>
 </head>
 <body>
   <div class="wrap">
@@ -184,7 +184,7 @@
 
                     <!-- 답변영역 -->
                     <article class="ai-answer">
-                      <h1 class="tit-article">회계법인 부실 회계처리로 인한 손해배상 소송 사례 분석</h1>
+                      <h1 class="tit-article">AI가 질문하신 내용에 답변 드리겠습니다.</h1>
                       <h2>1. 회계법인 손해배상 소송 승소 사례</h2>
                       <h3>가. 회계법인의 부실감사로 인한 손해배상 인정 사례</h3>
                       <p style="color:#8A949E"><span style="color:#246BEB">(서울북부지방법원 2023.2.14. 선고 2021가단127344판결)</span> 에서는 세무사가 양도 소득세 신고 대행업무를 처리하면서 관련 법령 개정사실을 파악하지 못하여 잘못된 세무 신고를 한 경우, <span style="color:#246BEB">(서울고등법원 2006.9.13. 선고 2006나14648 판결)</span>에서는 분석회계에 의한 배무제표에 대한 회계감사를 실시하지 않은 주식회사의 감사가 그 재무제표에 근거한 신용평가기관의 신용평가에 기초하여 회사채를 매입한 금융기관에 대하여 <b>상법 제 414조 제2항</b>에 의한 손해배상책임이 있다고 판단하였습니다.</p>
@@ -286,6 +286,7 @@
 
             <!-- prompt-section -->
             <section class="prompt-section">
+              <button type="button" class="btn-scroll-down" aria-label="아래로 스크롤이동" onclick="chatScrollDown();"></button>
               <div class="prompt-guide-wrap">
                 <div class="main-text">
                   <h1 class="tit">재판업무 지원  AI 플랫폼</h1>
@@ -1240,6 +1241,15 @@ function legalDocumentSelect() {
   });
 }
 
+
+
+function chatScrollDown(){
+  const target = document.querySelector('.ai-answers-section');
+  target.scrollTo({ 
+    top: target.scrollHeight, 
+    behavior: "smooth" 
+  });
+}
 
 </script>
 

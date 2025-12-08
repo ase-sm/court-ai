@@ -361,12 +361,12 @@ button[class*=btn-line]:disabled{border-color: #CDD1D5 !important;}
 .error-contents{background:#F4F6F9;}
 .error-wrap{display:flex;flex-direction: column;justify-content:center;align-items:center;height:100%;}
 .error-wrap [class*=ico-error]{margin-bottom:34px;}
-.error-wrap .ico-error-404 {width:280px;height:212px;background:url('../images/front/ico-error-404.svg') no-repeat 0 0;}
-.error-wrap .ico-error-auth {width:280px;height:212px;background:url('../images/front/ico-error-auth.svg') no-repeat 0 0;}
-.error-wrap .ico-error-server {width:280px;height:212px;background:url('../images/front/ico-error-server.svg') no-repeat 0 0;}
-.error-wrap .ico-error-system {width:280px;height:212px;background:url('../images/front/ico-error-system.svg') no-repeat 0 0;}
-.error-wrap .ico-error-network {width:280px;height:212px;background:url('../images/front/ico-error-network.svg') no-repeat 0 0;}
-.error-wrap .ico-error-session {width:280px;height:212px;background:url('../images/front/ico-error-session.svg') no-repeat 0 0;}
+.error-wrap .ico-error-404 {width:280px;height:212px;background:url('../images/user/ico-error-404.svg') no-repeat 0 0;}
+.error-wrap .ico-error-auth {width:280px;height:212px;background:url('../images/user/ico-error-auth.svg') no-repeat 0 0;}
+.error-wrap .ico-error-server {width:280px;height:212px;background:url('../images/user/ico-error-server.svg') no-repeat 0 0;}
+.error-wrap .ico-error-system {width:280px;height:212px;background:url('../images/user/ico-error-system.svg') no-repeat 0 0;}
+.error-wrap .ico-error-network {width:280px;height:212px;background:url('../images/user/ico-error-network.svg') no-repeat 0 0;}
+.error-wrap .ico-error-session {width:280px;height:212px;background:url('../images/user/ico-error-session.svg') no-repeat 0 0;}
 .error-wrap .error-text strong {display:block;font-size:28px;font-weight:600; color:#000;text-align:center;}
 .error-wrap .error-text p { color:#6D7882;margin-top:12px;font-size:16px;text-align:center;}
 .error-wrap .error-text .btn-wrap {display:flex;align-items:center;justify-content: center; margin-top:42px;gap:16px;}

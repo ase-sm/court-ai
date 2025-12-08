@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import url("font.css");
-@import url("front-common.css");
+@import url("user-common.css");
 
 /* ===========================================
     layout
@@ -15,7 +15,7 @@ body{height:100%;overflow:hidden;}
 .header{position:relative; width:246px;padding:16px 0;height: 100%;display:flex;flex-direction: column;background:#fff;z-index: 10;border-right: 1px solid #E4E4E4;overflow-x:hidden; overflow-y:auto;transition: width 0.3s ease;z-index: 12;}
 .header > *:not(.btn-collapse){min-width: 240px;}
 .header h1{padding:0 12px;}
-.header h1 a{display:block;width:144px;height:38px;/*background:url('../images/front/logo.svg') no-repeat 0 0;background-size:auto 100%;*/}
+.header h1 a{display:block;width:144px;height:38px;/*background:url('../images/user/logo.svg') no-repeat 0 0;background-size:auto 100%;*/}
 .header .btn-collapse{width:30px;height:30px;position:absolute;top:16px;right:14px;background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.99922 4.19995C3.00511 4.19995 2.19922 5.00584 2.19922 5.99995V18C2.19922 18.9941 3.00511 19.8 3.99922 19.8H19.9992C20.9933 19.8 21.7992 18.9941 21.7992 18V5.99995C21.7992 5.00584 20.9933 4.19995 19.9992 4.19995H3.99922ZM3.79922 5.99995C3.79922 5.88949 3.88876 5.79995 3.99922 5.79995H8.99924L8.99924 18.2H3.99922C3.88876 18.2 3.79922 18.1104 3.79922 18V5.99995ZM10.5992 18.2H19.9992C20.1097 18.2 20.1992 18.1104 20.1992 18V5.99995C20.1992 5.88949 20.1097 5.79995 19.9992 5.79995H10.5992L10.5992 18.2Z' fill='%2333363D'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 12C12 12.1126 12.0434 12.2203 12.1202 12.2983L14.6656 14.8845C14.8215 15.0429 15.0694 15.0377 15.2193 14.873C15.3693 14.7083 15.3644 14.4463 15.2085 14.2879L13.3639 12.4138L18.6084 12.4138C18.8247 12.4138 19 12.2285 19 12C19 11.7715 18.8247 11.5862 18.6084 11.5862L13.3639 11.5862L15.2085 9.71207C15.3644 9.55367 15.3693 9.29172 15.2193 9.12699C15.0694 8.96226 14.8215 8.95712 14.6656 9.11552L12.1202 11.7017C12.0434 11.7797 12 11.8874 12 12Z' fill='%2333363D'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size: 24px 24px;}
 .header .btn-collapse:hover{background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.0002 4.19922C3.00608 4.19922 2.2002 5.00511 2.2002 5.99922V17.9992C2.2002 18.9933 3.00608 19.7992 4.0002 19.7992H20.0002C20.9943 19.7992 21.8002 18.9933 21.8002 17.9992V5.99922C21.8002 5.00511 20.9943 4.19922 20.0002 4.19922H4.0002ZM3.8002 5.99922C3.8002 5.88876 3.88974 5.79922 4.0002 5.79922H9.00022L9.00022 18.1992H4.0002C3.88974 18.1992 3.8002 18.1097 3.8002 17.9992V5.99922ZM10.6002 18.1992H20.0002C20.1107 18.1992 20.2002 18.1097 20.2002 17.9992V5.99922C20.2002 5.88876 20.1107 5.79922 20.0002 5.79922H10.6002L10.6002 18.1992Z' fill='%23246BEB'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 12C12 12.1126 12.0434 12.2203 12.1202 12.2983L14.6656 14.8845C14.8215 15.0429 15.0694 15.0377 15.2193 14.873C15.3693 14.7083 15.3644 14.4463 15.2085 14.2879L13.3639 12.4138L18.6084 12.4138C18.8247 12.4138 19 12.2285 19 12C19 11.7715 18.8247 11.5862 18.6084 11.5862L13.3639 11.5862L15.2085 9.71207C15.3644 9.55367 15.3693 9.29172 15.2193 9.12699C15.0694 8.96226 14.8215 8.95712 14.6656 9.11552L12.1202 11.7017C12.0434 11.7797 12 11.8874 12 12Z' fill='%23246BEB'/%3E%3C/svg%3E%0A");}
 .header .gnb-nav{padding:0 12px; padding:12px;margin-top:15px;}
@@ -108,9 +108,9 @@ body{height:100%;overflow:hidden;}
     login
 =========================================== */
 .login-body{overflow-y:auto;}
-.login-wrap{width:100%; height:100%;min-height: 700px; display:flex;justify-content:center;align-items:center;background:url('../images/front/bg-login.jpg') no-repeat 50% 0;}
+.login-wrap{width:100%; height:100%;min-height: 700px; display:flex;justify-content:center;align-items:center;background:url('../images/user/bg-login.jpg') no-repeat 50% 0;}
 .login-container {display:flex;align-items: center;gap:150px;}
-.login-main-text:before{content:'';display:block;width:83px;height:80px;margin:0 auto; background:url('../images/front/ico-logo.svg') no-repeat 0 0;}
+.login-main-text:before{content:'';display:block;width:83px;height:80px;margin:0 auto; background:url('../images/user/ico-logo.svg') no-repeat 0 0;}
 .login-main-text{ text-align:center;margin-bottom:40px;display:flex;flex-direction: column;align-items: center;height:300px;}
 .login-main-text .tit {display:inline-block;position:relative;padding-top:60px; font-weight: 700; line-height:1; font-size: 50px; text-align: center; letter-spacing: -0.02em; background: linear-gradient(268.7deg, #8F54E1 8.59%, #0C81EE 76.93%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
 .login-main-text .txt {margin-top:32px;color: #000000;font-size: 34px; line-height:1;}
@@ -133,14 +133,16 @@ body{height:100%;overflow:hidden;}
     ai chat content
 =========================================== */
 
-.ai-content{display:flex;flex-direction: column;min-height: 100%;height: 100%;overflow:hidden;overflow-y:auto; background:url('../images/front/bg-blur.jpg') no-repeat 50% 0;}
+.ai-content{display:flex;flex-direction: column;min-height: 100%;height: 100%;overflow:hidden;overflow-y:auto; background:url('../images/user/bg-blur.jpg') no-repeat 50% 0;}
 .ai-content .prompt-section{flex:1;display:flex;flex-direction: column;justify-content: center;width:928px;margin:0 auto;padding:60px 0;}
 
 .ai-content.mode-chat{background:none;overflow:hidden;}
 .ai-content.mode-chat .noti-banner{display:none;}
 .ai-content.mode-chat .ai-answers-section{display:block;padding:60px 0;}
-.ai-content.mode-chat .prompt-section{flex:initial;position:relative;padding-top:0; padding-bottom:32px;}
-.ai-content.mode-chat .prompt-section:before{content:'';display:block;height:60px;position:absolute;top:-60px;left:0;width:100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);}
+.ai-content.mode-chat .prompt-section{position:relative; flex:initial;position:relative;padding-top:0; padding-bottom:32px;}
+.ai-content.mode-chat .prompt-section .btn-scroll-down { display: flex; justify-content: center; align-items: center; position: absolute; top:-60px;left:50%; transform:translateX(-50%); width: 36px; height: 36px; background: #FFFFFF; opacity: 0.8; border: 1px solid #E6E8EA; box-shadow: 0px 2px 4px rgba(62, 69, 80, 0.16); border-radius: 50px; }
+.ai-content.mode-chat .prompt-section .btn-scroll-down:after{content:'';display:block;width: 12px;height:14px;background: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 14C6.22512 14 6.44052 13.9067 6.59655 13.7416L11.769 8.26788C12.0858 7.93263 12.0755 7.39955 11.746 7.07719C11.4166 6.75484 10.8927 6.76529 10.5759 7.10054L6.82759 11.0671V0.842105C6.82759 0.377023 6.45706 -9.53674e-07 6 -9.53674e-07C5.54294 -9.53674e-07 5.17241 0.377023 5.17241 0.842105V11.0671L1.42414 7.10054C1.10734 6.76529 0.583446 6.75484 0.25398 7.07719C-0.0754863 7.39955 -0.0857588 7.93263 0.231036 8.26788L5.40345 13.7416C5.55948 13.9067 5.77488 14 6 14Z' fill='%2333363D'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;}
+.ai-content.mode-chat .prompt-section:before{content:'';display:block;height:60px;position:absolute;top:-60px;left:-5px;width:calc(100% + 10px); background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);}
 .ai-content.mode-chat .prompt-section .prompt-guide-wrap{display:none;}
 .ai-content.mode-chat .prompt-section .prompt-input-wrap{margin-top:0;}
 
@@ -163,7 +165,7 @@ body{height:100%;overflow:hidden;}
 
 .prompt-guide-wrap .main-text{ text-align:center;margin-bottom:40px;display:flex;flex-direction: column;align-items: center;height:340px;}
 .prompt-guide-wrap .main-text .tit {display:inline-block;position:relative;padding-top:80px; font-weight: 700; line-height:1; font-size: 48px; text-align: center; letter-spacing: -0.02em; background: linear-gradient(268.7deg, #8F54E1 8.59%, #0C81EE 76.93%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
-.prompt-guide-wrap .main-text .tit:after{content:'';display:inline-block;position:absolute;top:0;right:-50px; width:64px;height:64px; background:url('../images/front/ico-ai-star.svg') no-repeat 0 0;}
+.prompt-guide-wrap .main-text .tit:after{content:'';display:inline-block;position:absolute;top:0;right:-50px; width:64px;height:64px; background:url('../images/user/ico-ai-star.svg') no-repeat 0 0;}
 .prompt-guide-wrap .main-text .txt {margin-top:32px;color: #000000;font-size: 34px; line-height:1;}
 .prompt-guide-wrap .main-text .txt b{vertical-align:baseline;font-weight: 600; line-height:1;}
 .prompt-guide-wrap .main-text .txt2{display:flex;align-items:center;margin-top:35px; color:#6D7882;gap:16px;font-size:24px;}
@@ -245,7 +247,7 @@ body{height:100%;overflow:hidden;}
 .ai-upload-file-list ul li .file .desc .info {font-size:12px; color:#8A949E;}
 .ai-upload-file-list ul li .file .desc .info .type {position:relative;line-height:1;}
 .ai-upload-file-list ul li .file .desc .info .size {position:relative;line-height:1;}
-.ai-upload-file-list ul li .file [class*=ico-file]{width:40px; min-width:40px; height:40px;border-radius:5px;background-image: url('../images/front/ico-file-type.svg');background-repeat:no-repeat;background-position:0 0;background-size: auto 40px !important;}
+.ai-upload-file-list ul li .file [class*=ico-file]{width:40px; min-width:40px; height:40px;border-radius:5px;background-image: url('../images/user/ico-file-type.svg');background-repeat:no-repeat;background-position:0 0;background-size: auto 40px !important;}
 .ai-upload-file-list ul li .file .ico-file-txt {background-position-x:0 !important;}
 .ai-upload-file-list ul li .file .ico-file-xlsx {background-position-x:-50px !important;}
 .ai-upload-file-list ul li .file .ico-file-pdf {background-position-x:-100px !important;}
@@ -267,6 +269,7 @@ body{height:100%;overflow:hidden;}
 .ai-answers-section .ai-answer-wrap{width:928px;margin:0 auto;}
 
 .ai-answer-wrap{display:flex;flex-direction: column;gap:100px 0;}
+.ai-answer-wrap.hidden{display: none;}
 .ai-answer-comp {display:flex;flex-direction: column;gap:40px;}
 .ai-answer-comp .ai-question{display:flex;justify-content: flex-end;}
 .ai-answer-comp .ai-question .chat{max-width: 90%; padding: 24px;font-size:16px; color:#000000; background: #F4F6F9; border-radius: 10px; }
@@ -294,9 +297,11 @@ body{height:100%;overflow:hidden;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop:after{width:6px;height:6px;}
 .ai-answer-comp .ai-answer {padding: 40px 32px 24px; background: linear-gradient(180deg, #F4F6F9 0%, #FFFFFF 10.71%); border-radius: 16px; position:relative;}
 .ai-answer-comp .ai-answer h1,
-.ai-answer-comp .ai-answer .tit-article {display:flex;gap:18px;font-weight:600;font-size:28px; color:#1D1D1D;margin-bottom:56px;}
+.ai-answer-comp .ai-answer .tit-article {display:flex;gap:16px;font-weight:600;font-size:16px; color:#1D1D1D;margin-bottom:56px;line-height:1;display:flex;align-items:center;}
+/* .ai-answer-comp .ai-answer h1:before,
+.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width: 24px;height:24px;background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C24.5288 0 31.4974 6.67317 31.9727 15.083L31.998 15.0586V15.834C31.9986 15.8893 32 15.9446 32 16C32 16.055 31.9986 16.1101 31.998 16.165V32H15.0566L15.083 31.9727C6.67317 31.4974 0 24.5288 0 16C6.80327e-05 7.16347 7.16347 6.80371e-05 16 0Z' fill='url(%23paint0_linear_924_49752)'/%3E%3Cpath d='M17.1629 21.9303L20.8234 10.9989H24.503L20.8091 21.9303H17.1629Z' fill='white'/%3E%3Cpath d='M14.4826 22.2616C13.0553 22.2616 12.416 21.2568 12.5647 19.2472H9.68786C9.39346 19.7551 9.13718 20.2299 8.919 20.6716L8.30722 21.9304H5.96563L12.7705 10.9989H16.3665L15.9377 19.0484C15.8863 20.2078 16.0595 20.9587 16.4574 21.301C16.0441 21.9414 15.3858 22.2616 14.4826 22.2616ZM10.3763 18.0381H12.6844L13.0819 13.7814L13.1448 13.3342L11.5918 15.9346L10.3763 18.0381Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_924_49752' x1='-0.5' y1='9.99902' x2='37' y2='31.999' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%231D56BC'/%3E%3Cstop offset='1' stop-color='%230B96DB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;} */
 .ai-answer-comp .ai-answer h1:before,
-.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width: 32px;height:32px;background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C24.5288 0 31.4974 6.67317 31.9727 15.083L31.998 15.0586V15.834C31.9986 15.8893 32 15.9446 32 16C32 16.055 31.9986 16.1101 31.998 16.165V32H15.0566L15.083 31.9727C6.67317 31.4974 0 24.5288 0 16C6.80327e-05 7.16347 7.16347 6.80371e-05 16 0Z' fill='url(%23paint0_linear_924_49752)'/%3E%3Cpath d='M17.1629 21.9303L20.8234 10.9989H24.503L20.8091 21.9303H17.1629Z' fill='white'/%3E%3Cpath d='M14.4826 22.2616C13.0553 22.2616 12.416 21.2568 12.5647 19.2472H9.68786C9.39346 19.7551 9.13718 20.2299 8.919 20.6716L8.30722 21.9304H5.96563L12.7705 10.9989H16.3665L15.9377 19.0484C15.8863 20.2078 16.0595 20.9587 16.4574 21.301C16.0441 21.9414 15.3858 22.2616 14.4826 22.2616ZM10.3763 18.0381H12.6844L13.0819 13.7814L13.1448 13.3342L11.5918 15.9346L10.3763 18.0381Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_924_49752' x1='-0.5' y1='9.99902' x2='37' y2='31.999' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%231D56BC'/%3E%3Cstop offset='1' stop-color='%230B96DB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;}
+.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width:12px;height:12px;border-radius:100%;background:#246BEB;transform:translateY(-1px);}
 .ai-answer-comp .ai-answer h2 {font-weight:600;font-size:24px; color:#1D1D1D;margin:52px 0;}
 .ai-answer-comp .ai-answer h3 {font-weight:600;font-size:18px; color:#1E2124;margin:32px 0;}
 .ai-answer-comp .ai-answer p {font-size:16px; color:#1E2124;margin-top:32px;line-height:1.5;}
