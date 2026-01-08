@@ -11,12 +11,12 @@
                         <span class="txt">AI 채팅</span>
                     </a>
                 </li>
-                <li class="selected">
+                <!-- <li>
                     <a href="javascript:void(0);">
                         <i class="ico-gnb-document"></i>
                         <span class="txt">문서보관함</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <div class="chat-history-wrap">
@@ -51,8 +51,9 @@
                   </ul>
               </div>
               <ul class="ai-menu">
-                  <li class="on"><a href="javascript:void(0);" onclick="popOpen('#popMyPrompt');"><i class="ico-menu-prompt"></i><span>나의 프롬프트 관리</span></a></li>
-                  <li><a href="javascript:void(0);"><i class="ico-menu-ai"></i><span>프롬프트 공유 게시판</span></a></li>
+                <li><a href="javascript:void(0);"><i class="ico-menu-doc"></i><span>문서보관함</span></a></li>
+                <li class="on"><a href="javascript:void(0);" onclick="popOpen('#popMyPrompt');"><i class="ico-menu-prompt"></i><span>나의 프롬프트 관리</span></a></li>
+                <li><a href="javascript:void(0);"><i class="ico-menu-ai"></i><span>프롬프트 공유 게시판</span></a></li>
               </ul>
               <ul class="admin-menu">
                   <li class="on"><a href="javascript:void(0);">공지사항</a></li>
@@ -87,7 +88,7 @@
 
      <div class="dropdown-menu-layer" id="chatHistoryMenu" style="display: none;">
         <ul>
-            <li><button type="button"><span>수정</span></button></li>
+            <li><button type="button" onclick="popOpen('#popNameChange')"><span>수정</span></button></li>
             <li><button type="button" class="btn-delete"><span>삭제</span></button></li>
         </ul>
     </div>
@@ -387,6 +388,41 @@
       </div>
     </div>
   </div>
+
+
+  <!-- 채팅이름바꾸기 -->
+  <div class="popup-wrap" id="popNameChange">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">AI 채팅 기록 편집</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+            <h2 class="title-popup">채팅 목록에서 내용을 더 쉽게 알아볼 수 있도록 제목을 수정해보세요.</h2>
+            <div class="form-box st2">
+              <div class="form-set">
+                    <div class="row">
+                        <div class="form">
+                            <input type="text" placeholder="수정할 제목을 입력해주세요." title="수정할 제목">
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popNameChange')">취소</button>
+              <button type="button" class="btn-popup st-blue">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     // 

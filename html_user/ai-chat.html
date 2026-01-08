@@ -14,478 +14,531 @@
 <script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
 <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 <script src="../js/pub-user-ui.js"></script>
+
+ <script type="text/javascript" src="../js/jsplitter.min.js"></script>
 </head>
 <body>
   <div class="wrap">
     <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
-      <div class="contents">
-        <button class="btn-ref-open" aria-label="참조문서 영역 열기"></button>
+      <div class="container">
+        <div class="contents" id="leftDiv">
+          <button class="btn-ref-open" aria-label="참조문서 영역 열기"></button>
         
-        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
-
-          <main class="ai-content">
-            <div class="noti-banner" >
-              <div class="banner-tag">공지</div>
-              <div class="banner" id="bannerSwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
-                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
-                  <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+          <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+            <main class="ai-content">
+              <div class="noti-banner" >
+                <div class="banner-tag">공지</div>
+                <div class="banner" id="bannerSwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                    <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                    <div class="swiper-slide"><p class="ellips">재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.재판업무 지원 AI 플랫폼이 오픈 되었습니다. 재판업무 지원 AI 플랫폼이 오픈 되었습니다.</p></div>
+                  </div>
+                </div>
+                <div class="banner-menu">
+                  <button type="button" class="btn-prev"><span class="hidden">이전</span></button>
+                  <button type="button" class="btn-next"><span class="hidden">다음</span></button>
                 </div>
               </div>
-              <div class="banner-menu">
-                <button type="button" class="btn-prev"><span class="hidden">이전</span></button>
-                <button type="button" class="btn-next"><span class="hidden">다음</span></button>
-              </div>
-            </div>
-            <!-- // noti-banner -->
-
-            <!-- ai-answers-section -->
-            <section class="ai-answers-section">
-              <div class="ai-answer-wrap">
-                  <!-- 질문단위 -->
-                  <div class="ai-answer-comp" style="min-height: calc(100vh - 100px);">
-                    <div class="ai-question">
-                      <div class="chat">
-                        <div class="text">얼마 전 건문(자산) 매입할 때 발생한 대출 연장을 위해 2020년 재무제표를 회계법인에 요청하였는데, 회계 법인의 잘못된 회계처리로 은행 대출 연장을 받지 못하게 되어있어. 이런 경우처럼 회계 법인을 대상으로 소송하여 승소한 사례가 있니?</div>
+              <!-- // noti-banner -->
+              <!-- ai-answers-section -->
+              <section class="ai-answers-section">
+                <div class="ai-answer-wrap">
+                    <!-- 질문단위 -->
+                    <div class="ai-answer-comp" style="min-height: calc(100vh - 100px);">
+                      <div class="ai-question">
+                        <div class="chat">
+                          <div class="text">얼마 전 건문(자산) 매입할 때 발생한 대출 연장을 위해 2020년 재무제표를 회계법인에 요청하였는데, 회계 법인의 잘못된 회계처리로 은행 대출 연장을 받지 못하게 되어있어. 이런 경우처럼 회계 법인을 대상으로 소송하여 승소한 사례가 있니?</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="ai-question">
-                      <div class="chat">
-                        <div class="text">아래 파일을 분석해줘</div>
-                        <div class="ai-upload-file-wrap">
-                          <button type="button" class="btn-toggle on" onclick="$(this).toggleClass('on');$(this).next().toggle();">첨부파일 <em>4개</em></button>
-                          <div class="ai-upload-file-list st2">
-                            <ul>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-txt"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                      <div class="ai-question">
+                        <div class="chat">
+                          <div class="text">아래 파일을 분석해줘</div>
+                          <div class="ai-upload-file-wrap">
+                            <button type="button" class="btn-toggle on" onclick="$(this).toggleClass('on');$(this).next().toggle();">첨부파일 <em>4개</em></button>
+                            <div class="ai-upload-file-list st2">
+                              <ul>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-txt"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-xlsx"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-xlsx"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-pdf"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-pdf"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-hwp"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-hwp"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-doc"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-doc"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-pptx"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-pptx"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-img"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-img"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="file">
-                                  <i class="ico-file-etc"></i>
-                                  <div class="desc">
-                                    <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
-                                    <div class="info">
-                                      <span class="type">PPTX</span>
-                                      <span class="size">4.27 MB</span>
+                                </li>
+                                <li>
+                                  <div class="file">
+                                    <i class="ico-file-etc"></i>
+                                    <div class="desc">
+                                      <div class="name">BioOne AI 서비스 1차 테스트-조치의견추가_251121 (3)</div>
+                                      <div class="info">
+                                        <span class="type">PPTX</span>
+                                        <span class="size">4.27 MB</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                            </ul>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-
-                    <div class="ai-error">
-                      <div class="text">현재 시스템에 일시적인 오류가 발생하여 답변을 처리할 수 없습니다.<br>잠시 후 다시 시도해 주시기 바랍니다.</div>
-                    </div>
-
-                    
-                    <div class="ai-loader">
-                      <p class="tit-txt"> <i class="dot-spinner"> <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <defs> <!-- Gradient 정의 --> <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2D8DFF"/> <stop offset="100%" stop-color="#8F54E1"/> </linearGradient> </defs> <!-- 원을 gradient로 채우기 --> <circle cx="4" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_jObz" begin="0;spinner_vwSQ.end-0.25s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="12" cy="12" r="3" fill="url(#grad)"> <animate begin="spinner_jObz.end-0.6s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="20" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_vwSQ" begin="spinner_jObz.end-0.45s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> </svg> </i> <span>답변을 준비하는 중입니다</span></p>
-                      <div class="loader-status">
-                        <p class="txt-ing">
-                          <i class="loader-sm"> <span class="loader-circular"> <svg class="circular" viewBox="25 25 50 50"> <defs> <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2E7AFD" /> <stop offset="100%" stop-color="#6B3BE9" /> </linearGradient> </defs> <circle class="circular-path" cx="50" cy="50" r="20" fill="none" stroke="url(#gradientStroke)" stroke-width="8" /> </svg> </span></i>
-                          <span>요청사항에 필요한 작업을 분석하고 있습니다.</span>
+                      <div class="ai-error">
+                        <div class="text">현재 시스템에 일시적인 오류가 발생하여 답변을 처리할 수 없습니다.<br>잠시 후 다시 시도해 주시기 바랍니다.</div>
+                      </div>
+        
+                      <div class="ai-loader">
+                        <p class="tit-txt"> <i class="dot-spinner"> <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <defs> <!-- Gradient 정의 --> <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2D8DFF"/> <stop offset="100%" stop-color="#8F54E1"/> </linearGradient> </defs> <!-- 원을 gradient로 채우기 --> <circle cx="4" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_jObz" begin="0;spinner_vwSQ.end-0.25s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="12" cy="12" r="3" fill="url(#grad)"> <animate begin="spinner_jObz.end-0.6s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="20" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_vwSQ" begin="spinner_jObz.end-0.45s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> </svg> </i> <span>답변을 준비하는 중입니다</span></p>
+                        <div class="loader-status">
+                          <p class="txt-ing">
+                            <i class="loader-sm"> <span class="loader-circular"> <svg class="circular" viewBox="25 25 50 50"> <defs> <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2E7AFD" /> <stop offset="100%" stop-color="#6B3BE9" /> </linearGradient> </defs> <circle class="circular-path" cx="50" cy="50" r="20" fill="none" stroke="url(#gradientStroke)" stroke-width="8" /> </svg> </span></i>
+                            <span>요청사항에 필요한 작업을 분석하고 있습니다.</span>
+                          </p>
+                          <p class="txt-complete"><i class="ico-complete"></i><span>답변 생성을 위해 데이터베이스를 검색하고 있습니다.</span></p>
+                          <p class="txt-complete"><i class="ico-complete"></i><span>요청사항에 필요한 작업을 분석하고 있습니다.</span></p>
+                        </div>
+                      </div>
+        
+                      <div class="ai-answer-stop">
+                        <p class="tit-txt"><i class="ico-stop"></i><span>사용자의 요청으로 답변이 중지되었습니다.</span></p>
+                        <button class="btn-stop"><i class="ico-stop"></i><span>답변중지</span></button>
+                      </div>
+                      <!-- 답변영역 -->
+                      <article class="ai-answer">
+                        <h1 class="tit-article">AI가 질문하신 내용에 답변 드리겠습니다.</h1>
+                        <h2>1. 회계법인 손해배상 소송 승소 사례</h2>
+                        <h3>가. 회계법인의 부실감사로 인한 손해배상 인정 사례</h3>
+                        <p style="color:#8A949E"><span style="color:#246BEB">(서울북부지방법원 2023.2.14. 선고 2021가단127344판결)</span> 에서는 세무사가 양도 소득세 신고 대행업무를 처리하면서 관련 법령 개정사실을 파악하지 못하여 잘못된 세무 신고를 한 경우, <span style="color:#246BEB">(서울고등법원 2006.9.13. 선고 2006나14648 판결)</span>에서는 분석회계에 의한 배무제표에 대한 회계감사를 실시하지 않은 주식회사의 감사가 그 재무제표에 근거한 신용평가기관의 신용평가에 기초하여 회사채를 매입한 금융기관에 대하여 <b>상법 제 414조 제2항</b>에 의한 손해배상책임이 있다고 판단하였습니다.</p>
+                        <h2>2. 회계법인 손해배상책임의 법적 근거</h2>
+                        <h3>가. 위임계약상 선관주의 의무 위반</h3>
+                        <p>
+                          회계법인은 위임계약에 따라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다.
+                          특히 회계전문가로서 다음과 같은 의무를 져야 합니다.
+                          <br>
+                          관련 회계기준 및 법령의 정확한 적용
+                          회계처리의 적정성 검토
+                          재무제표 작성 시 충분한 주의 및 검증
                         </p>
-                        <p class="txt-complete"><i class="ico-complete"></i><span>답변 생성을 위해 데이터베이스를 검색하고 있습니다.</span></p>
-                        <p class="txt-complete"><i class="ico-complete"></i><span>요청사항에 필요한 작업을 분석하고 있습니다.</span></p>
-                      </div>
-                    </div>
-                    
-
-                    <div class="ai-answer-stop">
-                      <p class="tit-txt"><i class="ico-stop"></i><span>사용자의 요청으로 답변이 중지되었습니다.</span></p>
-                      <button class="btn-stop"><i class="ico-stop"></i><span>답변중지</span></button>
-                    </div>
-
-                    <!-- 답변영역 -->
-                    <article class="ai-answer">
-                      <h1 class="tit-article">AI가 질문하신 내용에 답변 드리겠습니다.</h1>
-                      <h2>1. 회계법인 손해배상 소송 승소 사례</h2>
-                      <h3>가. 회계법인의 부실감사로 인한 손해배상 인정 사례</h3>
-                      <p style="color:#8A949E"><span style="color:#246BEB">(서울북부지방법원 2023.2.14. 선고 2021가단127344판결)</span> 에서는 세무사가 양도 소득세 신고 대행업무를 처리하면서 관련 법령 개정사실을 파악하지 못하여 잘못된 세무 신고를 한 경우, <span style="color:#246BEB">(서울고등법원 2006.9.13. 선고 2006나14648 판결)</span>에서는 분석회계에 의한 배무제표에 대한 회계감사를 실시하지 않은 주식회사의 감사가 그 재무제표에 근거한 신용평가기관의 신용평가에 기초하여 회사채를 매입한 금융기관에 대하여 <b>상법 제 414조 제2항</b>에 의한 손해배상책임이 있다고 판단하였습니다.</p>
-                      <h2>2. 회계법인 손해배상책임의 법적 근거</h2>
-                      <h3>가. 위임계약상 선관주의 의무 위반</h3>
-                      <p>
-                        회계법인은 위임계약에 따라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다.
-                        특히 회계전문가로서 다음과 같은 의무를 져야 합니다.
-                        <br>
-                        관련 회계기준 및 법령의 정확한 적용 
-                        회계처리의 적정성 검토
-                        재무제표 작성 시 충분한 주의 및 검증
-                      </p>
-                      <h3>나. 불법행위로 인한 손해배상 책임</h3>
-                      <p>서울중앙지방법원 <b>2019.회계법인은 위임계약</b>에 다라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다. <br>특히 회게전문가로서 다음과 같은 의무를 져야 합니다.</p>
-                      <h3>다. 유사 사례</h3>
-
-                        <ol>
-                          <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
-                          <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
-                          <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
-                          <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
-                          <li><strong>원고:</strong> 원고의 이름은 추가 정보가 필요합니다. 원고는 소송을 제기한 당사자입니다.</li>
-                          <li><strong>피고:</strong> 피고의 이름은 추가 정보가 필요합니다. 피고는 소송을 당한 당사자입니다.</li>
-                          <li><strong>판결요지:</strong> 판결요지는 판결의 주요 내용을 간략히 요약한 것입니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
-                          <li><strong>판결내용:</strong> 판결내용은 판결의 상세한 내용을 포함합니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
-                          <li><strong>참고문헌:</strong> 판결에 참고된 문헌이나 자료는 추가 정보가 필요합니다.</li>
-                        </ol>                      
-                        <ul>
-                          <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
-                          <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
-                          <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
-                          <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
-                          <li><strong>원고:</strong> 원고의 이름은 추가 정보가 필요합니다. 원고는 소송을 제기한 당사자입니다.</li>
-                          <li><strong>피고:</strong> 피고의 이름은 추가 정보가 필요합니다. 피고는 소송을 당한 당사자입니다.</li>
-                          <li><strong>판결요지:</strong> 판결요지는 판결의 주요 내용을 간략히 요약한 것입니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
-                          <li><strong>판결내용:</strong> 판결내용은 판결의 상세한 내용을 포함합니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
-                          <li><strong>참고문헌:</strong> 판결에 참고된 문헌이나 자료는 추가 정보가 필요합니다.</li>
-                        </ul>                      
-                      <!-- table -->
-                      <div class="st-table">
-                      <table>
-                         <caption>테이블 제목 필요</caption>
-                          <colgroup>
-                              <col style="width:auto" />
-                              <col style="width:33%" />
-                              <col style="width:33%" />
-                          </colgroup>
-                          <thead>
-                              <tr>
-                                  <th>사례 이름/ 요지</th>
-                                  <th>주요내용</th>
-                                  <th>결과/판례 의미</th>
-                              </tr>
-                          </thead>
-                          <tbody>
+                        <h3>나. 불법행위로 인한 손해배상 책임</h3>
+                        <p>서울중앙지방법원 <b>2019.회계법인은 위임계약</b>에 다라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다. <br>특히 회게전문가로서 다음과 같은 의무를 져야 합니다.</p>
+                        <h3>다. 유사 사례</h3>
+                          <ol>
+                            <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                            <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
+                            <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
+                            <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
+                            <li><strong>원고:</strong> 원고의 이름은 추가 정보가 필요합니다. 원고는 소송을 제기한 당사자입니다.</li>
+                            <li><strong>피고:</strong> 피고의 이름은 추가 정보가 필요합니다. 피고는 소송을 당한 당사자입니다.</li>
+                            <li><strong>판결요지:</strong> 판결요지는 판결의 주요 내용을 간략히 요약한 것입니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
+                            <li><strong>판결내용:</strong> 판결내용은 판결의 상세한 내용을 포함합니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
+                            <li><strong>참고문헌:</strong> 판결에 참고된 문헌이나 자료는 추가 정보가 필요합니다.</li>
+                          </ol>
+                          <ul>
+                            <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                            <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
+                            <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
+                            <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
+                            <li><strong>원고:</strong> 원고의 이름은 추가 정보가 필요합니다. 원고는 소송을 제기한 당사자입니다.</li>
+                            <li><strong>피고:</strong> 피고의 이름은 추가 정보가 필요합니다. 피고는 소송을 당한 당사자입니다.</li>
+                            <li><strong>판결요지:</strong> 판결요지는 판결의 주요 내용을 간략히 요약한 것입니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
+                            <li><strong>판결내용:</strong> 판결내용은 판결의 상세한 내용을 포함합니다. 구체적인 내용은 추가 정보가 필요합니다.</li>
+                            <li><strong>참고문헌:</strong> 판결에 참고된 문헌이나 자료는 추가 정보가 필요합니다.</li>
+                          </ul>
+                        <!-- table -->
+                        <div class="st-table">
+                        <table>
+                           <caption>테이블 제목 필요</caption>
+                            <colgroup>
+                                <col style="width:auto" />
+                                <col style="width:33%" />
+                                <col style="width:33%" />
+                            </colgroup>
+                            <thead>
                                 <tr>
-                                  <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
-                                  <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
-                                  <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                    <th>사례 이름/ 요지</th>
+                                    <th>주요내용</th>
+                                    <th>결과/판례 의미</th>
                                 </tr>
-                                <tr>
-                                  <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
-                                  <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
-                                  <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
-                                </tr>
-                          </tbody>
-                      </table>
+                            </thead>
+                            <tbody>
+                                  <tr>
+                                    <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                    <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                    <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                  </tr>
+                                  <tr>
+                                    <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                    <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                    <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <!-- //table -->
+                      </article>
+                      <!-- // 답변영역 -->
+                      <div class="ai-answer-menu">
+                        <div class="menu-box">
+                          <div class="satisfaction-evaluation">
+                            <b class="label">답변에 대한 만족도를 평가해주세요.</b>
+                            <div class="satisfaction">
+                                <span class="star-grade">
+                                  <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
+                                  <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
+                                  <button type="button" data-val="3"><span class="hidden">3점</span></button>
+                                  <button type="button" data-val="4"><span class="hidden">4점</span></button>
+                                  <button type="button" data-val="5"><span class="hidden">5점</span></button>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="menu">
+                            <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사"  onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+                            <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
+                          </div>
+                        </div>
                       </div>
-                      <!-- //table -->
-                    </article>
-                    <!-- // 답변영역 -->
-
-                    <div class="ai-answer-menu">
-                      <div class="menu-box">
-                        <div class="satisfaction-evaluation">
-                          <b class="label">답변에 대한 만족도를 평가해주세요.</b>
-                          <div class="satisfaction">
-                              <span class="star-grade">
-                                <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
-                                <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
-                                <button type="button" data-val="3"><span class="hidden">3점</span></button>
-                                <button type="button" data-val="4"><span class="hidden">4점</span></button>
-                                <button type="button" data-val="5"><span class="hidden">5점</span></button>
-                              </span>
-                          </div>
-                        </div>
-                        <div class="menu">
-                          <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사"  onclick="completeCheck(this)"><i class="ico-copy"></i></button>
-                          <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  <!-- // 질문단위 -->
-              </div>
-            </section>
-            <!-- // ai-answers-section -->
-
-            <!-- prompt-section -->
-            <section class="prompt-section">
-              <button type="button" class="btn-scroll-down" aria-label="아래로 스크롤이동" onclick="chatScrollDown();"></button>
-              <div class="prompt-guide-wrap">
-                <div class="main-text">
-                  <h1 class="tit">재판업무 지원  AI 플랫폼</h1>
-                  <div class="txt"><b>법률에 대한 모든 것</b>을 질문해주세요.</div>
-                  <div class="txt2"><button type="button" class="btn-st-dp" onclick="popOpen('#popLegalDocument');">모든 법률 문서</button> 안에서 답을 찾아 드립니다.</div>
+                    <!-- // 질문단위 -->
                 </div>
-                <div class="prompt-toggle">
-                  <button type="button" class="btn on" onclick="togglePromptGuide(this)">프롬프트 가이드</button>
-                </div>
-                <div class="prompt-guide">
-                  <div class="prompt-menu">
-                    <ul>
-                       <li><button class="btn-menu on">전체</button></li>
-                       <li><button class="btn-menu">민사</button></li>
-                       <li><button class="btn-menu">형사</button></li>
-                       <li><button class="btn-menu">자문</button></li>
-                       <li><button class="btn-menu">가사</button></li>
-                       <li><button class="btn-menu">특허</button></li>
-                    </ul>
-                    <div class="right">
-                      <button class="btn-rest" aria-label="초기화"></button>
-                    </div>
+              </section>
+              <!-- // ai-answers-section -->
+              <!-- prompt-section -->
+              <section class="prompt-section">
+                <button type="button" class="btn-scroll-down" aria-label="아래로 스크롤이동" onclick="chatScrollDown();"></button>
+                <div class="prompt-guide-wrap">
+                  <div class="main-text">
+                    <h1 class="tit">재판업무 지원  AI 플랫폼</h1>
+                    <div class="txt"><b>법률에 대한 모든 것</b>을 질문해주세요.</div>
+                    <div class="txt2"><button type="button" class="btn-st-dp" onclick="popOpen('#popLegalDocument');">모든 법률 문서</button> 안에서 답을 찾아 드립니다.</div>
                   </div>
-                  <!-- // prompt-menu -->
-                  <div class="prompt-guide-list-wrap">
-                    <div class="prompt-guide-list">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <a href="javascript:void(0);">
-                              <dl>
-                                <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
-                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
-                              </dl>
-                            </a>
-                          </div>
-                          <!--  -->
-                          <div class="swiper-slide">
-                            <a href="javascript:void(0);">
-                              <dl>
-                                <dt>최근 3년내 전원합의체 판결중 가장 많이 인용된 판례를 찾아줘</dt>
-                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
-                              </dl>
-                            </a>
-                          </div>
-                          <!--  -->
-                          <div class="swiper-slide">
-                            <a href="javascript:void(0);">
-                              <dl>
-                                <dt>자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요</dt>
-                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
-                              </dl>
-                            </a>
-                          </div>
-                          <!--  -->
-                          <div class="swiper-slide">
-                            <a href="javascript:void(0);">
-                              <dl>
-                                <dt>주거침입죄 관련한 최신 대법원 판례 찾아줘</dt>
-                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
-                              </dl>
-                            </a>
-                          </div>
-                          <!--  -->
-                          <div class="swiper-slide">
-                            <a href="javascript:void(0);">
-                              <dl>
-                                <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
-                                <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
-                              </dl>
-                            </a>
-                          </div>
-                          <!--  -->
-                        </div>
-                    </div>
-                    <button type="button" class="swiper-button-prev"><span class="hidden">이전</span></button>
-                    <button type="button" class="swiper-button-next"><span class="hidden">다음</span></button>
+                  <div class="prompt-toggle">
+                    <button type="button" class="btn on" onclick="togglePromptGuide(this)">프롬프트 가이드</button>
                   </div>
-                </div>
-              </div>
-              <!-- // prompt-guide-wrap -->
-              <div class="prompt-input-wrap">
-                  
-                <div class="prompt-chat">
-                  <div class="prompt-inner">
-                    <div class="ai-upload-file-list">
-                      <ul class="swiper-wrapper">
-                        <!-- 첨부파일 영역 -->
+                  <div class="prompt-guide">
+                    <div class="prompt-menu">
+                      <ul>
+                         <li><button class="btn-menu on">전체</button></li>
+                         <li><button class="btn-menu">민사</button></li>
+                         <li><button class="btn-menu">형사</button></li>
+                         <li><button class="btn-menu">자문</button></li>
+                         <li><button class="btn-menu">가사</button></li>
+                         <li><button class="btn-menu">특허</button></li>
                       </ul>
-                    </div>
-                    <div class="textarea">
-                      <textarea placeholder="요청하실 내용을 입력해주세요.&#10;예) 오픈채팅방을 통해 한 대화가 명예훼손과 관련하여 문제된 사례가 없는지 찾아줘." title="프롬프트 입력"></textarea>
-                    </div>
-                    <div class="chat-menu">
-                      <div class="left">
-                        <button type="button" class="btn-upload" data-evt="tooltip-menu" data-id="fileUploadMenu"><span class="hidden">파일 업로드</span></button>
+                      <div class="right">
+                        <button class="btn-rest" aria-label="초기화"></button>
                       </div>
-                      <div class="right"><button type="button" class="btn-send" aria-label="질문 보내기" onclick="document.querySelector('.ai-content').classList.add('mode-chat');answerEffect();" ></button></div>
+                    </div>
+                    <!-- // prompt-menu -->
+                    <div class="prompt-guide-list-wrap">
+                      <div class="prompt-guide-list">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="javascript:void(0);">
+                                <dl>
+                                  <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
+                                  <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                                </dl>
+                              </a>
+                            </div>
+                            <!--  -->
+                            <div class="swiper-slide">
+                              <a href="javascript:void(0);">
+                                <dl>
+                                  <dt>최근 3년내 전원합의체 판결중 가장 많이 인용된 판례를 찾아줘</dt>
+                                  <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
+                                </dl>
+                              </a>
+                            </div>
+                            <!--  -->
+                            <div class="swiper-slide">
+                              <a href="javascript:void(0);">
+                                <dl>
+                                  <dt>자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요자심감이 떨어지고 있을때..흥달쌤을 만났어요</dt>
+                                  <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                                </dl>
+                              </a>
+                            </div>
+                            <!--  -->
+                            <div class="swiper-slide">
+                              <a href="javascript:void(0);">
+                                <dl>
+                                  <dt>주거침입죄 관련한 최신 대법원 판례 찾아줘</dt>
+                                  <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 </dd>
+                                </dl>
+                              </a>
+                            </div>
+                            <!--  -->
+                            <div class="swiper-slide">
+                              <a href="javascript:void(0);">
+                                <dl>
+                                  <dt>부양로 반환 청구 소송의 주요 쟁점 분석 및 대응</dt>
+                                  <dd>공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요 공부를 포기 해야 지 라는 생각을 하고있었어요</dd>
+                                </dl>
+                              </a>
+                            </div>
+                            <!--  -->
+                          </div>
+                      </div>
+                      <button type="button" class="swiper-button-prev"><span class="hidden">이전</span></button>
+                      <button type="button" class="swiper-button-next"><span class="hidden">다음</span></button>
                     </div>
                   </div>
                 </div>
-                <p class="txt-msg">재판업무 지원 AI가 부정확한 답변을 제공할 수 있습니다. 답변은 재차 확인해주세요.</p>
-              </div>
-            </section>
-            <!-- // prompt-section -->
-
-          </main> 
-          <!-- // ai-content -->
-      </div>
-
-      <!-- 참조문서 -->
-      <aside class="reference-document-wrap closed">
-        <div class="ref-header">
-          <h2 class="ref-title">참조문서</h2>
-          <button type="button" class="btn-collapse" aria-label="참조문서 영역 닫기"></button>
-        </div>
-        <div class="ref-question">
-          <h3 class="tit">질문 내역</h3>
-          <p class="ref-question-text" data-evt="more-view">피고는 ‘C’라는 영업표지로 실내운전연습장 운영업, 이와 관련된 사업지원서비스업, 프랜차이즈업 등을 영위하는 주식회사로서 가맹사업거래의 공정화에 관한 법률(이하 ‘가맹사업법’이라</p>
-        </div>
-        <div class="ref-documents">
-          <ol class="ref-doc-list">
-            <!-- 문서 1 -->
-            <li class="ref-doc-item">
-              <dl class="ref-doc">
-                <dt><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></dt>
-                <dd>
-                  <div class="doc-txt">
-                    <div class="txt">
-                      피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
-                      사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
-                      가맹사업거래가
+                <!-- // prompt-guide-wrap -->
+                <div class="prompt-input-wrap">
+        
+                  <div class="prompt-chat">
+                    <div class="prompt-inner">
+                      <div class="ai-upload-file-list">
+                        <ul class="swiper-wrapper">
+                          <!-- 첨부파일 영역 -->
+                        </ul>
+                      </div>
+                      <div class="textarea">
+                        <textarea placeholder="요청하실 내용을 입력해주세요.&#10;예) 오픈채팅방을 통해 한 대화가 명예훼손과 관련하여 문제된 사례가 없는지 찾아줘." title="프롬프트 입력"></textarea>
+                      </div>
+                      <div class="chat-menu">
+                        <div class="left">
+                          <button type="button" class="btn-upload" data-evt="tooltip-menu" data-id="fileUploadMenu"><span class="hidden">파일 업로드</span></button>
+                          <button type="button" class="btn-select st2" onclick="popOpen('#popLegalDocument');">검색범위선택</button>
+                          <button type="button" class="btn-select st2 active">상법기타 외_1</button>
+                        </div>
+                        <div class="right"><button type="button" class="btn-send" aria-label="질문 보내기" onclick="document.querySelector('.ai-content').classList.add('mode-chat');answerEffect();" ></button></div>
+                      </div>
                     </div>
                   </div>
-                    <button type="button" class="btn-toggle"
-                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
-                      더보기
-                  </button>
-                </dd>
-              </dl>
-            </li>
-            <!-- 문서 2 -->
-            <li class="ref-doc-item">
-              <dl class="ref-doc">
-                <dt><i class="ref-num">2</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></dt>
-                <dd>
-                  <div class="doc-txt">
-                    <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
-                  </div>
-                    <button type="button" class="btn-toggle"
-                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
-                      <span>더보기</span>
-                  </button>
-                </dd>
-              </dl>
-            </li>
-            <!-- 문서 3 -->
-            <li class="ref-doc-item">
-              <dl class="ref-doc">
-                <dt><i class="ref-num">3</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기 선고 2024나2000854 판결 [손해배상(기)])]</div></dt>
-                <dd>
-                  <div class="doc-txt">
-                    <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
-                  </div>
-                  <button type="button" class="btn-toggle"
-                       onclick="var txt=this.closest('dd').querySelector('.doc-txt'); txt.classList.toggle('on'); this.textContent=txt.classList.contains('on')?'접기':'더보기';">
-                      <span>더보기</span>
-                  </button>
-                </dd>
-              </dl>
-            </li>
-          </ol>
-          <div class="pagination-wrap">
-            <div class="pagination sm">
-                <button type="button" class="btn-prev"></button>
-                <ul>
-                  <li class="on"><button type="button">1</button></li>
-                  <li><button type="button">2</button></li>
-                  <li><button type="button">3</button></li>
-                  <li><button type="button">4</button></li>
-                  <li><button type="button">5</button></li>
-                </ul>
-                <button type="button" class="btn-next"></button>
-            </div>
-            <!-- // pagination -->
-          </div>
+                  <p class="txt-msg">재판업무 지원 AI가 부정확한 답변을 제공할 수 있습니다. 답변은 재차 확인해주세요.</p>
+                </div>
+              </section>
+              <!-- // prompt-section -->
+            </main>
+            <!-- // ai-content -->
         </div>
-        <!-- // ref-documents -->
-         <div class="relative-link-list">
-          <h3 class="tit">관련 포털 바로가기</h3>
-          <ul>
-            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털 사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털사업정보 공개 포털</span></a></li>
-            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
-            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
-            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
-            <li><a href="javascript:void(0);" target="_blank"><span>사업정보 공개 포털</span></a></li>
-          </ul>
-         </div>
-      </aside>
-      <!-- // 참조문서 -->
+        <!-- 참조문서 -->
+        <aside class="reference-document-wrap closed" id="rightDiv">
+          <div class="splitter" id="splitDiv"></div>
+          <div class="ref-header">
+            <h2 class="ref-title">참조문서</h2>
+            <button type="button" class="btn-collapse" aria-label="참조문서 영역 닫기"></button>
+          </div>
+          <div class="ref-question">
+            <p class="ref-question-text" data-evt="more-view">피고는 ‘C’라는 영업표지로 실내운전연습장 운영업, 이와 관련된 사업지원서비스업, 프랜차이즈업 등을 영위하는 주식회사로서 가맹사업거래의 공정화에 관한 법률(이하 ‘가맹사업법’이라</p>
+            <span class="bar"></span>
+            <div id="multiSelect1" class="select-multi filter-type"></div>
+          </div>
+          <div class="ref-documents">
+            <ol class="ref-doc-list">
+              <!-- 문서 1 -->
+              <li class="ref-doc-item">
+                <dl class="ref-doc">
+                  <dt>
+                    <div class="infos">
+                      <div class="tags">
+                        <span class="tag-doc st-blue">판결문</span>
+                        <span class="tag-doc st-pupple">판례</span>
+                        <span class="tag-doc st-navy">대법원 규칙</span>
+                        <span class="tag-doc st-green">결정례</span>
+                        <span class="tag-doc st-sky">법령</span>
+                        <span class="tag-doc st-bage">유권해석</span>
+                        <span class="tag-doc st-red">문헌</span>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-summary" onclick="popOpen('#popRefSummary')">요약보기</button>
+                        <a href="javascript:void(0);" class="btn-doc-view">원문보기</a>
+                      </div>
+                    </div>
+                    <div class="title"><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></div>
+                  </dt>
+                  <dd>
+                    <div class="doc-txt">
+                      <div class="txt">
+                        피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
+                        사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
+                        가맹사업거래가
+                        피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
+                        사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
+                        가맹사업거래가
+                        피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
+                        사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
+                        가맹사업거래가
+                        피고는 ‘C'라는 영업표지로 실내운전연습장 운영업, 이와 관련한
+                        사전지식서비스업, 프랜차이즈업 등을 영위하는 주식회사로서
+                        가맹사업거래가
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+              <!-- 문서 2 -->
+              <li class="ref-doc-item">
+                <dl class="ref-doc">
+                  <dt>
+                    <div class="infos">
+                      <div class="tags">
+                        <span class="tag-doc st-pupple">판례</span>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-summary" onclick="popOpen('#popRefSummary')">요약보기</button>
+                        <a href="javascript:void(0);" class="btn-doc-view">원문보기</a>
+                      </div>
+                    </div>
+                    <div class="title"><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></div>
+                  </dt>
+                  <dd>
+                    <div class="doc-txt">
+                      <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+              <!-- 문서 3 -->
+              <li class="ref-doc-item">
+                <dl class="ref-doc">
+                  <dt>
+                    <div class="infos">
+                      <div class="tags">
+                        <span class="tag-doc st-navy">대법원 규칙</span>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-summary" onclick="popOpen('#popRefSummary')">요약보기</button>
+                        <a href="javascript:void(0);" class="btn-doc-view">원문보기</a>
+                      </div>
+                    </div>
+                    <div class="title"><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></div>
+                  </dt>
+                  <dd>
+                    <div class="doc-txt">
+                      <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+              <!-- 문서 4 -->
+              <li class="ref-doc-item">
+                <dl class="ref-doc">
+                  <dt>
+                    <div class="infos">
+                      <div class="tags">
+                        <span class="tag-doc st-navy">대법원 규칙</span>
+                      </div>
+                      <div class="right">
+                        <button type="button" class="btn-summary" onclick="popOpen('#popRefSummary')">요약보기</button>
+                        <a href="javascript:void(0);" class="btn-doc-view">원문보기</a>
+                      </div>
+                    </div>
+                    <div class="title"><i class="ref-num">1</i><div>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 [손해배상(기)]</div></div>
+                  </dt>
+                  <dd>
+                    <div class="doc-txt">
+                      <div class="txt">이 법원이 이 사건에 관하여 적을 이유는, 가맹본부인 피고가 계약 기간 정산자료를 제대로 제공하지 않고 일 매출액이 80만 원에서 100만 원에 이를 때까지 마케팅, 판촉행사 비용과 도넛 폐기 비용을 전액 보장하겠다는 경영지원 약정을 이행하지 않는 등 이 사건 가맹계약이나 가맹사업거래의 공정화에 관한 법률 등에서 정한 가맹본부의 의무를 위반하였다는 원고의 주장 사실을 인정하기에 부족한 갑 제32 내지 44호증(가지번호 포함)의 각 기재를 배척하는 것 외에는 제1심판결의 이유 부분 기재(제1심 공동원고 B에 대한 부분은 제외)와 같으므로 민사소송법 제420조 본문에 의하여 이를 그대로 인용한다.</div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+            </ol>
+            <div class="pagination-wrap">
+              <div class="pagination sm">
+                  <button type="button" class="btn-prev"></button>
+                  <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button">5</button></li>
+                  </ul>
+                  <button type="button" class="btn-next"></button>
+              </div>
+              <!-- // pagination -->
+            </div>
+          </div>
+          <!-- // ref-documents -->
+           <div class="relative-link-list">
+            <h3 class="tit">관련 포털 바로가기</h3>
+            <ul>
+              <li><a href="javascript:void(0);" target="_blank"><span>국가법령정보센터</span></a></li>
+              <li><a href="javascript:void(0);" target="_blank"><span>사법정보통합검색</span></a></li>
+              <li><a href="javascript:void(0);" target="_blank"><span>법원전자도서관</span></a></li>
+            </ul>
+           </div>
+        </aside>
+        <!-- // 참조문서 -->
+      </div>
   </div>
   <!-- // wrap -->
 
@@ -767,7 +820,6 @@
     </div>
   </div>
 
-
   <!-- 세션 만료 사전 안내 -->
   <div class="popup-wrap" id="popNotificationPre">
     <div class="dim"></div>
@@ -798,7 +850,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- 세션 만료 안내 -->
   <div class="popup-wrap" id="popNotification">
@@ -869,6 +920,94 @@
       </div>
     </div>
   </div>
+
+
+  <!-- 참조문서 요약보기 -->
+  <div class="popup-wrap" id="popRefSummary">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" style="width:920px;">
+        <div class="pop-header">
+          <h2 class="tit">참조문서 요약보기</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="ref-summary-wrap">
+            <div class="doc-tit-box">
+              <h3 class="tit">대법원 2025. 8. 14. 선고 2023다294173 판결 [손해배상(기)]</h3>
+            </div>
+            <div class="ref-summary">
+              <h2>판결문 요약</h2>
+              <h3>사건개요</h3>
+              <ul>
+                <li>사건번호: 해당사항 없음</li>
+                <li>당사자: 원고(이름 미기재), 피고(대성탄좌개발주식회사)</li>
+                <li>대리인 변호사 서예교</li>
+              </ul>
+              <h3>주문</h3>
+              <p>상고를 기각하고 상고비용을 피고의 부담으로 한다.</p>
+              <h3>청구취지/공소사실</h3>
+              <p>해당사항 없음</p>
+              <h3>이유</h3>
+              <p>가. 인정사실</p>
+              <ol>
+                <li>원고는 부당해고 기간 중 부업으로 과수원을 경영하며 수입을 얻었으나, 이는 해고와 무관한 부업적 수입으로 임금 공제 대상이 아님.</li>
+                <li>중간퇴직 절차는 허위표시로 무효이며, 실제 근속기간은 1970년 11월 1일부터 1989년 7월 15일까지로 인정됨.</li>
+              </ol>
+              <p>나. 쟁점사항</p>
+              <ol>
+                <li>부당해고 시 임금 공제 범위 및 부업 수입의 공제 가능성 여부</li>
+                <li>중간퇴직 무효 여부와 퇴직금 계산 기준 근속기간 산정 문제</li>
+                <li>무효 퇴직금의 법정이자상당액이 부당이득에 해당하는지 여부</li>
+              </ol>
+            </div>
+            <div class="menu">
+              <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사" onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+              <button type="button" class="btn-menu st-blue-line"><i class="ico-link"></i><span>원문보기</span></button>            
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue" onclick="popClose('#popRefSummary')">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 참조영역 요약 더보기 -->
+<div class="pop-ref-summary-wrap">
+  <div class="pop-ref-summary">
+    <div class="pop-header">
+      <button class="btn-close" aria-label="닫기"></button>
+      <span class="tag-doc st-blue">판결문</span>
+      <strong>서울고등법원 2025. 8. 22. 선고 2024나2000854 판결 <span class="t-sm">[손해배상(기)]</span><button type="button" class="btn-more" aria-label="더보기"></button></strong>
+    </div>
+    <div class="pop-body">
+      <div class="summary-text">
+        ASN 2024 연례학술대회, 3000개 포스터 중 주요 연구 선정
+        <br>
+        <br>건양대 송다운·삼성서울 송승민·서울대 오재익 전임의 'Top trainee posters' 영예28일 대한신장학회는 23일부터 27일까지 미국 샌디에이고에서 열린 ASN 2024 연례 학술대회인 'Kidney Week 2024'에서 대한민국의 젊은 신장내과 연구자들이 세계적 수준임을 다시 한번 입증했다고 밝혔다.
+        <br>
+        <br>Kidney Week 2024는 전 세계 신장 전문가 12000여명이 참석한 세계 최고의 신장의학 학술대회다.
+        <br>
+        <br>만성 콩팥병, 당뇨병콩팥병, IgA 신병증 등 그동안 치료가 어려웠던 콩팥병에 대한 뛰어난 효과를 보이는 신약들이 최근 연이어 출시되는 등 신장의학 분야는 많은 주목을 받고 있다.
+        <br>
+        <br>이번 학술 대회에서도 최신 임상시험 결과들이 발표되는 등 세계적인 연구 수준과 방향을 가늠할 수 있어 국내에서 150여명의 신장내과 의사, 연구자들이 참석했다.
+        <br>
+        <br>ASN은 미래 신장의학분야의 주역이라고 할 수 있는 펠로우 수련중인 연구자들이 발표한 포스터 중 뛰어난 성과를 보인 'Top trainee posters'를 선정해 발표한다.
+        <br>신장학회는 "전세계 3000개 이상의 포스터 중 국내 연구자 3명이 동시에 선정되는 쾌거를 이뤘다"며 "그 주인공들은 건양대병원 송다운, 삼성서울병원 송승민, 서울대병원 오재익 신장내과 전임의들이다"이라고 소개했다.
+        <br>건양대병원팀(송다운, 박요한 교수)은 중환자에게 적용하는 지속정정맥혈액투석여과법에서 시스타틴-C를 이용한 투석 중단 시점을 평가할 수 있는 새로운 방법을 착안해 그 결과를 발표했다.
+        <br>삼성서울병원팀(송승민, 이정은 교수)은 SGLT2 억제제를 복용한 당뇨환자들이 수술 후 발생하는 급성신손상의 빈도가 DPP4 억제제를 복용한 군에 비해 낮았다는 연구결과를 발표했다.
+        <br>또한 서울대병원팀(오재익, 박세훈 교수)은 당뇨병성 콩팥병의 임상적 중증도에 따라 유전자 분석을 수행해 섬유화와 관련된 특정 유전자 발현이 중증도가 심할수록 증가한다는 실험결과를 발표했다.
+        <br>박형천 이사장은 "미국을 비롯한 전세계 최고의 대학병원 전임의들과 어깨를 나란히 하는 연구결과를 발표하는 모습에 감동했고, 의정사태로 어려운 시기에도 난치병 극복을 위한 연구를 위해 노력하는 대한민국의 젊은 신장내과 의사들이 자랑스럽다"고 소감을 밝혔다.
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 
@@ -1053,8 +1192,6 @@ function aiFileUpload() {
     dropArea.dataset.dropInitialized = "true";
   }
 }
-
-
 
 
 //  프롬프트 가이드 숨기기
@@ -1251,7 +1388,109 @@ function chatScrollDown(){
   });
 }
 
+
+// 법률문서 선택 멀티 셀렉트
+  createMultiSelect("#multiSelect1", "선택해주세요", [
+    {value: "1", label: "판결문"},
+    {value: "2", label: "대법원 규칙"},
+    {value: "3", label: "법령"},
+    {value: "4", label: "결정례"},
+    {value: "5", label: "유권해석"},
+    {value: "6", label: "문헌"}
+  ], true);
+
+
+// 참조문서 요약보기 hover
+function bindRefDocHover(refSelector, popSelector, openClass = 'is-open') {
+
+  const $pop = $(popSelector);
+  if (!$pop.length) return;
+
+  const FADE_TIME = 200;
+
+  function isSplitterIng() {
+    return $('body').hasClass('jSplitter-ing');
+  }
+
+  function show(refEl) {
+    if (isSplitterIng()) return;
+
+    positionPop(refEl, $pop[0]);
+    $pop.addClass(openClass);
+    $pop.stop(true, true).fadeIn(FADE_TIME);
+  }
+
+  function hide() {
+    if (isSplitterIng()) return;
+
+    $pop.removeClass(openClass);
+    $pop.stop(true, true).fadeOut(FADE_TIME);
+  }
+
+  $(document)
+    .on('mouseenter', refSelector, function () {
+      show(this);
+    })
+    .on('mouseleave', refSelector, function (e) {
+      if (isSplitterIng()) return;
+      if ($(e.relatedTarget).closest(popSelector).length) return;
+      hide();
+    });
+
+  // pop
+  $pop
+    .on('mouseenter', function () {
+      if (isSplitterIng()) return;
+      $(this).stop(true, true).show();
+    })
+    .on('mouseleave', function (e) {
+      if (isSplitterIng()) return;
+      if ($(e.relatedTarget).closest(refSelector).length) return;
+      hide();
+    })
+     .on('click', '.btn-close', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      hide();
+    });
+}
+
+
+function positionPop(refDoc, pop) {
+  const refRect = refDoc.getBoundingClientRect();
+
+  const prevDisplay = pop.style.display;
+  pop.style.visibility = 'hidden';
+  pop.style.display = 'block';
+
+  const popRect = pop.getBoundingClientRect();
+
+  pop.style.display = prevDisplay;
+  pop.style.visibility = '';
+
+  const padding = 10;
+  const right = window.innerWidth - refRect.left;
+
+  let top =
+    refRect.top + refRect.height / 2 - popRect.height / 2;
+
+  const overflowTop = padding - top;
+  const overflowBottom =
+    top + popRect.height - (window.innerHeight - padding);
+
+  if (overflowTop > 0) top += overflowTop;
+  else if (overflowBottom > 0) top -= overflowBottom;
+
+  pop.style.right = right + 'px';
+  pop.style.left = 'auto';
+  pop.style.top = Math.round(top) + 'px';
+}
+
+bindRefDocHover('.ref-doc', '.pop-ref-summary-wrap', 'is-open');
+
 </script>
+
+
 
 
 </body>

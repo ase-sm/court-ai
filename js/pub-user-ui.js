@@ -1,8 +1,13 @@
 
 
-  // gnb, 참조 열고닫기
+
+// gnb, 참조 열고닫기
 function layoutEvt() {
 
+  const minRight = 440; // 👉 rightDiv 최소 너비 (변경 가능)
+  let splitterInitialized = false;
+
+  // 닫기 버튼
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.btn-collapse');
     if (!btn) return;
@@ -11,6 +16,15 @@ function layoutEvt() {
     if (!wrapper) return;
 
     wrapper.classList.add('closed');
+
+    // 👉 reference 닫힐 때
+    if (wrapper.classList.contains('reference-document-wrap')) {
+      $('.container').removeClass('ref-open');
+      $('#leftDiv').removeAttr('style');
+      $('#rightDiv').removeAttr('style');
+
+      splitterInitialized = false;
+    }
 
     if (wrapper.classList.contains('header')) {
       const openBtn = document.querySelector('.btn-header-open');
@@ -21,6 +35,7 @@ function layoutEvt() {
     }
   });
 
+  // 열기 버튼
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.btn-header-open, .btn-ref-open');
     if (!btn) return;
@@ -33,33 +48,69 @@ function layoutEvt() {
       wrapper = document.querySelector('.reference-document-wrap');
     }
 
-    if (wrapper) wrapper.classList.remove('closed');
+    if (wrapper) {
+      wrapper.classList.remove('closed');
+
+      if (wrapper.classList.contains('reference-document-wrap')) {
+        const $container = $('.container');
+        const containerWidth = $container.width();        
+        const leftWidth = containerWidth - minRight;
+
+        $('.container').addClass('ref-open');
+        $('#leftDiv').width(leftWidth);        
+        
+        initSplitter();
+      }
+    }
 
     btn.style.display = 'none';
   });
 
+  // splitter 초기화
+function initSplitter() {
+  if (splitterInitialized) return;
 
+  $('#splitDiv').jSplitter({
+    leftdiv: 'leftDiv',
+    rightdiv: 'rightDiv',
+    flex: true,
+    minright: minRight,
+  });
+
+  // 👉 드래그 중 body에 클래스 추가
+  $('#splitDiv')
+    .on('mousedown', function () {
+      document.body.classList.add('jSplitter-ing');
+    });
+
+  document.addEventListener('mouseup', function () {
+    document.body.classList.remove('jSplitter-ing');
+  });
+
+  splitterInitialized = true;
+}
+
+
+  // header 반응형 처리
   function resizeHeaderCheck() {
     const header = document.querySelector('.header');
     const openBtn = document.querySelector('.btn-header-open');
-
     if (!header) return;
 
     if (window.innerWidth <= 1200) {
-      // 1000px 이하 → 닫기
       header.classList.add('closed');
+      $('#leftDiv').removeAttr('style');      
       if (openBtn) openBtn.style.display = 'inline-block';
     } else {
-      // 1000px 이상 → 열기
       header.classList.remove('closed');
       if (openBtn) openBtn.style.display = 'none';
     }
   }
 
   resizeHeaderCheck();
-
   window.addEventListener('resize', resizeHeaderCheck);
 }
+
 
 
 function starGrade(){
@@ -247,6 +298,14 @@ function selectUi(id, data) {
 
       dropdownEl = document.createElement("div");
       dropdownEl.className = "select-dropdown";
+
+      // container의 클래스 중 select-ui 제외하고 dropdown에 복사
+      container.classList.forEach(cls => {
+        if (cls !== "select-ui") {
+          dropdownEl.classList.add(cls);
+        }
+      });
+
       dropdownEl.setAttribute("role", "listbox");
       dropdownEl.innerHTML = `
         <ul>
@@ -264,8 +323,22 @@ function selectUi(id, data) {
       document.body.appendChild(dropdownEl);
 
       const rect = head.getBoundingClientRect();
+      const dropdownHeight = dropdownEl.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      const spaceBelow = viewportHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      let top;
+
+      if (spaceBelow < dropdownHeight && spaceAbove > dropdownHeight) {
+        top = rect.top + window.scrollY - dropdownHeight - 5;
+      } else {
+        top = rect.bottom + window.scrollY + 5;
+      }
+
       Object.assign(dropdownEl.style, {
-        top: `${rect.bottom + window.scrollY + 5}px`,
+        top: `${top}px`,
         left: `${rect.left + window.scrollX}px`,
         minWidth: `${rect.width}px`
       });
@@ -724,8 +797,216 @@ function loading(){
   $('body, html').css('overflow', 'hidden');
 }
 
+// multi select
+function createMultiSelect(containerSelector, title, items, allCheck) {
+  const $container = $(containerSelector);
+  if ($container.length === 0) return;
 
+  const uid = containerSelector.replace("#", "");
 
+  const extraClasses = ($container.attr("class") || "")
+    .split(/\s+/)
+    .filter(cls => cls && cls !== "select-multi")
+    .join(" ");
+
+  const html = `
+      <div class="select-head">
+        <input type="hidden" class="select-value">
+        <button type="button" class="placeholder" arial-label="필터 선택">${title}</button>
+        <button type="button" class="selected" style="display:none"></button>
+      </div>
+  `;
+  $container.html(html);
+
+  const htmlDropdown = `
+      <div class="select-multi-dropdown ${extraClasses}" data-owner="${uid}" style="display:none; position:absolute;">
+        <div class="input-choice">
+          <input type="checkbox" id="${uid}_all" class="select-all-toggle">
+          <i></i>
+          <label for="${uid}_all">전체</label>
+        </div>
+        ${items.map(item => `
+          <div class="input-choice">
+            <input type="checkbox"
+                   class="option"
+                   id="${uid}_${item.value}"
+                   value="${item.value}">
+            <i></i>
+            <label for="${uid}_${item.value}">${item.label}</label>
+          </div>
+        `).join("")}
+      </div>
+  `;
+  $("body").append(htmlDropdown);
+
+  const $multi = $container;
+  const $dropdown = $(`.select-multi-dropdown[data-owner="${uid}"]`);
+  const $hidden = $multi.find(".select-value");
+  const $options = $dropdown.find(".option");
+  const $selectedText = $multi.find(".selected");
+  const $toggle = $dropdown.find(".select-all-toggle");
+
+  /* 선택 업데이트 */
+function updateSelectedText() {
+  const allChecked = ($options.length === $options.filter(":checked").length);
+
+  if (allChecked) {
+    $selectedText.text("전체");
+    $multi.find(".placeholder").hide();
+    $selectedText.show();
+
+    $hidden.val("ALL"); 
+    return;
+  }
+
+  // 개별 선택 처리
+  const selected = $options.filter(":checked").map(function () {
+    return $dropdown.find(`label[for="${$(this).attr('id')}"]`).text();
+  }).get();
+
+  const selectedValues = $options.filter(":checked").map(function () {
+    return $(this).val();
+  }).get();
+
+  if (selected.length > 0) {
+    $selectedText.text(selected.join(", "));
+    $multi.find(".placeholder").hide();
+    $multi.find(".selected").show();
+  } else {
+    $selectedText.text(title);
+    $multi.find(".placeholder").show();
+    $multi.find(".selected").hide();
+  }
+
+  $hidden.val(selectedValues.join(","));
+}
+
+  /* dropdown 열기 */
+$multi.find(".select-head").on("click", function (e) {
+  e.stopPropagation();
+
+  const $head = $(this);
+
+  // 이미 열려 있으면 닫기
+  if ($dropdown.is(":visible")) {
+    $dropdown.hide();
+    $head.removeClass("focus");
+    return;
+  }
+
+  $(".select-multi-dropdown").hide();
+  $(".select-head").removeClass("focus");
+
+  const offset = $head.offset();
+  const headW = $head.outerWidth();
+  const headH = $head.outerHeight();
+
+  // 🔹 크기 측정용 (안 보이게 열기)
+  $dropdown.css({
+    display: "block",
+    visibility: "hidden",
+    width: headW
+  });
+
+  const dropW = $dropdown.outerWidth();
+  const dropH = $dropdown.outerHeight();
+
+  const winW = $(window).width();
+  const winH = $(window).height();
+  const scrollT = $(window).scrollTop();
+  const scrollL = $(window).scrollLeft();
+
+  // 기본 위치
+  let top = offset.top + headH + 5;
+  let left = offset.left;
+
+  //세로 보정
+  if (top + dropH > scrollT + winH) {
+    top = offset.top - dropH - 5; // 위로
+  }
+  if (top < scrollT) {
+    top = offset.top + headH + 5; // 그래도 넘치면 아래
+  }
+
+  // 가로 보정
+  if (left + dropW > scrollL + winW) {
+    left = scrollL + winW - dropW - 15;
+  }
+  if (left < scrollL) {
+    left = scrollL + 15;
+  }
+
+  // 최종 적용
+  $dropdown.css({
+    top,
+    left,
+    visibility: "visible"
+  });
+
+  $dropdown.show();
+  $head.addClass("focus");
+});
+
+$options.on("change", function () {
+  const checkedCount = $options.filter(":checked").length;
+  const isAllChecked = checkedCount === $options.length;
+
+  $toggle.prop("checked", isAllChecked);
+
+  $(this)
+    .closest(".input-choice")
+    .toggleClass("on", $(this).is(":checked"));
+
+  $toggle.closest(".input-choice").toggleClass("on", isAllChecked);
+
+  updateSelectedText();
+});
+
+  /* 전체 선택 */
+  $toggle.on("change", function () {
+    const isChecked = this.checked;
+
+    $options.prop("checked", isChecked);
+    $dropdown.find(".input-choice").toggleClass("on", isChecked);
+
+    updateSelectedText();
+  });
+
+  if (allCheck === true) {
+    $toggle.prop("checked", true);
+    $options.prop("checked", true);
+    $dropdown.find(".input-choice").addClass("on");
+    updateSelectedText();
+  }  
+
+  // 닫기
+  $(document).on("click", function (e) {
+    if (
+      !$(e.target).closest($multi).length &&
+      !$(e.target).closest($dropdown).length
+    ) {
+      $dropdown.hide();
+       $multi.find(".select-head").removeClass("focus");
+    }
+  });
+
+  $("body").on("scroll", function () {
+    $dropdown.hide();
+     $multi.find(".select-head").removeClass("focus");
+  });//
+
+  $(window).on("scroll resize", function () { 
+    $dropdown.hide(); 
+    $multi.find(".select-head").removeClass("focus");
+  });
+
+  $multi.parents().each(function () {
+    $(this).on("scroll", function () {
+      $dropdown.hide();
+       $multi.find(".select-head").removeClass("focus");
+    });
+  });
+}
 
 
 // ready
@@ -738,4 +1019,5 @@ $(function(){
   tabEvt();
   popoverMoreView();
   initByteFields();
+
 })
