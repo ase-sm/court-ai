@@ -22,7 +22,7 @@
     <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
       <div class="container">
         <div class="contents" id="leftDiv">
-          <button class="btn-ref-open" aria-label="참조문서 영역 열기"></button>
+          <button class="btn-ref-open" aria-label="참조문서 영역 열기">참조문서</button>
         
           <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
             <main class="ai-content">
@@ -392,10 +392,9 @@
         </div>
         <!-- 참조문서 -->
         <aside class="reference-document-wrap closed" id="rightDiv">
-          <div class="splitter" id="splitDiv"></div>
           <div class="ref-header">
-            <h2 class="ref-title">참조문서</h2>
-            <button type="button" class="btn-collapse" aria-label="참조문서 영역 닫기"></button>
+            <div class="splitter" id="splitDiv"></div>
+            <button type="button" class="btn-collapse" aria-label="참조문서 영역 닫기">접어두기</button>
           </div>
           <div class="ref-question">
             <p class="ref-question-text" data-evt="more-view">피고는 ‘C’라는 영업표지로 실내운전연습장 운영업, 이와 관련된 사업지원서비스업, 프랜차이즈업 등을 영위하는 주식회사로서 가맹사업거래의 공정화에 관한 법률(이하 ‘가맹사업법’이라</p>

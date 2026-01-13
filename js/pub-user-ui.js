@@ -31,7 +31,7 @@ function layoutEvt() {
       if (openBtn) openBtn.style.display = 'inline-block';
     } else {
       const openBtn = document.querySelector('.btn-ref-open');
-      if (openBtn) openBtn.style.display = 'inline-block';
+      if (openBtn) openBtn.style.display = 'inline-flex';
     }
   });
 
