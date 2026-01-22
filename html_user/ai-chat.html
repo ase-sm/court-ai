@@ -922,7 +922,7 @@
 
 
   <!-- 참조문서 요약보기 -->
-  <div class="popup-wrap" id="popRefSummary">
+  <div class="popup-wrap drag" id="popRefSummary">
     <div class="dim"></div>
     <div class="pop-wrap">
       <div class="popup" style="width:920px;">
@@ -1487,8 +1487,27 @@ function positionPop(refDoc, pop) {
 
 bindRefDocHover('.ref-doc', '.pop-ref-summary-wrap', 'is-open');
 
-</script>
+// 드래그팝업
+$(function() {
+    $(".popup-wrap.drag .pop-wrap").draggable({
+        handle: ".pop-header",
+        containment: "window",
+        start: function(event, ui) {
+            var target = $(this);
+            var offset = target.offset();
+            
+            target.css({
+                transform: "none",
+                top: offset.top,
+                left: offset.left,
+                margin: 0  
+            });
+        }
+    });
 
+    $(".pop-header").css("cursor", "move");
+});
+</script>
 
 
 

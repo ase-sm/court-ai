@@ -122,14 +122,13 @@ body{height:100%;overflow:hidden;}
     login
 =========================================== */
 .login-body{overflow-y:auto;}
-.login-wrap{width:100%; height:100%;min-height: 700px; display:flex;justify-content:center;align-items:center;background:url('../images/user/bg-login.jpg') no-repeat 50% 0;}
-.login-container {display:flex;align-items: center;gap:150px;}
-.login-main-text:before{content:'';display:block;width:83px;height:80px;margin:0 auto; background:url('../images/user/ico-logo.svg') no-repeat 0 0;}
-.login-main-text{ text-align:center;margin-bottom:40px;display:flex;flex-direction: column;align-items: center;height:300px;}
-.login-main-text .tit {display:inline-block;position:relative;padding-top:60px; font-weight: 700; line-height:1; font-size: 50px; text-align: center; letter-spacing: -0.02em; background: linear-gradient(268.7deg, #8F54E1 8.59%, #0C81EE 76.93%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;}
-.login-main-text .txt {margin-top:32px;color: #000000;font-size: 34px; line-height:1;}
-.login-main-text .txt b{vertical-align:baseline;font-weight: 600; line-height:1;}
-.login-box { padding: 80px 56px 40px; gap: 12px; width: 512px; background: #FFFFFF; border-radius: 20px; filter: drop-shadow(4px 6px 8px rgba(172, 179, 188, 0.25));  }
+.login-wrap{width:100%; height:100%;min-height: 700px; display:flex;justify-content:center;align-items:center;background:url('../images/user/bg-login.jpg') no-repeat 50% 50%;background-size:cover;}
+.login-container {display:flex;align-items: center;gap:220px;}
+.login-main-text .logo{display:block;width:302px;height:86px;margin:0 auto; background:url('../images/user/logo.svg') no-repeat 0 0;overflow:hidden;text-indent: -999999%;}
+.login-main-text{position:relative; width:600px; text-align:center;display:flex;flex-direction: column;align-items: center;height:600px;}
+.login-main-text:after{content:'';display:block;position:absolute;top:280px;right:35px;width: 817px;height: 395px; background:url('../images/user/login-visual.png') no-repeat 0 0;}
+.login-main-text .tit {display:inline-block;position:relative;padding-top:43px; font-weight: 700; line-height:1; font-size: 32px; text-align: center; letter-spacing: -0.02em;  color:#1E2124;}
+.login-box { padding: 70px 56px 40px; gap: 12px; width: 512px; background: #FFFFFF; border-radius: 20px; filter: drop-shadow(4px 6px 8px rgba(172, 179, 188, 0.25));  transform:translateX(-50px);}
 .login-box .login-tit {color: #0c0a0a;font-weight: 700; font-size: 34px;margin-bottom:48px;text-align:center;}
 .login-box ul {display:flex;flex-direction: column;gap:32px;}
 .login-box ul li .input-unit {display:flex;flex-direction: column;gap:10px;}
@@ -141,6 +140,9 @@ body{height:100%;overflow:hidden;}
 .login-box .login-menu .input-choice label{ color:#555555;font-size:15px;line-height:1;transform:translateY(1px);}
 .login-box .info{ color:#000;font-size:16px;line-height:1;margin-top:60px;text-align:center;}
 .login-box .info b{ color:#246BEB;font-weight:600;vertical-align:baseline;}
+@media screen and (max-width: 1200px) {
+    .login-main-text{display: none;}
+}
 
 
 /* ===========================================

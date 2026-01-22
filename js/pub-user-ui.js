@@ -640,11 +640,11 @@ function popOpen(popup, callback){
   let $popup = $(popup);
   scrollPosition = $(window).scrollTop();
 
-
+  $popup.removeAttr('style');
   $popup.fadeIn();
   $('body, html').css('overflow', 'hidden');
   $('body').addClass('pop-open');
-
+  
   $popup.find('.btn-close').on('click', function(){
     popClose(popup)
   });

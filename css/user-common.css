@@ -366,6 +366,11 @@ button[class*=btn-line]:disabled{border-color: #CDD1D5 !important;}
 .popup-wrap .prompt-form{margin-top:40px;}
 .popup-wrap .prompt-form .pop-header{margin-bottom:24px;}
 
+.popup-wrap.drag .dim{display:none;}
+.popup-wrap.drag .pop-wrap{box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);}
+.popup-wrap.drag .pop-wrap .popup{padding-top:0;}
+.popup-wrap.drag .pop-wrap .popup .pop-header{padding-top:25px;}
+
 .alert-popup { display: none; position: fixed; top: 0; width: 100%; height: 100%; z-index: 500; }
 .alert-popup .dim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #2a2a2a; opacity: 0.7; }
 .alert-popup .popup { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);padding:24px;filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));background:#fff;border:1px solid #B1B8BE;border-radius:10px;width:400px;}
