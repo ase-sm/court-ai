@@ -49,6 +49,8 @@ body{min-width: var(--min-width);}
 
 .ellips{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;word-wrap:break-word;line-height:1.3em;height:1.3em;}
 
+:focus-visible { outline: 1px dotted rgba(0, 0, 0, 0.7) !important; outline-offset:-3px; }
+
 /* ===========================================
     form
 =========================================== */
@@ -179,6 +181,7 @@ input.error{border-color: #D50136;border-width: 1.5px;}
 .input-choice-wrap{display:flex;align-items:center;flex-wrap: wrap;gap:8px 24px;}
 .input-choice{position:relative;display:inline-flex;align-items:center;gap:8px;}
 .input-choice input{position:absolute;top:0;left:0;width:20px;height:20px;z-index: 1;top:1px;opacity: 0;}
+.input-choice input:focus + i{outline:1px dotted #000;}
 .input-choice i{display:inline-block; position:relative;min-width:20px;width:20px;height:20px;border:1px solid #B4C4D6;border-radius:4px;background:#fff;}
 .input-choice label{font-size:16px; color:#000;line-height:1;}
 .input-choice input:checked + i{border-color: #0082FF;}
@@ -204,6 +207,7 @@ input.error{border-color: #D50136;border-width: 1.5px;}
 .tag-doc.st-navy{background:#E1E7EF; color:#003675;}
 .tag-doc.st-green{background:#D4F7EB; color:#08B074;}
 .tag-doc.st-sky{background:#F0F3FF; color:#163ECA;}
+.tag-doc.st-org{background: #ffb37a75;color: #eb3e2ae6;}
 .tag-doc.st-bage{background:#FFF3DB; color:#C78500;}
 .tag-doc.st-red{background:#FEECF0; color:#EF3E5E;}
 

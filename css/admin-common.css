@@ -46,6 +46,8 @@ body{min-width: var(--min-width);}
 .align-r{text-align:right !important;}
 .align-c{text-align:center !important;}
 
+:focus-visible { outline: 1px dotted rgba(0, 0, 0, 0.7) !important; outline-offset:-3px; }
+
 /* ===========================================
     form
 =========================================== */
@@ -138,6 +140,7 @@ input.error{border-color: #D50136;}
 .input-choice-wrap.gap-st2{gap:8px;}
 .input-choice{position:relative;display:flex;align-items:center;gap:8px;}
 .input-choice input{position:absolute;top:0;left:0;width:20px;height:20px;z-index: 1;top:2px;opacity: 0;}
+.input-choice input:focus + i{outline:1px dotted #000;}
 .input-choice i{display:inline-block; position:relative;min-width:20px;width:20px;height:20px;border:1px solid #5E687F;border-radius:4px;background:#fff;}
 .input-choice label{font-size:16px; color:#000;line-height:1;}
 .input-choice input:checked + i{border-color: #0082FF;}

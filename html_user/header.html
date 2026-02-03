@@ -38,7 +38,7 @@
             </ul>
         </div>
         <div class="bottom-area">
-            <button type="button" class="btn-toggle" data-evt="toggle-folding-menu"></button>
+            <button type="button" class="btn-toggle" data-evt="toggle-folding-menu" aria-label="메뉴 더보기 열기"></button>
             <div class="folding-menu" style="display: none;">
               <div class="fa-prompt-wrap">
                   <a href="javascript:void(0);" class="fa-prompt-header" data-evt="toggle-fa-prompt">
@@ -431,13 +431,16 @@
 
       const $wrap = $(this).closest('.bottom-area');
       const $menu = $wrap.find('.folding-menu');
+      const $button = $(this);
 
       $wrap.toggleClass('on');
 
       if ($wrap.hasClass('on')) {
         $menu.stop().slideDown(200);
+        $button.attr('aria-label', '메뉴 더보기 닫기');
       } else {
         $menu.stop().slideUp(200);
+        $button.attr('aria-label', '메뉴 더보기 열기');
       }
     });
     // 자주 쓰는 프롬프트
