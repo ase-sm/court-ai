@@ -348,9 +348,26 @@ body{height:100%;overflow:hidden;}
 .ai-answer-comp .ai-answer .st-table table td { color:#8A949E;}
 .ai-answer-comp .ai-answer ol > li,
 .ai-answer-comp .ai-answer ul > li{position:relative;padding-left:15px;line-height:1.5;}
-.ai-answer-comp .ai-answer ol > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
-.ai-answer-comp .ai-answer ul > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
-/* .ai-answer-comp .ai-answer ul{padding-left:15px;} */
+.ai-answer-comp .ai-answer ol > li:before,
+.ai-answer-comp .ai-answer ul > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
+.ai-answer-comp .ai-answer ol > li > * > li:before,
+.ai-answer-comp .ai-answer ul > li > * > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:11px;left:0;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li{padding-left:10px;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li:before,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:10px;left:0;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li{padding-left:15px;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li:before,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:10px;left:0;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li:after,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li:after{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:10px;left:6px;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li{padding-left:0;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:before,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:before{display:none;}
+.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:after,
+.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:after{display:none;}
 
 .ai-answer-comp .ai-answer-menu {padding:16px 0;border-top:1px solid #99B0CB;}
 .ai-answer-comp .ai-answer-menu .menu-box{display:flex;align-items:center;justify-content: space-between; height: 80px;background: #F4F6F9;padding:16px 24px;border: 1px solid #E1E7EF;border-radius: 5px;}
