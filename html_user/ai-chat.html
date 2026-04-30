@@ -199,8 +199,11 @@
                         <p>서울중앙지방법원 <b>2019.회계법인은 위임계약</b>에 다라 회계업무를 수행할 때 선량한 관리자의 주의의무를 부담합니다. <br>특히 회게전문가로서 다음과 같은 의무를 져야 합니다.</p>
                         <h3>다. 유사 사례</h3>
                           <ol>
-                            <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                            <li>
+                              <p>서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
+                              <strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
                             <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                              <p>서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
                               <ul>
                                 <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
                                 <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
@@ -220,6 +223,8 @@
                             <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
                           </ol>
                           <br>
+                          <h4>1. 유사 사례</h4>
+                          <p>1. <strong>dfdf</strong></p>
                           <ul>
                             <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
                             <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
@@ -292,7 +297,29 @@
                             </div>
                           </div>
                           <div class="menu">
-                            <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사"  onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+                            <button type="button" class="btn-download" data-evt="tooltip" data-tooltip-txt="다운로드"><i class="ico-download"></i></button>
+                            <button type="button" class="btn-print" data-evt="tooltip" data-tooltip-txt="출력" onclick="printAnswer(this)"><i class="ico-print"></i></button>
+                            <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사" onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+                            <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
+                          </div>
+                        </div>
+                        <div class="menu-box">
+                          <div class="satisfaction-evaluation">
+                            <b class="label">답변에 대한 만족도를 평가해주세요.</b>
+                            <div class="satisfaction">
+                                <span class="star-grade">
+                                  <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
+                                  <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
+                                  <button type="button" data-val="3"><span class="hidden">3점</span></button>
+                                  <button type="button" data-val="4"><span class="hidden">4점</span></button>
+                                  <button type="button" data-val="5"><span class="hidden">5점</span></button>
+                                </span>
+                            </div>
+                          </div>
+                          <div class="menu">
+                            <button type="button" class="btn-txt">다운로드</button>
+                            <button type="button" class="btn-txt" onclick="printAnswer(this)">출력</button>
+                            <button type="button" class="btn-txt" onclick="completeCheck(this)"><i>복사</i></button>
                             <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
                           </div>
                         </div>

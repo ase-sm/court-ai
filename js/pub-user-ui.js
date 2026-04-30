@@ -227,6 +227,23 @@ function completeCheck(obj){
   }, 2000);
 }
 
+function printAnswer(obj){
+  const target = obj.closest('.ai-answer-comp');
+  if(!target) return;
+  const clone = target.cloneNode(true);
+  clone.classList.add('print-clone');
+  clone.removeAttribute('style');
+  document.body.appendChild(clone);
+  document.body.classList.add('print-mode');
+  const cleanup = function(){
+    clone.remove();
+    document.body.classList.remove('print-mode');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  window.print();
+}
+
 function allCheck() {
   const allCheckBoxes = document.querySelectorAll('input[data-evt="all-check"]');
 
