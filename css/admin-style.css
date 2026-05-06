@@ -24,6 +24,7 @@ body{height:100%;background:#F4F6F9;}
 .header .gnb-nav .gnb > li > a .ico-gnb-operation {background-position-y: -48px !important;}
 .header .gnb-nav .gnb > li > a .ico-gnb-statistics {background-position-y: -72px !important;}
 .header .gnb-nav .gnb > li > a .ico-gnb-log {background-position-y: -96px !important;}
+.header .gnb-nav .gnb > li > a .ico-gnb-system {background-position-y: -120px !important;}
 .header .gnb-nav .gnb > li > ul {display:none; margin-top:8px}
 .header .gnb-nav .gnb > li > ul li ~ li{margin-top:4px;}
 .header .gnb-nav .gnb > li > ul li a {display:block; padding:12px 16px; color:#1E2124;font-size:16px;}
