@@ -680,7 +680,15 @@ header + .data-header{margin-top:60px;}
 .ref-summary-wrap .menu {display:flex;align-items:center;justify-content: flex-end;gap:16px;}
 .ref-summary-wrap .menu [class*=btn-]{height:40px;}
 .ref-summary-wrap .menu .btn-copy {background: #FFFFFF; border: 1px solid #E1E7EF; border-radius: 4px;display:flex;justify-content:center;align-items:center;width:40px;}
-.pop-wrap .ref-summary-wrap .ref-summary{max-height: calc(100vh - 470px);overflow-y:auto;}
+.ref-summary-wrap .notice-snooze{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px;}
+.ref-summary-wrap .notice-snooze .btn-snooze{display:inline-block; margin:0;padding:6px 8px;border:0;background:transparent;font:inherit;font-size:15px;color:#1D56BC;cursor:pointer;border-radius: 4px;}
+.ref-summary-wrap .notice-snooze .btn-snooze span{border-bottom:1px solid #1D56BC;line-height:1.2;}
+.ref-summary-wrap .bar{width:1px;height:13px;background:#CBD3DE;flex-shrink:0;}
+.pop-wrap .ref-summary-wrap .ref-summary{max-height: calc(100vh - 580px);overflow-y:auto;}
+@media screen and (min-width: 1025px) {
+    .ref-summary-wrap .notice-snooze .btn-snooze:hover{background:#EFF5FF;}
+    .ref-summary-wrap .notice-snooze .btn-snooze:hover span{border-bottom:none;}
+}
 
 .pop-ref-summary-wrap{ padding:0 24px; position: fixed; z-index: 50;transition: transform 0.5s ease-in-out;transform:translateX(10px);}
 .pop-ref-summary-wrap.is-open{transform:translateX(0);}
@@ -702,4 +710,7 @@ header + .data-header{margin-top:60px;}
   body.print-mode {overflow: visible !important; height: auto !important;}
   body.print-mode .print-clone {display: block !important; position: static !important; width: auto !important; min-height: 0 !important; padding: 20px !important; margin: 0 !important;}
   body.print-mode .print-clone .ai-answer-menu {display: none !important;}
+  body.print-mode .print-clone *,
+  body.print-mode .print-clone *:before,
+  body.print-mode .print-clone *:after {-webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;}
 }
