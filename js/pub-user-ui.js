@@ -156,7 +156,7 @@ function tooltipOver() {
   }
 
   document.addEventListener('mouseover', function(e) {
-    const target = e.target.closest('[data-evt="tooltip"]');
+    const target = e.target.closest('[data-evt~="tooltip"]');
     if (!target) return;
 
     txt = target.dataset.tooltipTxt || '';
@@ -204,7 +204,7 @@ function tooltipOver() {
   });
 
   document.addEventListener('mouseout', function(e) {
-    const target = e.target.closest('[data-evt="tooltip"]');
+    const target = e.target.closest('[data-evt~="tooltip"]');
     if (!target) return;
 
     lastLeaveTime = Date.now();
@@ -532,7 +532,14 @@ function openMenu(btn, menu) {
     }
     else {
       top = rect.top + scrollTop - menuHeight - 10; // 10px 여유
-      if (top < 10) top = 10; 
+      if (top < 10) top = 10;
+    }
+
+    // 우측 경계 체크
+    const viewportWidth = window.innerWidth;
+    if (left + menuWidth > viewportWidth + scrollLeft) {
+      left = rect.right + scrollLeft - menuWidth;
+      if (left < scrollLeft + 10) left = scrollLeft + 10;
     }
 
     menu.style.top = top + 'px';
@@ -572,7 +579,7 @@ function openMenu(btn, menu) {
 
 
   container.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-evt="tooltip-menu"]');
+    const btn = e.target.closest('[data-evt~="tooltip-menu"]');
     if (btn) {
       e.stopPropagation();
       toggleMenu(btn);

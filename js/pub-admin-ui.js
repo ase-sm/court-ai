@@ -289,6 +289,148 @@ function selectUi(containerEl, data) {
 }
 
 
+function tooltipMenu() {
+  const container = document;
+  let lastFocusedButton = null;
+  let openMenuElement = null;
+
+  // 메뉴 닫기
+  function closeMenu() {
+    if (!openMenuElement) return;
+
+    openMenuElement.classList.remove('active');
+    openMenuElement.style.display = 'none';
+    openMenuElement.querySelectorAll('button, [tabindex]').forEach(el => el.setAttribute('tabindex', '-1'));
+
+    if (lastFocusedButton) {
+      const liParent = lastFocusedButton.closest('li');
+      if (liParent) {
+        liParent.classList.remove('on');
+      }
+    }
+
+    openMenuElement = null;
+    lastFocusedButton = null;
+  }
+
+
+  // 메뉴 열기
+function openMenu(btn, menu) {
+    if (!menu) return;
+
+    const rect = btn.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+    const viewportHeight = window.innerHeight;
+
+    // 메뉴 높이 계산을 위해 보이지 않게 표시
+    menu.style.visibility = 'hidden';
+    menu.style.display = 'block';
+    menu.classList.add('active');
+
+    const menuHeight = menu.offsetHeight;
+    const menuWidth = menu.offsetWidth;
+
+    let top;
+    let left = rect.left + scrollLeft;
+
+    // 아랫공간 계산
+    const spaceBelow = viewportHeight - rect.bottom;
+    if (spaceBelow >= menuHeight + 20) {
+      top = rect.bottom + scrollTop; // 버튼 바로 아래
+    }
+    else {
+      top = rect.top + scrollTop - menuHeight - 10; // 10px 여유
+      if (top < 10) top = 10;
+    }
+
+    // 우측 경계 체크
+    const viewportWidth = window.innerWidth;
+    if (left + menuWidth > viewportWidth + scrollLeft) {
+      left = rect.right + scrollLeft - menuWidth;
+      if (left < scrollLeft + 10) left = scrollLeft + 10;
+    }
+
+    menu.style.top = top + 'px';
+    menu.style.left = left + 'px';
+    menu.style.visibility = 'visible';
+
+    openMenuElement = menu;
+    lastFocusedButton = btn;
+
+    const focusableItems = Array.from(menu.querySelectorAll('button, [tabindex]'));
+    focusableItems.forEach(el => el.setAttribute('tabindex', '0'));
+    if (focusableItems.length > 0) focusableItems[0].focus();
+
+
+    const liParent = btn.closest('li');
+    if (liParent) {
+      liParent.classList.toggle('on');
+    }
+  }
+
+
+
+  // 메뉴 토글
+  function toggleMenu(btn) {
+    const menuId = btn.dataset.id;
+    if (!menuId) return;
+    const menu = document.getElementById(menuId);
+    if (!menu) return;
+
+    if (openMenuElement === menu && lastFocusedButton === btn) {
+      closeMenu();
+    } else {
+      closeMenu();
+      openMenu(btn, menu);
+    }
+  }
+
+
+  container.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-evt~="tooltip-menu"]');
+    if (btn) {
+      e.stopPropagation();
+      toggleMenu(btn);
+      return;
+    }
+
+    if (openMenuElement && e.target.closest('.dropdown-menu-layer button')) {
+      closeMenu();
+      if (lastFocusedButton) lastFocusedButton.focus();
+      return;
+    }
+
+    closeMenu();
+  });
+
+  // ---------------------------
+  // 키보드 이벤트
+  // ---------------------------
+  container.addEventListener('keydown', (e) => {
+    if (!openMenuElement) return;
+
+    const focusableItems = Array.from(openMenuElement.querySelectorAll('button, [tabindex]:not([tabindex="-1"])'));
+    const index = focusableItems.indexOf(document.activeElement);
+
+    if (e.key === 'Escape') {
+      if (lastFocusedButton) lastFocusedButton.focus();
+      closeMenu();
+    } else if (e.key === 'Tab') {
+      if (!e.shiftKey && index === focusableItems.length - 1) {
+        e.preventDefault();
+        if (lastFocusedButton) lastFocusedButton.focus();
+        closeMenu();
+      } else if (e.shiftKey && index === 0) {
+        e.preventDefault();
+        if (lastFocusedButton) lastFocusedButton.focus();
+        closeMenu();
+      }
+    }
+  });
+}
+
+
 
 // 팝업
 let lastFocusedElement = null;
@@ -876,4 +1018,5 @@ $(function(){
   initByteFields();
   tabEvt();
   countInput();
+  tooltipMenu();
 })

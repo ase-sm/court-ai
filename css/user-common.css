@@ -269,6 +269,19 @@ input.error{border-color: #D50136;border-width: 1.5px;}
 .ico-ani-check svg .check{  stroke-dasharray: 1000; stroke-dashoffset: 0;    stroke-dashoffset: -100; -webkit-animation: dash-check .9s .35s ease-in-out forwards; animation: dash-check .9s .35s ease-in-out forwards;}
 .ico-reset-blue{background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0381 2.16797C12.821 2.16797 15.2667 3.6054 16.667 5.77441V3.33496C16.667 2.96688 16.965 2.66814 17.333 2.66797C17.7012 2.66797 18 2.96677 18 3.33496V7.50195C17.9998 7.86999 17.7011 8.16797 17.333 8.16797H13.167C12.7989 8.16797 12.5002 7.86999 12.5 7.50195C12.5 7.13376 12.7988 6.83496 13.167 6.83496H15.75C14.6315 4.84675 12.4936 3.50195 10.0381 3.50195C6.42258 3.50207 3.49805 6.41569 3.49805 10.002C3.49827 13.588 6.42271 16.5018 10.0381 16.502C13.3191 16.502 16.0332 14.1008 16.5059 10.9766C16.5611 10.6127 16.9007 10.3619 17.2646 10.417C17.6284 10.4721 17.879 10.812 17.8242 11.1758C17.2536 14.9477 13.9828 17.835 10.0381 17.835C5.69338 17.8348 2.16526 14.3314 2.16504 10.002C2.16504 5.67228 5.69325 2.16808 10.0381 2.16797Z' fill='%23246BEB'/%3E%3C/svg%3E%0A");}
 .ico-link{width:20px;height:20px;background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3H5C3.89543 3 3 3.89543 3 5V15C3 16.1046 3.89543 17 5 17H15C16.1046 17 17 16.1046 17 15V10' stroke='%23246BEB' stroke-width='1.4'/%3E%3Cpath d='M16.9999 3L7.5293 12.4706M16.9999 3H12.4705M16.9999 3V7.52941' stroke='%23246BEB' stroke-width='1.4'/%3E%3C/svg%3E%0A");}
+
+.dropdown-menu-layer [class*=ico-file]{transform: scale(0.5);transform-origin: 0 50%;margin-right:-20px;}
+[class*=ico-file]{width:40px; min-width:40px; height:40px;border-radius:5px;background-image: url('../images/user/ico-file-type.svg');background-repeat:no-repeat;background-position:0 0;background-size: auto 40px !important;}
+.ico-file-txt {background-position-x:0 !important;}
+.ico-file-xlsx {background-position-x:-50px !important;}
+.ico-file-pdf {background-position-x:-100px !important;}
+.ico-file-hwp {background-position-x:-150px !important;}
+.ico-file-doc {background-position-x:-200px !important;}
+.ico-file-pptx,
+.ico-file-ppt {background-position-x:-250px !important;}
+.ico-file-img {background-position-x:-300px !important;}
+.ico-file-etc {background-position-x:-350px !important;}
+
 @keyframes dash-check { 0% { stroke-dashoffset: -100; } 100% { stroke-dashoffset: 900; } }
 
 /* btn */
@@ -394,7 +407,7 @@ button[class*=btn-line]:disabled{border-color: #CDD1D5 !important;}
 
 /* dromdown */
 .btn-menu-dotting{min-width: 20px; width: 20px;height:20px; background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.9987 3.33374C10.643 3.33374 11.1654 3.85607 11.1654 4.50041C11.1654 5.14474 10.643 5.66707 9.9987 5.66707C9.35437 5.66707 8.83203 5.14474 8.83203 4.50041C8.83203 3.85607 9.35437 3.33374 9.9987 3.33374Z' fill='%2333363D'/%3E%3Cpath d='M9.9987 8.83504C10.643 8.83504 11.1654 9.35738 11.1654 10.0017C11.1654 10.646 10.643 11.1684 9.9987 11.1684C9.35437 11.1684 8.83203 10.646 8.83203 10.0017C8.83203 9.35738 9.35437 8.83504 9.9987 8.83504Z' fill='%2333363D'/%3E%3Cpath d='M11.1654 15.4998C11.1654 14.8554 10.643 14.3331 9.9987 14.3331C9.35437 14.3331 8.83203 14.8554 8.83203 15.4998C8.83203 16.1441 9.35437 16.6664 9.9987 16.6664C10.643 16.6664 11.1654 16.1441 11.1654 15.4998Z' fill='%2333363D'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;}
-.dropdown-menu-layer { position: absolute;display:inline-block;padding:8px; z-index: 50;margin-top:5px;min-width: 100px; ;overflow:hidden; background: #FFFFFF; border: 1px solid #8A949E; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);border-radius: 8px; }
+.dropdown-menu-layer { position: absolute;display:inline-block;padding:8px; z-index: 550;margin-top:5px;min-width: 100px; ;overflow:hidden; background: #FFFFFF; border: 1px solid #8A949E; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);border-radius: 8px; }
 .dropdown-menu-layer li button { width: 100%; padding: 4px 16px;height:42px;line-height:42px; border-radius:6px; border: none; background: #fff; text-align: center; cursor: pointer; white-space: nowrap;font-size:17px;display:flex;align-items:center;gap:8px; color:#1D1D1D;}
 .dropdown-menu-layer li button:hover {background:#F4F6F9; color:#246BEB;}
 .dropdown-menu-layer li .btn-delete:hover {background:#F4F6F9; color:#D50136;}
