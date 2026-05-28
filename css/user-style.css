@@ -146,10 +146,24 @@ body{height:100%;overflow:hidden;}
 .login-body.st-spring .login-main-text:after{display:none;}
 .login-body.st-spring .login-main-text .tit{padding-top:20px;}
 .login-body.st-spring .login-box{transform:translateX(0);background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, linear-gradient(to bottom, #4FDDB4, #22D6D6, #25B9E2) border-box; filter: drop-shadow(4px 10px 16px rgba(88, 101, 120, 0.3));}
-
-
+ 
+@media screen and (min-width: 1201px) {
+    .login-body.st-summer .login-wrap{background: url('../images/user/bg-login-summer.jpg') no-repeat calc(50% - 40px) 50%, url('../images/user/bg-login-summer-body.jpg') no-repeat 50% 50%;background-size:auto 1200px, cover;}
+        
+    .login-body.st-summer .login-container{width:1590px;justify-content: space-between;}
+    .login-body.st-summer .login-main-text{align-items:flex-start;transform: translateX(250px);}
+    .login-body.st-summer .login-main-text .logo{width:152px;height:53px;margin:0;}
+    .login-body.st-summer .login-main-text:after{display:none;}
+    .login-body.st-summer .login-box{transform: translateX(0);background-clip: padding-box;filter: drop-shadow(4px 10px 16px rgba(88, 101, 120, 0.3));}
+    .login-body.st-summer .login-main-text .tit{color:#246BEB;font-weight: 600;font-size: 24px;padding-top:22px;}
+}
 @media screen and (max-width: 1200px) {
-    .login-body:not(.st-spring) .login-main-text{display: none;}
+    .login-body .login-container{display:flex;flex-direction: column;gap:30px;transform:translateY(-50px);}
+    .login-main-text{height:auto;width:512px;}
+    .login-main-text:after{display:none;}
+    .login-main-text .tit{padding-top:20px;font-size:30px;}
+    .login-main-text .logo { display: block; width: 200px; height: 70px;}
+    .login-box{transform:translateX(0);}
 }
 
 
