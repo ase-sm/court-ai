@@ -1,0 +1,9 @@
+<svg width="140" height="40" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M130.968 30.9677C130.968 35.9561 135.012 40 140 40H0C4.98838 40 9.03226 35.9561 9.03226 30.9677V12C9.03226 5.37258 14.4048 0 21.0323 0H118.968C125.595 0 130.968 5.37258 130.968 12V30.9677Z" fill="url(#tabAiOff)"/>
+<defs>
+<linearGradient id="tabAiOff" x1="23.1452" y1="0" x2="54.8432" y2="49.6722" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4184FF"/>
+<stop offset="1" stop-color="#256CEC"/>
+</linearGradient>
+</defs>
+</svg>

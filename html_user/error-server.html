@@ -18,27 +18,33 @@
 <body>
   <div class="wrap">
     <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
-      <div class="contents error-contents">
-        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
-          <main class="content" aria-labelledby="content">
+      <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+      <div class="container-wrap">
+        <script> $(document).ready(function() { $.get('sidebar.html', function(data) { $('.container-wrap').prepend(data);}); }); </script>        
+        <div class="container">
+          <div class="contents error-contents">
+            <main class="content" aria-labelledby="content">
             
-            <div class="error-wrap">
-              <i class="ico-error-server"></i>
-              <div class="error-text">
-                <strong>서버가 요청사항을 처리할 수 없습니다.</strong>
-                <p>잠시 후 다시 시도해주세요. 이 오류가 계속 발생할 경우 관리자에게 문의해주세요.</p>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-lg st-blue">홈으로 이동</button>
+              <div class="error-wrap">
+                <i class="ico-error-server"></i>
+                <div class="error-text">
+                  <strong>서버가 요청사항을 처리할 수 없습니다.</strong>
+                  <p>잠시 후 다시 시도해주세요. 이 오류가 계속 발생할 경우 관리자에게 문의해주세요.</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn-lg st-blue">홈으로 이동</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-          </main>
+            </main>
+          </div>
+          <!-- // contents -->
+        </div>
+        <!-- // container -->
       </div>
+      <!-- // container-wrap -->
   </div>
   <!-- // wrap -->
-
-
 </body>
 </html>
 

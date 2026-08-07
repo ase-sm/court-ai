@@ -12,7 +12,7 @@ function layoutEvt() {
     const btn = e.target.closest('.btn-collapse');
     if (!btn) return;
 
-    const wrapper = btn.closest('.header, .reference-document-wrap');
+    const wrapper = btn.closest('.sidebar, .reference-document-wrap');
     if (!wrapper) return;
 
     wrapper.classList.add('closed');
@@ -26,9 +26,10 @@ function layoutEvt() {
       splitterInitialized = false;
     }
 
-    if (wrapper.classList.contains('header')) {
-      const openBtn = document.querySelector('.btn-header-open');
-      if (openBtn) openBtn.style.display = 'inline-block';
+    if (wrapper.classList.contains('sidebar')) {
+      document.querySelectorAll('.btn-aside-open, .btn-header-open').forEach(function(el) {
+        el.style.display = 'inline-block';
+      });
     } else {
       const openBtn = document.querySelector('.btn-ref-open');
       if (openBtn) openBtn.style.display = 'inline-flex';
@@ -37,13 +38,13 @@ function layoutEvt() {
 
   // 열기 버튼
   document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.btn-header-open, .btn-ref-open');
+    const btn = e.target.closest('.btn-aside-open, .btn-header-open, .btn-ref-open');
     if (!btn) return;
 
     let wrapper = null;
 
-    if (btn.classList.contains('btn-header-open')) {
-      wrapper = document.querySelector('.header');
+    if (btn.classList.contains('btn-aside-open') || btn.classList.contains('btn-header-open')) {
+      wrapper = document.querySelector('.sidebar');
     } else {
       wrapper = document.querySelector('.reference-document-wrap');
     }
@@ -53,17 +54,19 @@ function layoutEvt() {
 
       if (wrapper.classList.contains('reference-document-wrap')) {
         const $container = $('.container');
-        const containerWidth = $container.width();        
+        const containerWidth = $container.width();
         const leftWidth = containerWidth - minRight;
 
         $('.container').addClass('ref-open');
-        $('#leftDiv').width(leftWidth);        
-        
+        $('#leftDiv').width(leftWidth);
+
         initSplitter();
       }
     }
 
-    btn.style.display = 'none';
+    document.querySelectorAll('.btn-aside-open, .btn-header-open').forEach(function(el) {
+      el.style.display = 'none';
+    });
   });
 
   // splitter 초기화
@@ -93,17 +96,20 @@ function initSplitter() {
 
   // header 반응형 처리
   function resizeHeaderCheck() {
-    const header = document.querySelector('.header');
-    const openBtn = document.querySelector('.btn-header-open');
+    const header = document.querySelector('.sidebar');
     if (!header) return;
 
     if (window.innerWidth <= 1200) {
       header.classList.add('closed');
-      $('#leftDiv').removeAttr('style');      
-      if (openBtn) openBtn.style.display = 'inline-block';
+      $('#leftDiv').removeAttr('style');
+      document.querySelectorAll('.btn-aside-open, .btn-header-open').forEach(function(el) {
+        el.style.display = 'inline-block';
+      });
     } else {
       header.classList.remove('closed');
-      if (openBtn) openBtn.style.display = 'none';
+      document.querySelectorAll('.btn-aside-open, .btn-header-open').forEach(function(el) {
+        el.style.display = 'none';
+      });
     }
   }
 
@@ -836,6 +842,7 @@ function customAlert(message, type, icon = "") {
   });
 }
 
+
 function tabEvt(){
   let tabs = [];
   $(document).on('click', '[data-tab-id]', function(e){
@@ -1097,6 +1104,16 @@ $options.on("change", function () {
 }
 
 
+function initTextareaPlaceholder() {
+  document.querySelectorAll('.textarea .textarea-placeholder').forEach(ph => {
+    const textarea = ph.parentElement.querySelector('textarea');
+    if (!textarea) return;
+    const toggle = () => { ph.style.display = textarea.value ? 'none' : ''; };
+    textarea.addEventListener('input', toggle);
+    toggle();
+  });
+}
+
 // ready
 $(function(){
   layoutEvt();
@@ -1107,5 +1124,6 @@ $(function(){
   tabEvt();
   popoverMoreView();
   initByteFields();
+  initTextareaPlaceholder();
 
 })

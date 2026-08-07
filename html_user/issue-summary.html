@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../css/user-style.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-user-ui.js"></script>
+
+ <script type="text/javascript" src="../js/jsplitter.min.js"></script>
+</head>
+<body class="body-issue">
+
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>
+    
+    <div class="container-wrap">
+      <script> $(document).ready(function() { $.get('sidebar-issue.html', function(data) { $('.container-wrap').prepend(data);}); }); </script>        
+        <div class="container">
+          <div class="contents" id="leftDiv">
+            <main class="issue-summary-content">
+                <!-- 답변영역 -->
+                <section class="ai-answers-section">
+                  <div class="ai-answer-wrap">
+                    <div class="ai-answer-comp">
+                        <div class="ai-error">
+                          <div class="text">현재 시스템에 일시적인 오류가 발생하여 답변을 처리할 수 없습니다.<br>잠시 후 다시 시도해 주시기 바랍니다.</div>
+                        </div>
+      
+                        <div class="ai-loader">
+                          <p class="tit-txt"> <i class="dot-spinner"> <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <defs> <!-- Gradient 정의 --> <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2D8DFF"/> <stop offset="100%" stop-color="#8F54E1"/> </linearGradient> </defs> <!-- 원을 gradient로 채우기 --> <circle cx="4" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_jObz" begin="0;spinner_vwSQ.end-0.25s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="12" cy="12" r="3" fill="url(#grad)"> <animate begin="spinner_jObz.end-0.6s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> <circle cx="20" cy="12" r="3" fill="url(#grad)"> <animate id="spinner_vwSQ" begin="spinner_jObz.end-0.45s" attributeName="r" dur="0.75s" values="3;.2;3" /> </circle> </svg> </i> <span>답변을 준비하는 중입니다</span></p>
+                          <div class="loader-status">
+                            <p class="txt-ing">
+                              <i class="loader-sm"> <span class="loader-circular"> <svg class="circular" viewBox="25 25 50 50"> <defs> <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#2E7AFD" /> <stop offset="100%" stop-color="#6B3BE9" /> </linearGradient> </defs> <circle class="circular-path" cx="50" cy="50" r="20" fill="none" stroke="url(#gradientStroke)" stroke-width="8" /> </svg> </span></i>
+                              <span>요청사항에 필요한 작업을 분석하고 있습니다.</span>
+                            </p>
+                            <p class="txt-complete"><i class="ico-complete"></i><span>답변 생성을 위해 데이터베이스를 검색하고 있습니다.</span></p>
+                            <p class="txt-complete"><i class="ico-complete"></i><span>요청사항에 필요한 작업을 분석하고 있습니다.</span></p>
+                          </div>
+                        </div>
+                        <div class="ai-answer-stop">
+                          <p class="tit-txt"><i class="ico-stop"></i><span>사용자의 요청으로 답변이 중지되었습니다.</span></p>
+                          <button class="btn-stop"><i class="ico-stop"></i><span>답변중지</span></button>
+                        </div>
+
+                        <!-- ai-answer-issue -->
+                        <article class="ai-answer-issue">
+                          <div class="issue-intro">
+                            <p class="tit"><i class="dot" aria-hidden="true"></i><span>요청하신 내용에 대한 사실관계 및 주요 쟁점에 대한 답변을 드리겠습니다.</span></p>
+                          </div>
+
+                          <div class="issue-body">
+                            <p class="result-msg"><em>총 N건의 요약이 완료되었습니다.</em> 사건번호를 선택하여 요약내용을 확인하세요.</p>
+
+                            <div class="case-chip-list">
+                              <button type="button" class="case-chip on">대법원 2021다9999_판결문</button>
+                              <button type="button" class="case-chip">2024가합 12345</button>
+                              <button type="button" class="case-chip">2024가합 12345</button>
+                            </div>
+
+                            <div class="tab-type1 full issue-tab">
+                              <ul>
+                                <li class="on"><a href="javascript:void(0);" data-tab-id="issueAll"><span>전체요약</span></a></li>
+                                <li><a href="javascript:void(0);" data-tab-id="issueFact"><span>사실관계</span></a></li>
+                                <li><a href="javascript:void(0);" data-tab-id="issuePoint"><span>주요쟁점</span></a></li>
+                                <li class="action">
+                                  <button type="button" class="btn-origin"><i class="ico-origin" aria-hidden="true"></i><span>원문보기</span></button>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="issue-cont" id="issueAll">
+                              <section>
+                                <h3>사건 개요</h3>
+                                <p>광주고등법원은 어린이보호구역에서 발생한 교통사고로 피해자에게 상해를 입힌 피고인 A에 대한 항소심 판결을 선고했다. 원심에서 벌금 500만 원을 선고받은 피고인이 양형부당을 주장하며 항소했다.</p>
+                              </section>
+                              <section>
+                                <h3>주문</h3>
+                                <p>피고인은 어린이보호구역 내 교차로에서 좌회전 중 전방 주시의무를 태만히 하여 횡단 중이던 피해자를 들이받았다. 이로 인해 피해자는 약 10일간의 치료가 필요한 타박상을 입었다.</p>
+                              </section>
+                              <section>
+                                <h3>청구취지/공소사실</h3>
+                                <p>원심은 어린이보호구역에서의 각별한 주의의무 위반, 피해자의 신체적·정신적 고통, 피해자와의 미합의 등을 고려하여 벌금 500만 원을 선고했다.</p>
+                              </section>
+                              <section>
+                                <h3>이유</h3>
+                                <p>고등법원은 원심의 형이 과중하다고 판단했다. 유리한 정상으로 참작한 사항은 다음과 같다. 피고인의 범행 인정 및 반성, 공제조합을 통한 일부 피해회복, 비교적 경미한 상해 정도, 피해자의 처벌불원 의사표시, 제한속도 미위반·한적한 토요일 밤·소등된 가로등 등 사고 경위의 참작 사정, 피해자 구호 조치, 동종 범죄전력 부재, 건강 악화·경제적 곤궁·부양가족 존재 등이 있다.</p>
+                              </section>
+                              <section>
+                                <h3>재판부 판단</h3>
+                                <p>이러한 모든 양형조건을 종합 고려하면 원심의 형이 부당히 무겁다고 결론지었다</p>
+                              </section>
+                              <section>
+                                <h3>선고 형량</h3>
+                                <p>이러한 모든 양형조건을 종합 고려하면 원심의 형이 부당히 무겁다고 결론지었다</p>
+                              </section>
+                            </div>
+                            <div class="issue-cont" id="issueFact" style="display:none;">
+                              <section>
+                                <h3>사실관계</h3>
+                                <p>광주고등법원은 어린이보호구역에서 발생한 교통사고로 피해자에게 상해를 입힌 피고인 A에 대한 항소심 판결을 선고했다. 원심에서 벌금 500만 원을 선고받은 피고인이 양형부당을 주장하며 항소했다.</p>
+                              </section>
+                            </div>
+                            <div class="issue-cont" id="issuePoint" style="display:none;">
+                              <section>
+                                <h3>주요쟁점</h3>
+                                <p>고등법원은 원심의 형이 과중하다고 판단했다. 유리한 정상으로 참작한 사항은 다음과 같다. 피고인의 범행 인정 및 반성, 공제조합을 통한 일부 피해회복, 비교적 경미한 상해 정도 등이 있다.</p>
+                              </section>
+                            </div>
+                          </div>
+                        </article>
+                        <!-- // ai-answer-issue -->
+                         <div class="ai-answer-menu">
+                          <div class="menu-box">
+                            <div class="satisfaction-evaluation">
+                              <b class="label">답변에 대한 만족도를 평가해주세요.</b>
+                              <div class="satisfaction">
+                                  <span class="star-grade">
+                                    <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
+                                    <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
+                                    <button type="button" data-val="3"><span class="hidden">3점</span></button>
+                                    <button type="button" data-val="4"><span class="hidden">4점</span></button>
+                                    <button type="button" data-val="5"><span class="hidden">5점</span></button>
+                                  </span>
+                              </div>
+                            </div>
+                            <div class="menu">
+                              <button type="button" class="btn-download" data-evt="tooltip tooltip-menu" data-id="fileDownMenu" data-tooltip-txt="다운로드"><i class="ico-download"></i></button>
+                              <button type="button" class="btn-print" data-evt="tooltip" data-tooltip-txt="출력" onclick="printAnswer(this)"><i class="ico-print"></i></button>
+                              <button type="button" class="btn-copy" data-evt="tooltip" data-tooltip-txt="복사" onclick="completeCheck(this)"><i class="ico-copy"></i></button>
+                              <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
+                            </div>
+                          </div>
+                          <div class="menu-box">
+                            <div class="satisfaction-evaluation">
+                              <b class="label">답변에 대한 만족도를 평가해주세요.</b>
+                              <div class="satisfaction">
+                                  <span class="star-grade">
+                                    <button type="button" data-val="1" onclick="popOpen('#popSatisfaction')"><span class="hidden">1점</span></button>
+                                    <button type="button" data-val="2" onclick="popOpen('#popSatisfaction')"><span class="hidden">2점</span></button>
+                                    <button type="button" data-val="3"><span class="hidden">3점</span></button>
+                                    <button type="button" data-val="4"><span class="hidden">4점</span></button>
+                                    <button type="button" data-val="5"><span class="hidden">5점</span></button>
+                                  </span>
+                              </div>
+                            </div>
+                            <div class="menu">
+                              <button type="button" class="btn-txt" data-evt="tooltip-menu" data-id="fileDownMenu">다운로드</button>
+                              <button type="button" class="btn-txt" onclick="printAnswer(this)">출력</button>
+                              <button type="button" class="btn-txt" onclick="completeCheck(this)"><i>복사</i></button>
+                              <button type="button" class="btn-menu st-blue-line" onclick="document.querySelector('.btn-ref-open').click();">참조문서 확인</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- // ai-answer-comp -->
+                  </div>
+                  <!-- // ai-answer-wrap -->
+                </section>
+                <!-- // 답변영역 -->
+
+                <section class="issue-summary-section">
+                  <div class="guide-box">
+                    <i class="ico-guide-doc" aria-hidden="true"></i>
+                    <div class="cont">
+                      <p class="tit">판결문 또는 소송자료를 바탕으로 사실 관계 및 주요 쟁점을 요약 분석 합니다.</p>
+                      <ul class="list">
+                        <li>요약 방식(개별/통합)을 먼저 선택한 뒤, 필요한 자료만 입력하는 화면으로 개편되었습니다.</li>
+                        <li>문서의 분량에 따라 요약 결과가 나오기까지 1~3분 정도 소요될 수 있습니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="issue-summary-setup">
+                    <div class="choice-card-list">
+                      <label class="choice-card on">
+                        <input type="radio" name="summaryType" value="individual" checked>
+                        <span class="head">
+                          <i class="radio" aria-hidden="true"></i>
+                          <span class="tit">개별요약</span>
+                          <span class="badge">1건단위</span>
+                        </span>
+                        <span class="txt">판결문 1건 또는 소송자료 1건을 각각 따로 요약합니다.</span>
+                      </label>
+                      <label class="choice-card">
+                        <input type="radio" name="summaryType" value="integrated">
+                        <span class="head">
+                          <i class="radio" aria-hidden="true"></i>
+                          <span class="tit">통합요약</span>
+                          <span class="badge">심급 통합</span>
+                        </span>
+                        <span class="txt">1심·2심·3심(또는 항소·상고) 자료를 함께 묶어 하나의 흐름으로 요약합니다.</span>
+                      </label>
+                    </div>
+
+                    <!-- 개별요약 -->
+                    <div class="summary-tab-area" id="indvSummary">
+                      <div class="tab-type1 full">
+                        <ul>
+                          <li class="on"><a href="javascript:void(0);" data-tab-id="judgment-summary"><i class="ico-tab-judgment"></i><span>판결문 요약</span></a></li>
+                          <li><a href="javascript:void(0);" data-tab-id="litigation-summary"><i class="ico-tab-litigation"></i><span>소송자료 요약</span></a></li>
+                        </ul>
+                      </div>
+
+                      <!-- 개별요약 : 판결문요약 -->
+                      <div class="panel-box-wrap" id="judgment-summary">
+                        <div class="panel-box">
+                          <div class="tab-type2">
+                            <ul>
+                              <li class="on"><a href="javascript:void(0);" data-tab-id="caseSearch">사건번호로 조회</a></li>
+                              <li><a href="javascript:void(0);" data-tab-id="fileDirectUpload">파일 직접 업로드</a></li>
+                            </ul>
+                          </div>
+                          <div class="panel-cont on" id="caseSearch">
+                            <div class="case-search">
+                              <div class="label-row">
+                                <strong class="tit">사건번호 입력</strong>
+                                <span class="tag-doc st-red">필수</span>
+                                <span class="ps">※ 최대 3건까지 조회 가능</span>
+                              </div>
+                              <div class="form-row">
+                                <select title="법원">
+                                  <option>대법원</option>
+                                </select>
+                                <select title="연도">
+                                  <option>2026</option>
+                                </select>
+                                <select title="사건구분">
+                                  <option>다</option>
+                                </select>
+                                <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
+                                <button type="button" class="btn-nm st-blue">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel-cont" id="fileDirectUpload">
+                            <div class="label-row">
+                                <strong class="tit">판결문 파일 업로드</strong>
+                                <span class="tag-doc st-red">필수</span>
+                                <span class="ps">※ 최대 3건까지 업로드 가능</span>
+                              </div>
+                              <div class="file-upload-wrap" id="dropIndvJudgment">
+                                <div class="file-upload-set">
+                                  <div class="file-upload">
+                                    <input type="file" id="fileUploadInput" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                    <div class="text">
+                                      <strong>판결문 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                      <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                    </div>
+                                    <label for="fileUploadInput" class="btn-upload">파일 선택</label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="upload-file-list type2" id="listIndvJudgment" style="display:none;">
+                            <strong class="file-list-tit">업로드파일</strong>
+                            <ul class="file-ul"></ul>
+                          </div>
+                          <div class="search-result">
+                              <div class="label-row">
+                                <i class="ico-success" aria-hidden="true"></i>
+                                <strong class="tit">조회결과</strong>
+                              </div>
+                              <ul class="result-list">
+                                <li>
+                                  <span class="tag-doc st-blue">1심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                                <li>
+                                  <span class="tag-doc st-green">2심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                                <li>
+                                  <span class="tag-doc st-red">3심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- // 개별요약 : 판결문요약 -->
+                      <!-- 개별요약 : 소송자료요약 -->
+                      <div class="panel-box-wrap" id="litigation-summary" style="display:none;">
+                        <div class="panel-box">
+                          <div class="label-row">
+                              <strong class="tit">소송자료 파일 업로드</strong>
+                              <span class="tag-doc st-red">필수</span>
+                          </div>
+                          <div class="file-upload-wrap" id="dropIndvLitigation">
+                            <div class="file-upload-set">
+                              <div class="file-upload">
+                                <input type="file" id="fileUploadInput" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                <div class="text">
+                                  <strong>소송자료 파일(준비서면, 상고이유서 등)을 여기에 끌어다 놓거나 직접 선택하세요.</strong>
+                                  <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                </div>
+                                <label for="fileUploadInput" class="btn-upload">파일 선택</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="upload-file-list type2" id="listIndvLitigation" style="display:none;">
+                            <strong class="file-list-tit">업로드파일</strong>
+                            <ul class="file-ul"></ul>
+                          </div>
+                          <p class="txt-msg">개별요약은 조회 없이 업로드만 지원합니다. 관련 판결문 조회가 필요하면 상단에서 통합요약을 선택하세요.</p>
+                        </div>
+                      </div>
+                      <!-- // 개별요약 : 소송자료요약 -->
+                      <div class="summary-action">
+                        <button type="button" class="btn-lg st-navy" onclick="document.querySelector('.issue-summary-content').classList.add('mode-answer');answerEffect();">요약하기</button>
+                        <p class="txt-msg">문서 분량에 따라 1~3분 정도 소요될 수 있습니다.</p>
+                      </div>
+                    </div>
+                    <!-- // 개별요약 -->
+
+                    <!-- 통합요약 -->
+                    <div class="summary-tab-area" id="intgSummary" style="display:none;">
+                      <div class="tab-type1 full">
+                        <ul>
+                          <li class="on"><a href="javascript:void(0);" data-tab-id="integrated-judgment-summary"><i class="ico-tab-judgment"></i><span>판결문 요약</span></a></li>
+                          <li><a href="javascript:void(0);" data-tab-id="integrated-litigation-summary"><i class="ico-tab-litigation"></i><span>소송자료 요약</span></a></li>
+                        </ul>
+                      </div>
+                      <!-- 통합요약 : 판결문요약 -->
+                      <div class="panel-box-wrap" id="integrated-judgment-summary">
+                        <p class="txt-msg">1심 · 2심 · 3심 판결문을 심급 구분 없이 함께 입력하면, 하나의 흐름으로 통합 요약합니다.</p>
+                        <div class="panel-box">
+                          <div class="tab-type2">
+                            <ul>
+                              <li class="on"><a href="javascript:void(0);" data-tab-id="integrated-caseSearch">사건번호로 조회</a></li>
+                              <li><a href="javascript:void(0);" data-tab-id="integrated-fileDirectUpload">파일 직접 업로드</a></li>
+                            </ul>
+                          </div>
+                          <div class="panel-cont on" id="integrated-caseSearch">
+                            <div class="case-search">
+                              <div class="label-row">
+                                <strong class="tit">사건번호 입력</strong>
+                                <span class="tag-doc st-red">필수</span>
+                                <span class="ps">※ 최대 3건까지 조회 가능</span>
+                              </div>
+                              <div class="form-row">
+                                <select title="법원">
+                                  <option>대법원</option>
+                                </select>
+                                <select title="연도">
+                                  <option>2026</option>
+                                </select>
+                                <select title="사건구분">
+                                  <option>다</option>
+                                </select>
+                                <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
+                                <button type="button" class="btn-nm st-blue">조회</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div  class="panel-cont" id="integrated-fileDirectUpload">
+                              <div class="label-row">
+                                <strong class="tit">판결문 파일 업로드 </strong>
+                                <span class="tag-doc st-red">필수</span>
+                                <span class="ps">※ 최대 3건까지 업로드 가능</span>
+                              </div>
+                           
+                              <div class="file-upload-wrap" id="dropIntgJudgment">
+                                <div class="file-upload-set">
+                                  <div class="file-upload">
+                                    <input type="file" id="fileUploadInput" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                    <div class="text">
+                                      <strong>판결문 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                      <p class="txt">PDF, HWP, DOCX · 최대 10MB · 다중 파일 선택 가능 (최소 2건~최대 3건)</p>
+                                    </div>
+                                    <label for="fileUploadInput" class="btn-upload">파일 선택</label>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="upload-file-list type2" id="listIntgJudgment" style="display:none;">
+                            <strong class="file-list-tit">업로드파일</strong>
+                            <ul class="file-ul"></ul>
+                          </div>
+                          <div class="search-result">
+                              <div class="label-row">
+                                <i class="ico-success" aria-hidden="true"></i>
+                                <strong class="tit">조회결과</strong>
+                              </div>
+                              <ul class="result-list">
+                                <li>
+                                  <span class="tag-doc st-blue">1심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                                <li>
+                                  <span class="tag-doc st-green">2심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                                <li>
+                                  <span class="tag-doc st-red">3심</span>
+                                  <span class="name">대법원 2017 가단 04</span>
+                                  <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- // 통합요약 : 판결문요약 -->
+
+                      <!-- 통합요약 : 소송자료요약 -->
+                      <div class="panel-box-wrap" id="integrated-litigation-summary" style="display:none;">
+                          <div class="tltle-row">
+                            <strong class="title">심급 구성 선택</strong>
+                          </div>
+                        <div class="choice-card-list">
+                          <label class="choice-card on">
+                            <input type="radio" name="litigationType" value="supreme" checked>
+                            <span class="head">
+                              <i class="radio" aria-hidden="true"></i>
+                              <span class="tit">1심+2심+상고이유서</span>
+                            </span>
+                            <span class="txt">대법원까지 진행된 사건에 사용합니다.</span>
+                          </label>
+                          <label class="choice-card">
+                            <input type="radio" name="litigationType" value="appellate" >
+                            <span class="head">
+                              <i class="radio" aria-hidden="true"></i>
+                              <span class="tit">1심+항소이유서</span>
+                            </span>
+                            <span class="txt">항소심까지만 진행된 사건에 사용합니다.</span>
+                          </label>
+                        </div>
+
+                        <!-- 통합요약 : 소송자료요약 : 상고이유서 -->
+                        <div class="pannel-box-wrap" id="supremeAppeal">
+                          <div class="tltle-row">
+                              <strong class="title">상고이유서</strong>
+                            </div>
+                          <div class="panel-box">
+                            <div class="section-block">
+                              <div class="label-row">
+                                <strong class="tit">상고이유서 파일 업로드</strong>
+                                <span class="tag-doc st-red">필수</span>
+                              </div>
+                              <div class="file-upload-wrap" id="dropIntgLitigAppeal">
+                                <div class="file-upload-set">
+                                  <div class="file-upload">
+                                    <input type="file" id="dropIntgLitigAppeal" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                    <div class="text">
+                                      <strong>상고이유서 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                      <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                    </div>
+                                    <label for="dropIntgLitigAppeal" class="btn-upload">파일 선택</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="upload-file-list type2" id="listIntgLitigAppeal" style="display:none;">
+                                <strong class="file-list-tit">업로드파일</strong>
+                                <ul class="file-ul"></ul>
+                              </div>
+                            </div>
+                          
+                            <div class="section-block line-t">
+                              <div class="label-row">
+                                <strong class="tit">관련 판결문</strong>
+                                <span class="tag-doc st-navy">선택</span>
+                              </div>
+                              <div class="tab-type2">
+                                <ul>
+                                  <li class="on"><a href="javascript:void(0);" data-tab-id="intgLitigJudgmentCaseSearch">사건번호로 조회</a></li>
+                                  <li><a href="javascript:void(0);" data-tab-id="intgLitigJudgmentFileUpload">파일 직접 업로드</a></li>
+                                </ul>
+                              </div>
+                              <div class="panel-cont on" id="intgLitigJudgmentCaseSearch">
+                                <div class="case-search">
+                                  <!-- <div class="label-row">
+                                    <strong class="tit">사건번호 입력</strong>
+                                    <span class="tag-doc st-red">필수</span>
+                                    <span class="ps">※ 최대 3건까지 조회 가능</span>
+                                  </div> -->
+                                  <div class="form-row">
+                                    <select title="법원">
+                                      <option>대법원</option>
+                                    </select>
+                                    <select title="연도">
+                                      <option>2026</option>
+                                    </select>
+                                    <select title="사건구분">
+                                      <option>다</option>
+                                    </select>
+                                    <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
+                                    <button type="button" class="btn-nm st-blue">조회</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel-cont" id="intgLitigJudgmentFileUpload">
+                                  <div class="file-upload-wrap" id="dropIntgLitigAppealJudgment">
+                                    <div class="file-upload-set">
+                                      <div class="file-upload">
+                                        <input type="file" id="fileUploadInput" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                        <div class="text">
+                                          <strong>대법원 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                          <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                        </div>
+                                        <label for="fileUploadInput" class="btn-upload">파일 선택</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="upload-file-list type2" id="listIntgLitigAppealJudgment" style="display:none;">
+                                <strong class="file-list-tit">업로드파일</strong>
+                                <ul class="file-ul"></ul>
+                              </div>
+                              <div class="search-result">
+                                  <div class="label-row">
+                                    <i class="ico-success" aria-hidden="true"></i>
+                                    <strong class="tit">조회결과</strong>
+                                  </div>
+                                  <ul class="result-list">
+                                    <li>
+                                      <span class="tag-doc st-blue">1심</span>
+                                      <span class="name">대법원 2017 가단 04</span>
+                                      <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                    </li>
+                                    <li>
+                                      <span class="tag-doc st-green">2심</span>
+                                      <span class="name">대법원 2017 가단 04</span>
+                                      <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                    </li>
+                                    <li>
+                                      <span class="tag-doc st-red">3심</span>
+                                      <span class="name">대법원 2017 가단 04</span>
+                                      <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                    </li>
+                                  </ul>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- // 통합요약 : 소송자료요약 : 상고이유서 -->
+
+                        <!-- 통합요약 : 소송자료요약 : 항소이유서 -->
+                        <div class="pannel-box-wrap" id="appellateAppeal" style="display:none;">
+                          <div class="tltle-row">
+                            <strong class="title">항소이유서</strong>
+                          </div>
+                          <div class="panel-box">
+                              <div class="section-block">
+                                <div class="label-row">
+                                  <strong class="tit">항소이유서 파일 업로드</strong>
+                                  <span class="tag-doc st-red">필수</span>
+                                </div>
+                                <div class="file-upload-wrap" id="dropIntgLitigAppellate">
+                                  <div class="file-upload-set">
+                                    <div class="file-upload">
+                                      <input type="file" id="dropIntgLitigAppellate" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                      <div class="text">
+                                        <strong>항소이유서 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                        <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                      </div>
+                                      <label for="dropIntgLitigAppeal" class="btn-upload">파일 선택</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="upload-file-list type2" id="listIntgLitigAppellate" style="display:none;">
+                                  <strong class="file-list-tit">업로드파일</strong>
+                                  <ul class="file-ul"></ul>
+                                </div>
+                              </div>
+
+                              <div class="section-block line-t">
+                                <div class="label-row">
+                                  <strong class="tit">관련 판결문</strong>
+                                  <span class="tag-doc st-navy">선택</span>
+                                </div>
+                                <div class="tab-type2">
+                                  <ul>
+                                    <li class="on"><a href="javascript:void(0);" data-tab-id="intgLitigAppellateJudgmentCaseSearch">사건번호로 조회</a></li>
+                                    <li><a href="javascript:void(0);" data-tab-id="intgLitigAppellateJudgmentFileUpload">파일 직접 업로드</a></li>
+                                  </ul>
+                                </div>
+                                <div class="panel-cont on" id="intgLitigAppellateJudgmentCaseSearch">
+                                  <div class="case-search">
+                                    <!-- <div class="label-row">
+                                      <strong class="tit">사건번호 입력</strong>
+                                      <span class="tag-doc st-red">필수</span>
+                                      <span class="ps">※ 최대 3건까지 조회 가능</span>
+                                    </div> -->
+                                    <div class="form-row">
+                                      <select title="법원">
+                                        <option>대법원</option>
+                                      </select>
+                                      <select title="연도">
+                                        <option>2026</option>
+                                      </select>
+                                      <select title="사건구분">
+                                        <option>다</option>
+                                      </select>
+                                      <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
+                                      <button type="button" class="btn-nm st-blue">조회</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel-cont" id="intgLitigAppellateJudgmentFileUpload">
+                                    <div class="file-upload-wrap" id="dropIntgLitigAppellateJudgment">
+                                      <div class="file-upload-set">
+                                        <div class="file-upload">
+                                          <input type="file" id="fileUploadInput" multiple class="file-input" accept=".pdf,.hwp,.docx,.doc" />
+                                          <div class="text">
+                                            <strong>2심 판결문 파일을 여기다 끌어다 놓거나 직접 선택하세요.</strong>
+                                            <p class="txt">PDF, HWP, DOCX · 최대 10MB · 1건만 업로드 가능</p>
+                                          </div>
+                                          <label for="fileUploadInput" class="btn-upload">파일 선택</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="upload-file-list type2" id="listIntgLitigAppellateJudgment" style="display:none;">
+                                  <strong class="file-list-tit">업로드파일</strong>
+                                  <ul class="file-ul"></ul>
+                                </div>
+                                <div class="search-result">
+                                    <div class="label-row">
+                                      <i class="ico-success" aria-hidden="true"></i>
+                                      <strong class="tit">조회결과</strong>
+                                    </div>
+                                    <ul class="result-list">
+                                      <li>
+                                        <span class="tag-doc st-blue">1심</span>
+                                        <span class="name">대법원 2017 가단 04</span>
+                                        <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                      </li>
+                                      <li>
+                                        <span class="tag-doc st-green">2심</span>
+                                        <span class="name">대법원 2017 가단 04</span>
+                                        <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                      </li>
+                                      <li>
+                                        <span class="tag-doc st-red">3심</span>
+                                        <span class="name">대법원 2017 가단 04</span>
+                                        <button type="button" class="btn-delete"><span class="hidden">삭제</span></button>
+                                      </li>
+                                    </ul>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- // 통합요약 : 소송자료요약 : 항소이유서 -->
+
+                      </div>
+                      <!-- // 통합요약 : 소송자료요약 -->
+
+                      <div class="summary-action">
+                        <button type="button" class="btn-lg st-navy" onclick="document.querySelector('.issue-summary-content').classList.add('mode-answer');answerEffect();">요약하기</button>
+                        <p class="txt-msg">문서 분량에 따라 1~3분 정도 소요될 수 있습니다.</p>
+                      </div>
+                    </div>
+                    <!-- // 통합요약 -->
+
+                  </div>
+
+              </section>
+            </main>
+
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- // wrap -->
+
+<script>
+
+function initFileUpload(dropSel, listSel, showSelect, maxFiles) {
+  var showType = !!showSelect;
+  var limit = maxFiles || 0; // 0 = 제한없음
+  var $dropWrap = $(dropSel);
+  var $drop  = $dropWrap.find('.file-upload');
+  var $input = $dropWrap.find('.file-input');
+  var $list  = $(listSel);
+  var $ul    = $list.find('.file-ul');
+
+  // 파일 수 제한에 따라 input 속성 및 안내문구 설정
+  var $txt = $dropWrap.find('.file-upload .txt');
+  if (limit === 1) {
+    $input.removeAttr('multiple');
+  } else if (limit > 1) {
+    $input.attr('multiple', 'multiple');
+  }
+
+  function formatSize(bytes) {
+    if (!bytes) return '0KB';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + 'KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + 'MB';
+  }
+
+  function buildItem(file) {
+    var $li = $('<li>');
+
+    if (showType) {
+      var $sel = $('<div class="file-sel">');
+      var $select = $('<select><option value="">미분류</option><option value="1">1심</option><option value="2">2심</option><option value="3">3심</option></select>');
+      $sel.append($select);
+
+      if ($ul.children().length === 0) {
+        var $tip = $('<div class="tooltip-plan"><p class="txt">소송자료 유형을 선택해주세요.</p><button type="button" class="btn-close" aria-label="닫기"></button></div>');
+        $sel.append($tip);
+        var closeTip = function() { $tip.fadeOut(150, function() { $(this).remove(); }); };
+        $select.one('change focus', closeTip);
+        $tip.find('.btn-close').on('click', closeTip);
+      }
+
+      $li.append($sel);
+    }
+
+    var $item = $('<div class="file-item">');
+    var $fname = $('<div class="file-name">');
+    $fname.append($('<span class="name">').text(file.name));
+    $fname.append($('<span class="file-info">').text(formatSize(file.size)));
+    $item.append($fname);
+
+    var $del = $('<div class="file-del">');
+    var $delBtn = $('<button type="button" class="btn-delete"><span class="hidden">삭제</span></button>');
+    $delBtn.on('click', function() {
+      $li.remove();
+      if ($ul.children().length === 0) { $list.hide(); }
+    });
+    $del.append($delBtn);
+    $item.append($del);
+    $li.append($item);
+
+    return $li;
+  }
+
+  function addFiles(files) {
+    var toAdd = files;
+    if (limit > 0) {
+      var slots = limit - $ul.children().length;
+      if (slots <= 0) return;
+      toAdd = files.slice(0, slots);
+    }
+    toAdd.forEach(function(file) { $ul.append(buildItem(file)); });
+    if ($ul.children().length > 0) { $list.show(); }
+  }
+
+  $input.on('change', function() {
+    addFiles(Array.from(this.files));
+    this.value = '';
+  });
+
+  $drop.on('dragover dragenter', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).addClass('drag-over');
+  });
+
+  $drop.on('dragleave', function(e) {
+    if (!$(this).has(e.relatedTarget).length) { $(this).removeClass('drag-over'); }
+  });
+
+  $drop.on('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).removeClass('drag-over');
+    var dt = e.originalEvent.dataTransfer;
+    if (dt && dt.files.length) { addFiles(Array.from(dt.files)); }
+  });
+}
+
+
+$(function() {
+  
+  //파일 업로드 케이스  initFileUpload(드래그영역, 리스트영역, 셀렉트여부, 최대파일수)
+  initFileUpload('#dropIndvJudgment',   '#listIndvJudgment',   false, 1); // 개별요약 - 판결문요약
+  initFileUpload('#dropIndvLitigation', '#listIndvLitigation', true,  1); // 개별요약 - 소송자료요약
+
+  initFileUpload('#dropIntgJudgment',   '#listIntgJudgment',   false, 3); // 통합요약 - 판결문요약
+  initFileUpload('#dropIntgLitigAppeal',           '#listIntgLitigAppeal',           false, 1); // 통합요약 - 소송자료요약 - 상고이유서
+  initFileUpload('#dropIntgLitigAppealJudgment',   '#listIntgLitigAppealJudgment',   true,  1); // 통합요약 - 소송자료요약 - 상고관련판결문
+  initFileUpload('#dropIntgLitigAppellate',         '#listIntgLitigAppellate',         false, 1); // 통합요약 - 소송자료요약 - 항소이유서
+  initFileUpload('#dropIntgLitigAppellateJudgment', '#listIntgLitigAppellateJudgment', true,  1); // 통합요약 - 소송자료요약 - 항소관련판결문
+  
+
+  $(document).on('click', '.ai-answer-issue .case-chip', function(){
+    $(this).addClass('on').siblings('.case-chip').removeClass('on');
+  });
+
+  $(document).on('change', '.choice-card-list input[type="radio"]', function(){
+    var $list = $(this).closest('.choice-card-list');
+    $list.find('.choice-card').removeClass('on');
+    $(this).closest('.choice-card').addClass('on');
+    var name = $(this).attr('name');
+    var val = $(this).val();
+    if (name === 'summaryType') {
+      $('#indvSummary').toggle(val === 'individual');
+      $('#intgSummary').toggle(val === 'integrated');
+    } else if (name === 'litigationType') {
+      $('#supremeAppeal').toggle(val === 'supreme');
+      $('#appellateAppeal').toggle(val === 'appellate');
+    }
+  });
+
+
+
+});
+
+// 답변영역 효과
+function answerEffect(){
+    const reveals = document.querySelectorAll(".ai-answer-issue > *, .ai-answer-issue > .issue-body > *, .ai-answer-menu");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = [...reveals].indexOf(entry.target);
+          entry.target.style.transitionDelay = `${index * 0.08}s`;
+          entry.target.classList.add("active");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(el => observer.observe(el));
+}
+</script>
+
+
+</body>
+</html>
+
+

@@ -18,9 +18,12 @@
 <body>
   <div class="wrap">
     <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
-      <div class="contents">
-        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
-          <main class="content" aria-labelledby="content">
+      <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+      <div class="container-wrap">
+        <script> $(document).ready(function() { $.get('sidebar.html', function(data) { $('.container-wrap').prepend(data);}); }); </script>        
+        <div class="container">
+          <div class="contents">
+            <main class="content" aria-labelledby="content">
 
             <div class="title-wrap no-line">
                 <h2 class="title-page">자주 묻는 질문</h2>
@@ -98,8 +101,13 @@
                 </li>
               </ul>
 
-          </main>
+            </main>
+          </div>
+          <!-- // contents -->
+        </div>
+        <!-- // container -->
       </div>
+      <!-- // container-wrap -->
   </div>
   <!-- // wrap -->
 

@@ -18,26 +18,33 @@
 <body>
   <div class="wrap">
     <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);}); }); </script>        
-      <div class="contents error-contents">
-        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
-          <main class="content" aria-labelledby="content">
-            
-            <div class="error-wrap">
-              <i class="ico-error-session"></i>
-              <div class="error-text">
-                <strong>로그인 세션이 만료되었습니다.</strong>
-                <p>보안을 위해 로그아웃 되었습니다. 다시 로그인해주세요.</p>
-                <div class="btn-wrap">
-                  <button type="button" class="btn-lg st-blue">홈으로 이동</button>
+      <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+      <div class="container-wrap">
+        <script> $(document).ready(function() { $.get('sidebar.html', function(data) { $('.container-wrap').prepend(data);}); }); </script>        
+        <div class="container">
+          <div class="contents error-contents">
+            <main class="content" aria-labelledby="content">
+              
+              <div class="error-wrap">
+                <i class="ico-error-session"></i>
+                <div class="error-text">
+                  <strong>로그인 세션이 만료되었습니다.</strong>
+                  <p>보안을 위해 로그아웃 되었습니다. 다시 로그인해주세요.</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn-lg st-blue">홈으로 이동</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-          </main>
+            </main>
+          </div>
+          <!-- // contents -->
+        </div>
+        <!-- // container -->
       </div>
+      <!-- // container-wrap -->
   </div>
   <!-- // wrap -->
-
 
 </body>
 </html>

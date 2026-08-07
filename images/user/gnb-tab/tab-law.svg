@@ -1,0 +1,9 @@
+<svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M130.968 38.9677C130.968 43.9561 135.012 48 140 48H0C4.98838 48 9.03226 43.9561 9.03226 38.9677V12C9.03226 5.37258 14.4048 0 21.0323 0H118.968C125.595 0 130.968 5.37258 130.968 12V38.9677Z" fill="url(#tabLaw)"/>
+<defs>
+<linearGradient id="tabLaw" x1="27.5" y1="0" x2="65" y2="49.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3850B0"/>
+<stop offset="1" stop-color="#1C3494"/>
+</linearGradient>
+</defs>
+</svg>
