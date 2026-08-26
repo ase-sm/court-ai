@@ -411,7 +411,7 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer-stop .btn-stop:focus{background: #E1E7EF;  border: 1px solid #B4C4D6;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop{width:20px;height:20px;min-width: 20px;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop:after{width:6px;height:6px;}
-.ai-answer-comp .ai-answer {padding: 40px 32px 24px; background: linear-gradient(180deg, #F4F6F9 0%, #FFFFFF 10.71%); border-radius: 16px; position:relative;}
+.ai-answer-comp .ai-answer {padding: 40px 0 24px;/* background: linear-gradient(180deg, #F4F6F9 0%, #FFFFFF 10.71%); border-radius: 16px; position:relative;*/}
 .ai-answer-comp .ai-answer h1,
 .ai-answer-comp .ai-answer .tit-article {display:flex;gap:16px;font-weight:600;font-size:16px; color:#1D1D1D;margin-bottom:56px;line-height:1;display:flex;align-items:center;}
 /* .ai-answer-comp .ai-answer h1:before,
@@ -457,6 +457,7 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:after{display:none;}
 
 /* ai-answer-issue */
+.ai-answer-issue{padding-bottom:24px;}
 .ai-answer-issue > *,
 .ai-answer-issue > .issue-body > *{opacity: 0; transform: translateY(80px); transition: all 0.8s ease; will-change: transform, opacity;}
 .ai-answer-issue .active{opacity: 1 !important; transform: none;}
@@ -480,7 +481,7 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-issue .issue-cont h3{font-size:20px;font-weight:600;line-height:1.5;color:#000;}
 .ai-answer-issue .issue-cont p{font-size:16px;font-weight:400;line-height:1.7;color:#6D7882;}
 
-.ai-answer-comp .ai-answer-menu {padding:16px 0;border-top:1px solid #99B0CB;}
+.ai-answer-comp .ai-answer-menu {padding:8px 0 16px;}
 .ai-answer-comp .ai-answer-menu .menu-box{display:flex;align-items:center;justify-content: space-between; height: 80px;background: #F4F6F9;padding:16px 24px;border: 1px solid #E1E7EF;border-radius: 5px;}
 .ai-answer-comp .ai-answer-menu .satisfaction-evaluation {display:flex;align-items:center;gap:24px;}
 .ai-answer-comp .ai-answer-menu .satisfaction-evaluation .label {font-size:16px; color:#000000;font-weight:600;}
@@ -491,13 +492,22 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer-menu .menu .btn-txt:hover{background: #F4F6F9;  border: 1px solid #B4C4D6;}
 .ai-answer-comp .ai-answer-menu .menu .btn-menu{height:40px;margin-left:8px;}
 
+.answer-view-tab{display:flex;justify-content:flex-end;align-items:stretch;margin-top:-24px;background:#fff;border-top:1px solid #E6E8EA;border-bottom:1px solid #E6E8EA;}
+.answer-view-tab ul{display:flex;align-items:stretch;}
+.answer-view-tab li button{display:flex;align-items:center;padding:8px 20px;border:0;border-left:1px solid #E6E8EA;background:#fff;font-size:14px;font-weight:400;line-height:1.7;color:#1E2124;white-space:nowrap;}
+.answer-view-tab li.on button{background:#F4F6F9;}
+
 /* effect */
 .ai-answer-comp .ai-answer > *, 
+.answer-view-tab,
 .ai-answer-menu{ opacity: 0; transform: translateY(80px); transition: all 0.8s ease; will-change: transform, opacity; }
 .ai-answer-menu .txt-msg{margin-top:20px;color: #33363D;font-size: 14px;display:flex;align-items: center; gap:8px;}
 .ai-answer-menu .txt-msg:before{content:'';display:block;width: 16px;height:16px;background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1.5C11.5899 1.5 14.5 4.41015 14.5 8C14.5 11.5899 11.5899 14.5 8 14.5C4.41015 14.5 1.5 11.5899 1.5 8C1.5 4.41015 4.41015 1.5 8 1.5ZM8 9.7334C7.63181 9.7334 7.33301 10.0322 7.33301 10.4004C7.33322 10.7684 7.63194 11.0664 8 11.0664H8.00586C8.37392 11.0664 8.67264 10.7684 8.67285 10.4004C8.67285 10.0322 8.37405 9.7334 8.00586 9.7334H8ZM8.00586 4.93359C7.63784 4.93367 7.33904 5.23162 7.33887 5.59961V8C7.3389 8.36811 7.63776 8.66692 8.00586 8.66699C8.37403 8.66699 8.67282 8.36816 8.67285 8V5.59961C8.67268 5.23157 8.37394 4.93359 8.00586 4.93359Z' fill='%2333363D'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;}
-.ai-answer-comp .ai-answer .active, .ai-answer-menu.active{ opacity: 1; transform: none; }
-.ai-answer .fade-in, .ai-answer-menu.fade-in { transform: translateY(80px); }
+.ai-answer-comp .ai-answer .active, 
+.answer-view-tab.active,
+.ai-answer-menu.active{ opacity: 1; transform: none; }
+.ai-answer .fade-in, 
+.ai-answer-menu.fade-in { transform: translateY(80px); }
 
 /* ===========================================
     참조문서

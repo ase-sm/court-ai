@@ -117,6 +117,12 @@
                             </div>
                           </div>
                         </article>
+                        <div class="answer-view-tab">
+                          <ul>
+                            <li class="on"><button type="button">HTML</button></li>
+                            <li><button type="button">Markdown</button></li>
+                          </ul>
+                        </div>
                         <!-- // ai-answer-issue -->
                          <div class="ai-answer-menu">
                           <div class="menu-box">
@@ -789,7 +795,7 @@ $(function() {
 
 // 답변영역 효과
 function answerEffect(){
-    const reveals = document.querySelectorAll(".ai-answer-issue > *, .ai-answer-issue > .issue-body > *, .ai-answer-menu");
+    const reveals = document.querySelectorAll(".ai-answer-issue > *, .answer-view-tab, .ai-answer-issue > .issue-body > *, .ai-answer-menu");
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -944,6 +950,14 @@ function answerEffect(){
       initFilterSelect($(this));
     });
   });
+
+  // html / markdown
+  $(function(){
+    $(document).on("click", ".answer-view-tab button", function(){
+      $(this).closest("li").addClass("on").siblings().removeClass("on");
+    });
+  });
+
 })();
 </script>
 

@@ -284,6 +284,14 @@
                           <!-- //table -->
                         </article>
                         <!-- // 답변영역 -->
+
+                        <div class="answer-view-tab">
+                          <ul>
+                            <li class="on"><button type="button">HTML</button></li>
+                            <li><button type="button">Markdown</button></li>
+                          </ul>
+                        </div>
+
                         <div class="ai-answer-menu">
                           <div class="menu-box">
                             <div class="satisfaction-evaluation">
@@ -1340,7 +1348,7 @@ function aiFileUpload() {
 
   // 답변영역 효과
   function answerEffect(){
-      const reveals = document.querySelectorAll(".ai-answer > *, .ai-answer-menu");
+      const reveals = document.querySelectorAll(".ai-answer > *, .answer-view-tab, .ai-answer-menu");
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1637,9 +1645,15 @@ $(function() {
 
     $(".pop-header").css("cursor", "move");
 });
+
+
+// html/ markdown
+$(function(){
+  $(document).on("click", ".answer-view-tab button", function(){
+    $(this).closest("li").addClass("on").siblings().removeClass("on");
+  });
+});
 </script>
-
-
 
 </body>
 </html>
