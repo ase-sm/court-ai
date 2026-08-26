@@ -227,15 +227,9 @@
                                 <span class="ps">※ 최대 3건까지 조회 가능</span>
                               </div>
                               <div class="form-row">
-                                <select title="법원">
-                                  <option>대법원</option>
-                                </select>
-                                <select title="연도">
-                                  <option>2026</option>
-                                </select>
-                                <select title="사건구분">
-                                  <option>다</option>
-                                </select>
+                                <div class="filter-select" data-key="court"><select class="js-filter-select" data-key="court" title="법원"></select></div>
+                                <div class="filter-select" data-key="year"><select class="js-filter-select" data-key="year" title="연도"></select></div>
+                                <div class="filter-select" data-key="caseType"><select class="js-filter-select" data-key="caseType" title="사건구분"></select></div>
                                 <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
                                 <button type="button" class="btn-nm st-blue">조회</button>
                               </div>
@@ -350,15 +344,9 @@
                                 <span class="ps">※ 최대 3건까지 조회 가능</span>
                               </div>
                               <div class="form-row">
-                                <select title="법원">
-                                  <option>대법원</option>
-                                </select>
-                                <select title="연도">
-                                  <option>2026</option>
-                                </select>
-                                <select title="사건구분">
-                                  <option>다</option>
-                                </select>
+                                <div class="filter-select" data-key="court"><select class="js-filter-select" data-key="court" title="법원"></select></div>
+                                <div class="filter-select" data-key="year"><select class="js-filter-select" data-key="year" title="연도"></select></div>
+                                <div class="filter-select" data-key="caseType"><select class="js-filter-select" data-key="caseType" title="사건구분"></select></div>
                                 <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
                                 <button type="button" class="btn-nm st-blue">조회</button>
                               </div>
@@ -487,15 +475,9 @@
                                     <span class="ps">※ 최대 3건까지 조회 가능</span>
                                   </div> -->
                                   <div class="form-row">
-                                    <select title="법원">
-                                      <option>대법원</option>
-                                    </select>
-                                    <select title="연도">
-                                      <option>2026</option>
-                                    </select>
-                                    <select title="사건구분">
-                                      <option>다</option>
-                                    </select>
+                                    <div class="filter-select" data-key="court"><select class="js-filter-select" data-key="court" title="법원"></select></div>
+                                    <div class="filter-select" data-key="year"><select class="js-filter-select" data-key="year" title="연도"></select></div>
+                                    <div class="filter-select" data-key="caseType"><select class="js-filter-select" data-key="caseType" title="사건구분"></select></div>
                                     <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
                                     <button type="button" class="btn-nm st-blue">조회</button>
                                   </div>
@@ -595,15 +577,9 @@
                                       <span class="ps">※ 최대 3건까지 조회 가능</span>
                                     </div> -->
                                     <div class="form-row">
-                                      <select title="법원">
-                                        <option>대법원</option>
-                                      </select>
-                                      <select title="연도">
-                                        <option>2026</option>
-                                      </select>
-                                      <select title="사건구분">
-                                        <option>다</option>
-                                      </select>
+                                      <div class="filter-select" data-key="court"><select class="js-filter-select" data-key="court" title="법원"></select></div>
+                                      <div class="filter-select" data-key="year"><select class="js-filter-select" data-key="year" title="연도"></select></div>
+                                      <div class="filter-select" data-key="caseType"><select class="js-filter-select" data-key="caseType" title="사건구분"></select></div>
                                       <input type="text" placeholder="사건번호 (예:12345)" title="사건번호">
                                       <button type="button" class="btn-nm st-blue">조회</button>
                                     </div>
@@ -829,6 +805,146 @@ function answerEffect(){
 
     reveals.forEach(el => observer.observe(el));
 }
+</script>
+
+<script>
+  // 셀렉트박스 필터적용
+(function(){
+  var CASE_SELECT_DATA = {
+    court: [
+      { id: "대법원", text: "대법원" },
+      { id: "서울고등법원", text: "서울고등법원" },
+      { id: "대전고등법원", text: "대전고등법원" },
+      { id: "대구고등법원", text: "대구고등법원" },
+      { id: "부산고등법원", text: "부산고등법원" },
+      { id: "광주고등법원", text: "광주고등법원" },
+      { id: "수원고등법원", text: "수원고등법원" },
+      { id: "특허법원", text: "특허법원" },
+      { id: "서울중앙지방법원", text: "서울중앙지방법원" },
+      { id: "서울동부지방법원", text: "서울동부지방법원" },
+      { id: "서울서부지방법원", text: "서울서부지방법원" },
+      { id: "서울남부지방법원", text: "서울남부지방법원" },
+      { id: "서울북부지방법원", text: "서울북부지방법원" },
+      { id: "의정부지방법원", text: "의정부지방법원" },
+      { id: "인천지방법원", text: "인천지방법원" },
+      { id: "수원지방법원", text: "수원지방법원" },
+      { id: "춘천지방법원", text: "춘천지방법원" },
+      { id: "대전지방법원", text: "대전지방법원" },
+      { id: "청주지방법원", text: "청주지방법원" },
+      { id: "대구지방법원", text: "대구지방법원" },
+      { id: "부산지방법원", text: "부산지방법원" },
+      { id: "울산지방법원", text: "울산지방법원" },
+      { id: "창원지방법원", text: "창원지방법원" },
+      { id: "광주지방법원", text: "광주지방법원" },
+      { id: "전주지방법원", text: "전주지방법원" },
+      { id: "제주지방법원", text: "제주지방법원" }
+    ],
+    year: (function(){
+      var y = [];
+      for (var i = 2026; i >= 2010; i--) { y.push({ id: String(i), text: String(i) }); }
+      return y;
+    })(),
+    caseType: [
+      { id: "가단", text: "가단" }, { id: "가합", text: "가합" }, { id: "가소", text: "가소" },
+      { id: "나", text: "나" }, { id: "다", text: "다" }, { id: "라", text: "라" }, { id: "마", text: "마" },
+      { id: "카단", text: "카단" }, { id: "카합", text: "카합" },
+      { id: "드", text: "드" }, { id: "느", text: "느" }, { id: "므", text: "므" },
+      { id: "구", text: "구" }, { id: "누", text: "누" }, { id: "두", text: "두" },
+      { id: "고단", text: "고단" }, { id: "고합", text: "고합" }, { id: "노", text: "노" }, { id: "도", text: "도" },
+      { id: "허", text: "허" }, { id: "후", text: "후" }
+    ]
+  };
+  var CASE_SELECT_DEFAULT = { court: "대법원", year: "2026", caseType: "다" };
+
+  function toVal(v){
+    return v == null ? "" : String(v);
+  }
+
+  function renderList($list, options, keyword, selected){
+    var kw = (keyword || "").replace(/\s/g, "").toLowerCase();
+    var sel = toVal(selected);
+    var html = "";
+    options.forEach(function(opt){
+      if (kw && opt.text.toLowerCase().indexOf(kw) === -1) { return; }
+      html += '<li class="' + (toVal(opt.id) === sel ? "on" : "") + '"><button type="button" data-value="' + opt.id + '">' + opt.text + "</button></li>";
+    });
+    $list.html(html || '<li class="empty" data-empty="true">검색 결과가 없습니다.</li>');
+  }
+
+  function initFilterSelect($wrap){
+    if ($wrap.data("inited")) { return; }
+    var $select = $wrap.find(".js-filter-select");
+    var key = $wrap.data("key") || $select.data("key");
+    var options = CASE_SELECT_DATA[key] || [];
+    var selected = CASE_SELECT_DEFAULT[key] || "";
+    var selectedText = selected;
+
+    $select.empty();
+    options.forEach(function(opt){
+      $select.append($("<option>").attr("value", opt.id).text(opt.text));
+    });
+    if (selected) { $select.val(selected); }
+
+    var $head = $('<button type="button" class="filter-select-head"></button>');
+    var $drop = $('<div class="filter-select-drop"></div>');
+    var $search = $('<input type="text" class="filter-select-search" placeholder="검색어 입력" autocomplete="off">');
+    var $list = $('<ul class="filter-select-list"></ul>');
+    $drop.append($search, $list);
+    $wrap.append($head, $drop);
+
+    function setLabel(val){
+      var sel = toVal(val);
+      var found = options.filter(function(o){ return toVal(o.id) === sel; })[0];
+      if (found) {
+        $head.text(found.text).removeClass("is-placeholder");
+      } else {
+        $head.text("선택").addClass("is-placeholder");
+      }
+    }
+    setLabel(selected);
+    renderList($list, options, "", selected);
+
+    $head.on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = $wrap.hasClass("open");
+      $(".filter-select").removeClass("open");
+      if (!isOpen) {
+        $wrap.addClass("open");
+        $search.val("");
+        renderList($list, options, "", $select.val());
+        setTimeout(function(){ $search.trigger("focus"); }, 0);
+      }
+    });
+
+    $search.on("input", function(){
+      renderList($list, options, this.value, $select.val());
+    });
+
+    $list.on("click", "button", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      selected = toVal($(this).attr("data-value"));
+      $select.val(selected).trigger("change");
+      setLabel(selected);
+      $wrap.removeClass("open");
+    });
+
+    $wrap.data("inited", true);
+  }
+
+  $(document).on("mousedown", function(e){
+    if (!$(e.target).closest(".filter-select").length) {
+      $(".filter-select").removeClass("open");
+    }
+  });
+
+  $(function(){
+    $(".case-search .filter-select").each(function(){
+      initFilterSelect($(this));
+    });
+  });
+})();
 </script>
 
 
