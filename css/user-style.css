@@ -356,6 +356,8 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .prompt-input-wrap .txt-msg-wrap{display:flex;align-items:center;gap:8px;margin-top:-10px;padding: 24px 24px 14px;background:#E9F0FD;border-radius:0 0 20px 20px;}
 .prompt-input-wrap .txt-msg-wrap .txt-msg{margin-top:0;}
 .prompt-input-wrap.active .prompt-chat{background-image: linear-gradient(to right, #5BE1FF, #2D8DFF, #8F54E1);border:none;}
+.prompt-input-wrap .prompt-chat.dragging{background-image: linear-gradient(to right, #5BE1FF, #2D8DFF, #8F54E1);border:none;}
+.prompt-input-wrap .prompt-chat.dragging:before{display:none;}
 .prompt-input-wrap.active .prompt-chat:before{display:none;}
 .prompt-input-wrap.active .chat-menu .btn-send{background-color: #246BEB;}
 
@@ -423,12 +425,14 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer p {font-size:16px; color:#1E2124;margin-top:32px;line-height:1.5;}
 .ai-answer-comp .ai-answer p b {font-weight:600;} 
 .ai-answer-comp .ai-answer p * {vertical-align:baseline;} 
-.ai-answer-comp .ai-answer .st-table {font-size:16px;}
-.ai-answer-comp .ai-answer .st-table table {border-collapse: collapse;width:100%;}
-.ai-answer-comp .ai-answer .st-table table th,
-.ai-answer-comp .ai-answer .st-table table td {height:43px;padding:16px;border-bottom:1px solid #E1E7EF;vertical-align: middle;}
-.ai-answer-comp .ai-answer .st-table table th {padding:8px 16px 6px; background:#F4F6F9; color:#000;font-weight:700;}
-.ai-answer-comp .ai-answer .st-table table td { color:#8A949E;}
+
+.ai-answer-comp .st-table {font-size:16px;}
+.ai-answer-comp .st-table table {border-collapse: collapse;width:100%;}
+.ai-answer-comp .st-table table th,
+.ai-answer-comp .st-table table td {height:43px;padding:16px;border-bottom:1px solid #E1E7EF;vertical-align: middle;}
+.ai-answer-comp .st-table table th {padding:8px 16px 6px; background:#F4F6F9; color:#000;font-weight:700;}
+.ai-answer-comp .st-table table td { color:#8A949E;}
+
 .ai-answer-comp .ai-answer ol p,
 .ai-answer-comp .ai-answer ul p{margin-top:0;}
 .ai-answer-comp .ai-answer > ul{padding-left:20px;}
@@ -455,6 +459,40 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:before{display:none;}
 .ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:after,
 .ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:after{display:none;}
+
+.ai-answer-comp .issue-cont ol p,
+.ai-answer-comp .issue-cont ul p{margin-top:0;}
+.ai-answer-comp .issue-cont > ul{padding-left:20px;}
+.ai-answer-comp .issue-cont .answer-content > ul{padding-left:20px;}
+.ai-answer-comp .issue-cont ol > li,
+.ai-answer-comp .issue-cont ul > li{position:relative;padding-left:15px;line-height:1.5;}
+.ai-answer-comp .issue-cont ol > li:before,
+.ai-answer-comp .issue-cont ul > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
+.ai-answer-comp .issue-cont ol > li > * > li,
+.ai-answer-comp .issue-cont ul > li > * > li{padding-left:14px;}
+.ai-answer-comp .issue-cont ol > li > * > li:before,
+.ai-answer-comp .issue-cont ul > li > * > li:before{content:'';display:block;width:6px;height:1px;border-radius:100%;background:#000;position:absolute;top:11px;left:0;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li{padding-left:10px;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li:before,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li{padding-left:12px;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li:before,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li{padding-left:0;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li:before,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li:before{display:none;}
+.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li:after,
+.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li:after{display:none;}
+
+.ai-answer-issue p * {vertical-align:baseline;} 
+/* strong을 가진 제목성 p */
+.ai-answer-issue p:has(> strong) { margin-left: 0; }
+/* strong을 가지지 않은 일반 p */
+.ai-answer-issue p:not(:has(> strong)) { margin-left: 20px; }
+
 
 /* ai-answer-issue */
 .ai-answer-issue{padding-bottom:24px;}

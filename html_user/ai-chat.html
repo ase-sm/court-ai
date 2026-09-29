@@ -1163,7 +1163,7 @@ function aiFileUpload() {
   const fileInput = document.getElementById('fileInput');
   const fileListWrap = document.querySelector('.prompt-chat .ai-upload-file-list'); 
   const fileListUl = fileListWrap.querySelector('ul');
-  const dropArea = document.querySelector('.prompt-chat .textarea');
+  const dropArea = document.querySelector('.prompt-chat');
 
   const allowedTypes = ['pdf','hwp','doc','ppt','pptx','xlsx','txt'];
   const maxFileSize = 50 * 1024 * 1024; // 50MB
