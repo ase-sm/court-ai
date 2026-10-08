@@ -635,7 +635,7 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .choice-card .head{display:flex;align-items:center;gap:16px;}
 .choice-card .radio{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;min-width:20px;background:#fff;border:1px solid #B4C4D6;border-radius:50%;}
 .choice-card .tit{font-size:17px;font-weight:700;line-height:1.6;color:#1E2124;white-space:nowrap;}
-.choice-card .badge{display:inline-flex;align-items:center;justify-content:center;height:24px; padding:2px 8px;border-radius:5px;background:#EFF5FF;font-size:14px;font-weight:600;line-height:1.5;color:#246BEB;white-space:nowrap;}
+.choice-card .badge{display:inline-flex;align-items:center;justify-content:center;height:24px;line-height:24px; padding:2px 8px;border-radius:5px;background:#EFF5FF;font-size:14px;font-weight:600;line-height:1.5;color:#246BEB;white-space:nowrap;}
 .choice-card .txt{font-size:14px;font-weight:400;line-height:1.5;color:#6D7882;text-align:center;}
 .choice-card.on{background:#EFF5FF;border-color:#246BEB;}
 .choice-card.on .radio{border:1.4px solid #246BEB;}
@@ -991,3 +991,27 @@ header + .data-header{margin-top:60px;}
   body.print-mode .print-clone *:before,
   body.print-mode .print-clone *:after {-webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;}
 }
+
+
+/* 요지쟁점 : 요약방식 선택 (개별=블루, 통합=그린) */
+.choice-card-list.type-mode .choice-card .radio{display:none;}
+.choice-card-list.type-mode .choice-card .head{gap:12px;}
+.choice-card-list.type-mode .choice-card.on{background:#1D56BC;border-color:#246BEB;}
+.choice-card-list.type-mode .choice-card.on .tit,
+.choice-card-list.type-mode .choice-card.on .txt{color:#fff;}
+.choice-card-list.type-mode .choice-card.on .badge{background:#fff;color:#246BEB;}
+.choice-card.type-integrated .badge{background:#E3F3F1;color:#2A8A7A;}
+.choice-card-list.type-mode .choice-card.type-integrated.on{background:#2A8A7A;border-color:#2A8A7A;}
+.choice-card-list.type-mode .choice-card.type-integrated.on .badge{background:#fff;color:#2A8A7A;}
+
+/* 요지쟁점 : 통합요약 영역 그린 테마 */
+.type-integrated .tab-type1 ul li.on a{color:#2A8A7A;}
+.type-integrated .tab-type1 ul li.on a:after{background:#2A8A7A;}
+.type-integrated .tab-type1 li.on .ico-tab-judgment{background-image:url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.501 8.00043C16.2358 8.00043 15.9814 7.89507 15.7939 7.70754C15.6063 7.52 15.501 7.26565 15.501 7.00043V2.00043C15.8175 1.99992 16.1311 2.06203 16.4235 2.1832C16.716 2.30437 16.9815 2.48219 17.205 2.70643L20.793 6.29443C21.0178 6.51794 21.1961 6.78378 21.3177 7.07659C21.4392 7.36941 21.5015 7.6834 21.501 8.00043H16.501Z' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21.5033 8.00043V20.0004C21.5033 20.5309 21.2926 21.0396 20.9175 21.4146C20.5424 21.7897 20.0337 22.0004 19.5033 22.0004H15.3213' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.50098 10.5924V4.00043C5.50098 3.46999 5.71169 2.96129 6.08676 2.58621C6.46184 2.21114 6.97054 2.00043 7.50098 2.00043H15.501' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.50098 18.2506L4.00982 21.7415C3.92776 21.8235 3.83034 21.8887 3.72312 21.9331C3.6159 21.9775 3.50098 22.0004 3.38492 22.0004C3.15052 22.0005 2.92571 21.9074 2.75994 21.7417C2.59417 21.5759 2.50102 21.3511 2.50098 21.1167C2.50094 20.8823 2.59401 20.6575 2.75973 20.4917L6.25214 17.0004' stroke='%232A8A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.50098 20.0004L12.501 17.0004' stroke='%232A8A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.501 17.0004L7.50098 13.0004' stroke='%232A8A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.50098 15.0004L7.50098 12.0004' stroke='%232A8A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.50098 15.0004L9.50098 19.0004' stroke='%232A8A7A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.50098 22.0004H12.501' stroke='%2333363D' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");}
+.type-integrated .tab-type1 li.on .ico-tab-litigation{background-image:url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 8C14.7348 8 14.4804 7.89465 14.2929 7.70711C14.1054 7.51957 14 7.26522 14 7V2C14.3166 1.99949 14.6301 2.06161 14.9225 2.18277C15.215 2.30394 15.4806 2.48176 15.704 2.706L19.292 6.294C19.5168 6.51751 19.6952 6.78335 19.8167 7.07616C19.9382 7.36898 20.0005 7.68297 20 8H15Z' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.0004 8V20C20.0004 20.5304 19.7896 21.0391 19.4146 21.4142C19.0395 21.7893 18.5308 22 18.0004 22H13.8184' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.30469 19.53L4.22769 19.148' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4 10.592V4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H14' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.22771 16.852L3.30371 16.469' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.85175 15.228L5.46875 14.305' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.85175 20.772L5.46875 21.696' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.14844 15.228L8.53144 14.305' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.53044 21.696L8.14844 20.772' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.77344 16.852L10.6954 16.469' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.77344 19.148L10.6954 19.531' stroke='%232A8A7A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
+.type-integrated .tab-type2 ul li.on a{background:#E3F3F1;border-color:#2A8A7A;color:#2A8A7A;}
+.type-integrated .choice-card.on{background:#E3F3F1;border-color:#2A8A7A;}
+.type-integrated .choice-card.on .radio{border-color:#2A8A7A;}
+.type-integrated .choice-card.on .radio:after{background:#2A8A7A;}
+.type-integrated .choice-card.on .tit{color:#2A8A7A;}
+.type-integrated .choice-card.on .txt{color:#6D7882;}
