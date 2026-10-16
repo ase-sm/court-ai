@@ -1,5 +1,5 @@
-<svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M130.968 38.9677C130.968 43.9561 135.012 48 140 48H0C4.98838 48 9.03226 43.9561 9.03226 38.9677V12C9.03226 5.37258 14.4048 0 21.0323 0H118.968C125.595 0 130.968 5.37258 130.968 12V38.9677Z" fill="url(#tabIssue)"/>
+<svg width="140" height="40" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M130.968 30.9677C130.968 35.9561 135.012 40 140 40H0C4.98838 40 9.03226 35.9561 9.03226 30.9677V12C9.03226 5.37258 14.4048 0 21.0323 0H118.968C125.595 0 130.968 5.37258 130.968 12V30.9677Z" fill="url(#tabIssue)"/>
 <defs>
 <linearGradient id="tabIssue" x1="11" y1="0" x2="38.5" y2="45" gradientUnits="userSpaceOnUse">
 <stop stop-color="#4DCCC6"/>
