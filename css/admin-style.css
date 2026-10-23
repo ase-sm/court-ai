@@ -2,6 +2,7 @@
 
 @import url("font.css");
 @import url("admin-common.css");
+@import url("ai-answer.css");
 
 /* ===========================================
     layout
@@ -422,53 +423,7 @@ header + .data-header{margin-top:60px;}
 .ai-answer-comp .ai-answer-stop .btn-stop:focus{background: #E1E7EF;  border: 1px solid #B4C4D6;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop{width:20px;height:20px;min-width: 20px;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop:after{width:6px;height:6px;}
-/* .ai-answer-comp .ai-answer {padding: 40px 32px 24px; background: linear-gradient(180deg, #F4F6F9 0%, #FFFFFF 10.71%); border-radius: 16px; position:relative;} */
-.ai-answer-comp .ai-answer h1,
-.ai-answer-comp .ai-answer .tit-article {display:flex;gap:16px;font-weight:600;font-size:16px; color:#1D1D1D;margin-bottom:56px;line-height:1;display:flex;align-items:center;}
-/* .ai-answer-comp .ai-answer h1:before,
-.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width: 24px;height:24px;background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C24.5288 0 31.4974 6.67317 31.9727 15.083L31.998 15.0586V15.834C31.9986 15.8893 32 15.9446 32 16C32 16.055 31.9986 16.1101 31.998 16.165V32H15.0566L15.083 31.9727C6.67317 31.4974 0 24.5288 0 16C6.80327e-05 7.16347 7.16347 6.80371e-05 16 0Z' fill='url(%23paint0_linear_924_49752)'/%3E%3Cpath d='M17.1629 21.9303L20.8234 10.9989H24.503L20.8091 21.9303H17.1629Z' fill='white'/%3E%3Cpath d='M14.4826 22.2616C13.0553 22.2616 12.416 21.2568 12.5647 19.2472H9.68786C9.39346 19.7551 9.13718 20.2299 8.919 20.6716L8.30722 21.9304H5.96563L12.7705 10.9989H16.3665L15.9377 19.0484C15.8863 20.2078 16.0595 20.9587 16.4574 21.301C16.0441 21.9414 15.3858 22.2616 14.4826 22.2616ZM10.3763 18.0381H12.6844L13.0819 13.7814L13.1448 13.3342L11.5918 15.9346L10.3763 18.0381Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_924_49752' x1='-0.5' y1='9.99902' x2='37' y2='31.999' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%231D56BC'/%3E%3Cstop offset='1' stop-color='%230B96DB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;} */
-.ai-answer-comp .ai-answer h1:before,
-.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width:12px;height:12px;border-radius:100%;background:#246BEB;transform:translateY(-1px);}
-.ai-answer-comp .ai-answer h2 {font-weight:600;font-size:24px; color:#1D1D1D;margin:52px 0;}
-.ai-answer-comp .ai-answer h2:first-child{margin-top:20px;}
-.ai-answer-comp .ai-answer h3 {font-weight:600;font-size:18px; color:#1E2124;margin:32px 0;}
-.ai-answer-comp .ai-answer h3:first-child{margin-top:20px;}
-.ai-answer-comp .ai-answer p {font-size:16px; color:#1E2124;margin-top:32px;line-height:1.5;}
-.ai-answer-comp .ai-answer p:first-child{margin-top:15px;}
-.ai-answer-comp .ai-answer p b {font-weight:600;}
-.ai-answer-comp .ai-answer p * {vertical-align:baseline;}
-.ai-answer-comp .ai-answer .st-table {font-size:16px;}
-.ai-answer-comp .ai-answer .st-table table {border-collapse: collapse;width:100%;}
-.ai-answer-comp .ai-answer .st-table table th,
-.ai-answer-comp .ai-answer .st-table table td {height:43px;padding:16px;border-bottom:1px solid #E1E7EF;vertical-align: middle;}
-.ai-answer-comp .ai-answer .st-table table th {padding:8px 16px 6px; background:#F4F6F9; color:#000;font-weight:700;}
-.ai-answer-comp .ai-answer .st-table table td { color:#8A949E;}
-.ai-answer-comp .ai-answer ol p,
-.ai-answer-comp .ai-answer ul p{margin-top:0;}
-.ai-answer-comp .ai-answer > ul{padding-left:20px;}
-.ai-answer-comp .ai-answer .answer-content > ul{padding-left:20px;}
-.ai-answer-comp .ai-answer ol > li,
-.ai-answer-comp .ai-answer ul > li{position:relative;padding-left:15px;line-height:1.5;}
-.ai-answer-comp .ai-answer ol > li:before,
-.ai-answer-comp .ai-answer ul > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li{padding-left:14px;}
-.ai-answer-comp .ai-answer ol > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li:before{content:'';display:block;width:6px;height:1px;border-radius:100%;background:#000;position:absolute;top:11px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li{padding-left:10px;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li{padding-left:12px;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li{padding-left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:before{display:none;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:after,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:after{display:none;}
+/* ai-answer 본문 스타일 → ai-answer.css */
 
 .ai-answer-comp .ai-answer-menu {padding:16px 0;border-top:1px solid #99B0CB;}
 .ai-answer-comp .ai-answer-menu .menu-box{display:flex;align-items:center;justify-content: space-between; height: 80px;background: #F4F6F9;padding:16px 24px;border: 1px solid #E1E7EF;border-radius: 5px;}

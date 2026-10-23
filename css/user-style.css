@@ -2,6 +2,7 @@
 
 @import url("font.css");
 @import url("user-common.css");
+@import url("ai-answer.css");
 
 /* ===========================================
     layout
@@ -411,178 +412,12 @@ body.body-issue .container-wrap{border:4px solid transparent;background:linear-g
 .ai-answer-comp .ai-answer-stop .btn-stop:focus{background: #E1E7EF;  border: 1px solid #B4C4D6;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop{width:20px;height:20px;min-width: 20px;}
 .ai-answer-comp .ai-answer-stop .btn-stop .ico-stop:after{width:6px;height:6px;}
-.ai-answer-comp .ai-answer {padding: 0 0 24px;margin-top:-10px; /* background: linear-gradient(180deg, #F4F6F9 0%, #FFFFFF 10.71%); border-radius: 16px; position:relative;*/}
-.ai-answer-comp .ai-answer h1,
-.ai-answer-comp .ai-answer .tit-article {display:flex;gap:16px;font-weight:600;font-size:16px; color:#1D1D1D;margin-bottom:56px;line-height:1;display:flex;align-items:center;}
-/* .ai-answer-comp .ai-answer h1:before,
-.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width: 24px;height:24px;background: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0C24.5288 0 31.4974 6.67317 31.9727 15.083L31.998 15.0586V15.834C31.9986 15.8893 32 15.9446 32 16C32 16.055 31.9986 16.1101 31.998 16.165V32H15.0566L15.083 31.9727C6.67317 31.4974 0 24.5288 0 16C6.80327e-05 7.16347 7.16347 6.80371e-05 16 0Z' fill='url(%23paint0_linear_924_49752)'/%3E%3Cpath d='M17.1629 21.9303L20.8234 10.9989H24.503L20.8091 21.9303H17.1629Z' fill='white'/%3E%3Cpath d='M14.4826 22.2616C13.0553 22.2616 12.416 21.2568 12.5647 19.2472H9.68786C9.39346 19.7551 9.13718 20.2299 8.919 20.6716L8.30722 21.9304H5.96563L12.7705 10.9989H16.3665L15.9377 19.0484C15.8863 20.2078 16.0595 20.9587 16.4574 21.301C16.0441 21.9414 15.3858 22.2616 14.4826 22.2616ZM10.3763 18.0381H12.6844L13.0819 13.7814L13.1448 13.3342L11.5918 15.9346L10.3763 18.0381Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_924_49752' x1='-0.5' y1='9.99902' x2='37' y2='31.999' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%231D56BC'/%3E%3Cstop offset='1' stop-color='%230B96DB'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat 50% 50%;background-size:auto 100%;} */
-.ai-answer-comp .ai-answer h1:before,
-.ai-answer-comp .ai-answer .tit-article:before{content:'';display:block;width:12px;height:12px;border-radius:100%;background:#246BEB;transform:translateY(-1px);}
-.ai-answer-comp .ai-answer h2 {font-weight:600;font-size:24px; color:#1D1D1D;margin:32px 0 24px;}
-.ai-answer-comp .ai-answer h3 {font-weight:600;font-size:18px; color:#1E2124;margin:24px 0 12px;}
-.ai-answer-comp .ai-answer p {font-size:16px; color:#1E2124;margin-top:32px;line-height:1.5;}
-.ai-answer-comp .ai-answer p b {font-weight:600;}
-.ai-answer-comp .ai-answer p * {vertical-align:baseline;}
-.ai-answer-comp .st-table {font-size:16px;}
-.ai-answer-comp .st-table table {border-collapse: collapse;width:100%;}
-.ai-answer-comp .st-table table th,
-.ai-answer-comp .st-table table td {height:43px;padding:16px;border-bottom:1px solid #E1E7EF;vertical-align: middle;}
-.ai-answer-comp .st-table table th {padding:8px 16px 6px; background:#F4F6F9; color:#000;font-weight:700;}
-.ai-answer-comp .st-table table td { color:#8A949E;}
-.ai-answer-comp .ai-answer ol p,
-.ai-answer-comp .ai-answer ul p{margin-top:0;}
-.ai-answer-comp .ai-answer > ul{padding-left:20px;}
-.ai-answer-comp .ai-answer .answer-content > ul{padding-left:20px;}
-.ai-answer-comp .ai-answer ol > li,
-.ai-answer-comp .ai-answer ul > li{position:relative;padding-left:15px;line-height:1.5;}
-.ai-answer-comp .ai-answer ol > li:before,
-.ai-answer-comp .ai-answer ul > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li{padding-left:14px;}
-.ai-answer-comp .ai-answer ol > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li:before{content:'';display:block;width:6px;height:1px;border-radius:100%;background:#000;position:absolute;top:11px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li{padding-left:10px;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li{padding-left:12px;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li{padding-left:0;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:before,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:before{display:none;}
-.ai-answer-comp .ai-answer ol > li > * > li > * > li > * > li > * > li:after,
-.ai-answer-comp .ai-answer ul > li > * > li > * > li > * > li > * > li:after{display:none;}
+/* ai-answer, ai-answer-issue 본문 스타일 → ai-answer.css */
 
-/*
- * [주석처리] 기존 issue-cont 강제 들여쓰기/불릿 스타일
- * Flexmark 표준 Markdown(ul/ol 중첩 구조)의 depth를 CSS로 직접 표현하기 위해 비활성화함.
- *
-.ai-answer-comp .issue-cont ol p,
-.ai-answer-comp .issue-cont ul p{margin-top:0;}
-.ai-answer-comp .issue-cont > ul{padding-left:20px;}
-.ai-answer-comp .issue-cont .answer-content > ul{padding-left:20px;}
-.ai-answer-comp .issue-cont ol > li,
-.ai-answer-comp .issue-cont ul > li{position:relative;padding-left:15px;line-height:1.5;}
-.ai-answer-comp .issue-cont ol > li:before,
-.ai-answer-comp .issue-cont ul > li:before{content:'';display:block;width:4px;height:4px;border-radius:100%;background:#000;position:absolute;top:9px;left:0;}
-.ai-answer-comp .issue-cont ol > li > * > li,
-.ai-answer-comp .issue-cont ul > li > * > li{padding-left:14px;}
-.ai-answer-comp .issue-cont ol > li > * > li:before,
-.ai-answer-comp .issue-cont ul > li > * > li:before{content:'';display:block;width:6px;height:1px;border-radius:100%;background:#000;position:absolute;top:11px;left:0;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li{padding-left:10px;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li:before,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li:before{content:'';display:block;width:2px;height:2px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li{padding-left:12px;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li:before,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li:before{content:'';display:block;width:4px;height:1px;border-radius:100%;background:#000;position:absolute;top:12px;left:0;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li{padding-left:0;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li:before,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li:before{display:none;}
-.ai-answer-comp .issue-cont ol > li > * > li > * > li > * > li > * > li:after,
-.ai-answer-comp .issue-cont ul > li > * > li > * > li > * > li > * > li:after{display:none;}
-*/
-
-.ai-answer-issue p * {vertical-align:baseline;}
-/* strong을 가진 제목성 p */
-.ai-answer-issue p:has(> strong) { margin-left: 0; }
-/* strong을 가지지 않은 일반 p */
-/* [주석처리] issue-cont 일반 문단 강제 좌측 들여쓰기 제거 */
-/* .ai-answer-issue p:not(:has(> strong)) { margin-left: 20px; } */
-
-
-/* ai-answer-issue */
-.ai-answer-issue{padding-bottom:24px;}
+/* ai-answer-issue effect */
 .ai-answer-issue > *,
 .ai-answer-issue > .issue-body > *{opacity: 0; transform: translateY(80px); transition: all 0.8s ease; will-change: transform, opacity;}
 .ai-answer-issue .active{opacity: 1 !important; transform: none;}
-.ai-answer-issue{display:flex;flex-direction:column;gap:40px;border-radius:16px;}
-.ai-answer-issue .issue-intro{display:flex;flex-direction:column;gap:24px;width:100%;padding:8px 20px 8px 32px;border-radius:20px;background:linear-gradient(90deg, #EAEFFF 0%, #CFE6FF 100%);}
-.ai-answer-issue .issue-intro .tit{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;line-height:1.7;color:#1D1D1D;}
-.ai-answer-issue .issue-intro .tit .dot{display:block;width:12px;height:12px;min-width:12px;border-radius:50%;background:#246BEB;}
-.ai-answer-issue .issue-body{display:flex;flex-direction:column;gap:32px;width:100%;}
-.ai-answer-issue .result-msg{font-size:14px;font-weight:600;line-height:1.5;color:#6D7882;}
-.ai-answer-issue .result-msg em{font-weight:700;color:#246BEB;vertical-align:baseline;}
-.ai-answer-issue .case-chip-list{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;}
-.ai-answer-issue .case-chip{display:inline-flex;align-items:center;justify-content:center;padding:9px 18px;border:1px solid #B4C4D6;border-radius:5px;background:#fff;font-size:17px;font-weight:400;line-height:1.6;color:#000;white-space:nowrap;}
-.ai-answer-issue .case-chip:hover{background:#F4F6F9;}
-.ai-answer-issue .case-chip.on{background:#EFF5FF;border-color:#246BEB;color:#246BEB;}
-.ai-answer-issue .issue-tab ul li.action{display:flex;align-items:center;justify-content:flex-end;padding:0 18px;}
-.ai-answer-issue .btn-origin{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;border:1px solid #B4C4D6;border-radius:5px;background:#fff;font-size:15px;font-weight:400;line-height:1.5;color:#000;white-space:nowrap;}
-.ai-answer-issue .btn-origin:hover{background:#F4F6F9;}
-.ai-answer-issue .btn-origin .ico-origin{display:block;width:16px;height:16px;min-width:16px;background:url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11.5V4.5C1 2.84315 2.34315 1.5 4 1.5H7.5V3H4C3.17157 3 2.5 3.67157 2.5 4.5V11.5C2.5 12.3284 3.17157 13 4 13H11.5C12.3284 13 13 12.3284 13 11.5V8H14.5V11.5C14.5 13.1569 13.1569 14.5 11.5 14.5H4C2.34315 14.5 1 13.1569 1 11.5Z' fill='%2333363D'/%3E%3Cpath d='M9 2H14V7' stroke='%2333363D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 2L8 8' stroke='%2333363D' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 50% 50%;background-size:16px 16px;}
-.ai-answer-issue .issue-cont{display:flex;flex-direction:column;gap:24px;width:100%;/* padding:0 24px; */}
-.ai-answer-issue .issue-cont section{display:flex;flex-direction:column;gap:10px;}
-.ai-answer-issue .issue-cont h1{font-size:24px;font-weight:600;line-height:1.5;color:#000;margin:32px 0 0;}
-.ai-answer-issue .issue-cont h2{font-size:22px;font-weight:600;line-height:1.5;color:#000;margin:28px 0 0;}
-.ai-answer-issue .issue-cont h3{font-size:20px;font-weight:600;line-height:1.5;color:#000;margin:24px 0 0;}
-.ai-answer-issue .issue-cont h4{font-size:18px;font-weight:600;line-height:1.5;color:#000;margin:18px 0 0;}
-.ai-answer-issue .issue-cont p{font-size:16px;font-weight:400;line-height:1.7;}
-/*.ai-answer-issue .issue-cont p {margin: 0 0 16px;margin-left: 0;font-size: 16px;line-height: 1.7;}*/
-
-/* ===========================================
-Flexmark Markdown 4Depth Style
-- flexmark_4depth_publishing_sample.html 기준
-- 기존 issue-cont 강제 들여쓰기 대신 표준 HTML 구조(h1~h4, ul/ol) 기준 적용=========================================== */
-/* Heading 1~4Depth */
-/* 일반 문단은 별도 좌측 들여쓰기 없이 표시 */
-
-/* Flexmark 표준 목록 공통 */
-.ai-answer-issue .issue-cont ul,.ai-answer-issue .issue-cont ol {margin: 8px 0;padding-left: 24px;}
-.ai-answer-issue .issue-cont ul {list-style-type: disc;list-style-position: outside;}
-.ai-answer-issue .issue-cont ol {list-style-type: decimal;list-style-position: outside;}
-
-/* 기존 custom li / pseudo bullet 스타일 무효화 */
-.ai-answer-issue .issue-cont ul > li,
-.ai-answer-issue .issue-cont ol > li {position: static;padding-left: 0;line-height: 1.7;}
-
-.ai-answer-issue .issue-cont ul > li::before,
-.ai-answer-issue .issue-cont ol > li::before,
-.ai-answer-issue .issue-cont ul > li::after,
-.ai-answer-issue .issue-cont ol > li::after {content: none;display: none;}
-/* 2Depth */
-
-.ai-answer-issue .issue-cont ul ul,
-.ai-answer-issue .issue-cont ul ol,
-.ai-answer-issue .issue-cont ol ul,
-.ai-answer-issue .issue-cont ol ol {padding-left: 24px;}
-/* 3Depth */
-
-.ai-answer-issue .issue-cont ul ul ul,
-.ai-answer-issue .issue-cont ul ul ol,
-.ai-answer-issue .issue-cont ul ol ul,
-.ai-answer-issue .issue-cont ul ol ol,
-.ai-answer-issue .issue-cont ol ul ul,
-.ai-answer-issue .issue-cont ol ul ol,
-.ai-answer-issue .issue-cont ol ol ul,
-.ai-answer-issue .issue-cont ol ol ol {padding-left: 28px;}
-/* 4Depth */
-
-.ai-answer-issue .issue-cont ul ul ul ul,
-.ai-answer-issue .issue-cont ul ul ul ol,
-.ai-answer-issue .issue-cont ul ul ol ul,
-.ai-answer-issue .issue-cont ul ul ol ol,
-.ai-answer-issue .issue-cont ul ol ul ul,
-.ai-answer-issue .issue-cont ul ol ul ol,
-.ai-answer-issue .issue-cont ul ol ol ul,
-.ai-answer-issue .issue-cont ul ol ol ol,
-.ai-answer-issue .issue-cont ol ul ul ul,
-.ai-answer-issue .issue-cont ol ul ul ol,
-.ai-answer-issue .issue-cont ol ul ol ul,
-.ai-answer-issue .issue-cont ol ul ol ol,
-.ai-answer-issue .issue-cont ol ol ul ul,
-.ai-answer-issue .issue-cont ol ol ul ol,
-.ai-answer-issue .issue-cont ol ol ol ul,
-.ai-answer-issue .issue-cont ol ol ol ol {padding-left: 32px;}
-/* 출처 후처리용 영역 */
-.ai-answer-issue .issue-cont .source {font-size: 13px;font-weight: 400;vertical-align: baseline;}
-/* ===========================================   Markdown 출처 표시   [출처:]민법 제406조[:출처]   -> <span class="markdown-source">민법 제406조</span>=========================================== */
-.ai-answer-issue .issue-cont .markdown-source {color: #246BEB;font-size: 14px;font-weight: 400;vertical-align: baseline;}
 
 .ai-answer-comp .ai-answer-menu {padding:8px 0 16px;}
 .ai-answer-comp .ai-answer-menu .menu-box{display:flex;align-items:center;justify-content: space-between; height: 80px;background: #F4F6F9;padding:16px 24px;border: 1px solid #E1E7EF;border-radius: 5px;}

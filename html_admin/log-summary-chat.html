@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>대한민국 법원 재판지원 AI</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../css/admin-style.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-admin-ui.js"></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <script> $(document).ready(function() { $.get('header.html', function(data) { $('.wrap').prepend(data);gnbMenu();}); }); </script>        
+      <div class="contents">
+        <span id="content" tabindex="-1" class="skip-anchor">본문시작</span>
+          <nav class="breadcrumb" aria-label="경로 탐색">
+              <ol>
+                  <li><a href="../">홈</a></li>
+                  <li><a href="#">1뎁스</a></li>
+                  <li><a href="#">2뎁스</a></li>
+                  <li aria-current="page">CURRENT</li>
+              </ol>
+          </nav>
+          <main class="content" aria-labelledby="content">
+              <div class="title-wrap">
+                  <h2 class="title-page">요지쟁점 로그</h2>
+              </div>
+              <div class="search-area" aria-label="검색 영역"> <!-- form 태그필요시 div 를 form태그로 변경-->
+                  <div class="search-wrap">
+                      <div class="row">
+                          <label for="member" class="label">회원검색</label>
+                          <div class="input-set">
+                            <input type="text" id="member" placeholder="검색어를 입력해주세요." style="width:215px">
+                            <button type="button" class="btn-md st-navy-blue" onclick="popOpen('#memberSearch');"><span>회원검색</span></button>
+                          </div>
+                          <span class="label">응답 상태</span>
+                          <div class="select-ui" id="status"></div>
+                      </div>
+                      <div class="row">
+                          <label for="date">기간선택</label>
+                          <div class="input-date">
+                              <input type="text" id="date" class="datepicker auto start-date" placeholder="YYYY.MM.DD" title="시작일">
+                              <span class="dash">-</span>
+                              <input type="text" class="datepicker auto end-date" placeholder="YYYY.MM.DD" title="종료일">
+                          </div>
+                          <div class="date-range-menu" data-evt="date-menu">
+                            <label>
+                                <input type="radio" name="btn_item" value="today" title="오늘" ><span>오늘</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="threeDay" title="3일"><span>3일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneWeek" title="7일"><span>7일</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="btn_item" value="oneMonth" title="1개월"><span>1개월</span>
+                            </label>
+                          </div>
+                          
+                          <div class="search-menu">
+                              <button class="btn-md st-blue"><span>검색</span></button>
+                              <button type="reset" class="btn-md  st-blue-line"><span>초기화</span></button>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+
+                
+              <div class="data-box">
+                <div class="data-header">
+                  <span class="total"><span>전체</span> <em class="num">316,000건</em></span>
+                  <div class="right">
+                    <button type="button" class="btn-nm st-gray-line" onclick="popOpen('#memberSearch');"> 
+                        <i class="ico-excel"></i>
+                        <span>엑셀 다운로드</span>
+                        <i class="ico-download"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-type1">
+                  <table>
+                    <caption>AI 채팅 로그 목록</caption>
+                       <colgroup>
+                          <col style="width: 14%;">
+                          <col style="width: 10%;">
+                          <col style="width: 10%;">
+                          <col style="width: 10%;">
+                          <col style="width: 10%;">
+                          <col style="width: auto;">
+                          <col style="width: 8%;">
+                          <col style="width: 8%;">
+                          <col style="width: 9%;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                            <th scope="col">발생일시</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">소속</th>
+                            <th scope="col">질의유형</th>
+                            <th scope="col">질문요약</th>
+                            <th scope="col">벌점</th>
+                            <th scope="col">응답상태</th>
+                            <th scope="col">실패 사유</th>
+                          </tr>
+                        </thead>
+                      <tbody>
+                         <tr>
+                            <td>2025-10-13&nbsp;10:30:15</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td>텍스트 입력</td>
+                            <td><div class="title"><i class="ico-summary"></i><span class="ellips">회계법인 부실 회계처리로 인한 회계법인 부실 회계처리로 인한회계법인 부실 회계처리로 인한회계법인 부실 회계처리로 인한</span></div></td>
+                            <td>4.45</td>
+                            <td><span class="status-success">성공</span></td>
+                            <td>(실패 사유)</td>
+                          </tr>
+                         <tr>
+                            <td>2025-10-13&nbsp;10:30:15</td>
+                            <td>{LDAP ID}</td>
+                            <td>{LDAP Name}</td>
+                            <td>{LDAP 소속명}</td>
+                            <td>텍스트 입력</td>
+                            <td><a href="javascript:void(0);" class="title"><i class="ico-doc-blue"></i><span class=" link"><span class="ellips">2024_행정소송_판례행정소송_판례행정소송_판례행정소송_판례</span><span class="file-name">.PDF</span></span></a></td>
+                            <td>4.45</td>
+                            <td><span class="status-fail">실패</span></td>
+                            <td>(실패 사유)</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- // data-type1 -->
+              </div>
+
+              <div class="pagination-wrap">
+                <div class="pagination">
+                    <button type="button" class="btn-prev">이전</button>
+                    <ul>
+                      <li class="on"><button type="button">1</button></li>
+                      <li><button type="button">2</button></li>
+                      <li><button type="button">3</button></li>
+                      <li><button type="button">4</button></li>
+                      <li><button type="button">5</button></li>
+                    </ul>
+                    <button type="button" class="btn-next">다음</button>
+                </div>
+                <!-- // pagination -->
+              </div>
+
+          </main>
+      </div>
+    </div>
+    <!-- // wrap -->
+
+  <!-- 회원 검색 -->
+  <div class="popup-wrap" id="memberSearch">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">회원 검색</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="text">
+            <p class="txt">검색하고자 하는 회원의 이름 입력하신 후 해당하는 회원을 선택해주세요. </p>
+          </div>
+          <div class="form-box">
+            <div class="form-set">
+                <div class="row">
+                    <label for="name" class="label">이름 <i class="required"><span class="hidden">필수</span></i></label>
+                    <div class="form">
+                        <input type="text" id="name" placeholder="이름을 입력해주세요.">
+                      </div>
+                    <div class="menu">
+                        <button class="btn">검색</button>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+          <h2 class="title-popup">검색 결과</h2>          
+            <div class="data-type1">
+              <table>
+                <caption>검색 결과 목록</caption>
+                    <colgroup>
+                      <col style="width: auto;">
+                      <col style="width: auto;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">소속명</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr style="cursor:pointer">
+                        <td>김윤희</td>
+                        <td>{LDAP 소속명}</td>
+                      </tr>
+                      <tr class="no-hover">
+                        <td colspan="2">
+                          <div class="no-data">
+                            검색된 데이터가 없습니다. <br>이름, 아이디를 다시 한번 확인해주세요.
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div class="pagination-wrap">
+              <div class="pagination">
+                  <button type="button" class="btn-prev"></button>
+                  <ul>
+                    <li class="on"><button type="button">1</button></li>
+                    <li><button type="button">2</button></li>
+                    <li><button type="button">3</button></li>
+                    <li><button type="button">4</button></li>
+                    <li><button type="button">5</button></li>
+                  </ul>
+                  <button type="button" class="btn-next"></button>
+              </div>
+              <!-- // pagination -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+
+
+  <!-- 요지쟁점 로그 상세 팝업 -->
+  <div class="popup-wrap st-side" id="adminDetail">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <h2 class="tit">요지쟁점 로그 상세</h2>
+          <div class="right">
+            <button class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+
+          <div class="tab-type1">
+            <ul>
+                <li class="on"><a href="javascript:void(0);" data-tab-id="tab1">정보</a></li>
+                <li><a href="javascript:void(0);" data-tab-id="tab2">채팅이력</a></li>
+            </ul>
+          </div>
+          
+          <!-- 탭 정보 -->
+          <div class="tab-content" id="tab1">
+            <div class="board-header">
+              <div class="category"><span class="tag-cate st-blue">요지쟁점</span></div>            
+              <h3 class="title-board"><b> 요지쟁점 정확도를 높이고 싶어요.</b></h3>
+              <div class="board-info">
+                <span>등록일 : <span>2025-10-22</span></span>
+                <span>조회수: <span>110</span></span>
+                <div class="right"><span>작성자 : <span>홍길동</span></span></div>
+              </div>
+            </div>
+
+            <div class="board-body">
+                <div class="board-view">
+                  <section class="ai-answers-section">
+                    <div class="ai-answer-wrap">
+                        <!-- 질문단위 -->
+                        <div class="ai-answer-comp">
+                          <!-- 답변영역 -->
+                        <!-- ai-answer-issue -->
+                        <article class="ai-answer-issue">
+                            <div class="issue-cont" id="issueAll">
+                              <section>
+                                <h1>사건 개요</h1>
+                                <h2>사건 개요</h2>
+                                <h3>사건 개요</h3>
+                                <p>광주고등법원은 어린이보호구역에서 발생한 교통사고로 피해자에게 상해를 입힌 피고인 A에 대한 항소심 판결을 선고했다. 원심에서 벌금 500만 원을 선고받은 피고인이 양형부당을 주장하며 항소했다.</p>
+                              </section>
+                              <section>
+                                <h3>주문</h3>
+                                <p>피고인은 어린이보호구역 내 교차로에서 좌회전 중 전방 주시의무를 태만히 하여 횡단 중이던 피해자를 들이받았다. 이로 인해 피해자는 약 10일간의 치료가 필요한 타박상을 입었다.</p>
+                              </section>
+                              <section>
+                                <h3>청구취지/공소사실</h3>
+                                <p>원심은 어린이보호구역에서의 각별한 주의의무 위반, 피해자의 신체적·정신적 고통, 피해자와의 미합의 등을 고려하여 벌금 500만 원을 선고했다.</p>
+                              </section>
+                              <section>
+                                <h3>이유</h3>
+                                <p>고등법원은 원심의 형이 과중하다고 판단했다. 유리한 정상으로 참작한 사항은 다음과 같다. 피고인의 범행 인정 및 반성, 공제조합을 통한 일부 피해회복, 비교적 경미한 상해 정도, 피해자의 처벌불원 의사표시, 제한속도 미위반·한적한 토요일 밤·소등된 가로등 등 사고 경위의 참작 사정, 피해자 구호 조치, 동종 범죄전력 부재, 건강 악화·경제적 곤궁·부양가족 존재 등이 있다.</p>
+                              </section>
+                              <section>
+                                <h3>재판부 판단</h3>
+                                <p>이러한 모든 양형조건을 종합 고려하면 원심의 형이 부당히 무겁다고 결론지었다</p>
+                              </section>
+                              <section>
+                                <h3>선고 형량</h3>
+                                <p>이러한 모든 양형조건을 종합 고려하면 원심의 형이 부당히 무겁다고 결론지었다</p>
+                                <div class="st-table active" style="transition-delay: 1.28s;">
+                                  <table>
+                                    <caption>테이블 제목 필요</caption>
+                                      <colgroup>
+                                          <col style="width:auto">
+                                          <col style="width:33%">
+                                          <col style="width:33%">
+                                      </colgroup>
+                                      <thead>
+                                          <tr>
+                                              <th>사례 이름/ 요지</th>
+                                              <th>주요내용</th>
+                                              <th>결과/판례 의미</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                            <tr>
+                                              <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                              <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                              <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                            </tr>
+                                            <tr>
+                                              <td>H사 VS 안진회계법인(분식회계를 적정의견으로 분석</td>
+                                              <td>H사가 안진회계법인을 상대로, H사의 재무제표에 분식회계 및 특정 우발채무 등이 존재했는데오 감사인이 이를 적정 의견으로 공시했다는 이유로 손해배상</td>
+                                              <td>대법원에서 “감사인이 분시회계의 내용이 있음으 알았거나 쉽게 알 수 있었는데도 주의 의무를 현저히 게을리했다” 의 보고, 피해 주주들에게 회계법인 및 회사가 공동 불법행위자로서 배상 책임이 있음</td>
+                                            </tr>
+                                      </tbody>
+                                  </table>
+                                </div>
+
+                              </section>
+                              <section>
+
+                                <h3>유사 사례</h3>
+                                <p>ol</p>
+                                <ol>
+                                  <li>
+                                    <p>서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
+                                    <strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                  <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                    <p>서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
+                                    <ul>
+                                      <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                      <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                        <ol>
+                                          <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                          <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                            <ul>
+                                              <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                              <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
+                                            </ul>
+                                          </li>
+                                        </ol>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
+                                  <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
+                                </ol>
+
+                                <p>ul</p>
+                                <ul>
+                                  <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                  <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                    <ol>
+                                      <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                      <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                        <ul>
+                                          <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                          <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.
+                                            <ol>
+                                              <li><strong>법원:</strong> 서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다.</li>
+                                              <li><strong>판결일:</strong> 2006년 6월 23일, 이 날짜에 해당 사건에 대한 판결이 내려졌습니다.</li>
+                                            </ol>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ol>
+                                  </li>
+                                  <li><strong>사건번호:</strong> 20052685, 이는 해당 사건의 고유 번호입니다.</li>
+                                  <li><strong>사건명:</strong> 구체적인 사건명은 추가 정보가 필요합니다. 일반적으로 사건명은 원고와 피고의 이름 또는 사건의 성격을 포함합니다.</li>
+                                </ul>
+
+                                <p>case p</p>
+                                <p>서울고등법원은 대한민국에서 중요한 고등법원 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
+                                <p>서울고등법원은 <strong>대한민국에서 중요한 고등법원</strong> 중 하나로, 서울 및 인근 지역의 사건을 담당합니다</p>
+
+                              </section>
+                            </div>
+                            <div class="issue-cont" id="issueFact" style="display:none;">
+                              <section>
+                                <h3>사실관계</h3>
+                                <p>광주고등법원은 어린이보호구역에서 발생한 교통사고로 피해자에게 상해를 입힌 피고인 A에 대한 항소심 판결을 선고했다. 원심에서 벌금 500만 원을 선고받은 피고인이 양형부당을 주장하며 항소했다.</p>
+                              </section>
+                            </div>
+                            <div class="issue-cont" id="issuePoint" style="display:none;">
+                              <section>
+                                <h3>주요쟁점</h3>
+                                <p>고등법원은 원심의 형이 과중하다고 판단했다. 유리한 정상으로 참작한 사항은 다음과 같다. 피고인의 범행 인정 및 반성, 공제조합을 통한 일부 피해회복, 비교적 경미한 상해 정도 등이 있다.</p>
+                              </section>
+                            </div>
+                          </div>
+                        </article>
+                          <!-- // 답변영역 -->
+                          
+                        </div>
+                        <!-- // 질문단위 -->
+                    </div>
+                  </section>
+                </div>
+                
+            </div>
+            
+          </div>
+          <!-- 탭 활동이력 -->
+          <div class="tab-content" id="tab2" style="display: none;">
+
+
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+              <button type="button" class="btn-popup st-blue" onclick="sidePopClose('#adminDetail')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+    <script>
+
+      sidePopOpen('#adminDetail');
+
+      // 커스텀셀렉트
+      const data = {
+        placeholder: "",
+        options: [
+          { value: "total", label: "전체" },
+          { value: "select1", label: "선택1" },
+          { value: "select2", label: "선택2" },
+          { value: "select3", label: "선택2", disabled: true },
+          { value: "select4", label: "선택4" }
+        ],
+        selected: null
+      };
+
+      const select1 = selectUi('status', data);
+      select1.value = "total";
+
+  </script>
+    
+</body>
+</html>
