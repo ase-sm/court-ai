@@ -512,44 +512,40 @@ function tooltipMenu() {
 
 
   // 메뉴 열기
-function openMenu(btn, menu) {
-    if (!menu) return;
-
+function positionMenu(btn, menu) {
     const rect = btn.getBoundingClientRect();
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-    const viewportHeight = window.innerHeight;
+    const menuHeight = menu.offsetHeight;
+    const menuWidth = menu.offsetWidth;
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const top = spaceBelow >= menuHeight + 20
+      ? rect.bottom
+      : Math.max(10, rect.top - menuHeight - 10);
+    let left = rect.left;
+    if (left + menuWidth > window.innerWidth) {
+      left = Math.max(10, rect.right - menuWidth);
+    }
+    menu.style.top = top + 'px';
+    menu.style.left = left + 'px';
+  }
 
-    // 메뉴 높이 계산을 위해 보이지 않게 표시
+  function updateMenuPosition() {
+    if (!openMenuElement || !lastFocusedButton) return;
+    if (!lastFocusedButton.getClientRects().length) {
+      closeMenu();
+      return;
+    }
+    positionMenu(lastFocusedButton, openMenuElement);
+  }
+
+  window.addEventListener('scroll', closeMenu, true);
+  window.addEventListener('resize', updateMenuPosition);
+
+  function openMenu(btn, menu) {
+    if (!menu) return;
     menu.style.visibility = 'hidden';
     menu.style.display = 'block';
     menu.classList.add('active');
-
-    const menuHeight = menu.offsetHeight;
-    const menuWidth = menu.offsetWidth;
-
-    let top;
-    let left = rect.left + scrollLeft;
-
-    // 아랫공간 계산
-    const spaceBelow = viewportHeight - rect.bottom;
-    if (spaceBelow >= menuHeight + 20) {
-      top = rect.bottom + scrollTop; // 버튼 바로 아래
-    }
-    else {
-      top = rect.top + scrollTop - menuHeight - 10; // 10px 여유
-      if (top < 10) top = 10;
-    }
-
-    // 우측 경계 체크
-    const viewportWidth = window.innerWidth;
-    if (left + menuWidth > viewportWidth + scrollLeft) {
-      left = rect.right + scrollLeft - menuWidth;
-      if (left < scrollLeft + 10) left = scrollLeft + 10;
-    }
-
-    menu.style.top = top + 'px';
-    menu.style.left = left + 'px';
+    positionMenu(btn, menu);
     menu.style.visibility = 'visible';
 
     openMenuElement = menu;

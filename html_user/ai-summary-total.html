@@ -660,7 +660,7 @@
                                 <li><a href="javascript:void(0);" data-tab-id="issueFact"><span>사실관계</span></a></li>
                                 <li><a href="javascript:void(0);" data-tab-id="issuePoint"><span>주요쟁점</span></a></li>
                                 <li class="action">
-                                  <button type="button" class="btn-origin"><i class="ico-origin" aria-hidden="true"></i><span>원문보기</span></button>
+                                  <button type="button" class="btn-origin"  data-evt="tooltip-menu" data-id="fileLikMenu"><i class="ico-origin" aria-hidden="true"></i><span>원문보기</span></button>
                                 </li>
                               </ul>
                             </div>
@@ -1333,8 +1333,320 @@
         </div>
     </div>
     <!-- // 요지쟁점 -->
+    <!-- 법령검색 -->
+    <div class="container-wrap" id="lawWrap" style="display:none;">
+        <div class="container">
+          <div class="contents" id="leftDivLaw">
+            <!-- 상태 : 기본(첫 화면) / is-result(검색 결과) / is-empty(결과 없음) -->
+            <main class="law-search-content">
+              <div class="law-search-inner">
+
+                <!-- 기준일자 안내 (첫 화면) -->
+                <div class="guide-box st-law">
+                  <img src="../images/user/law/img-guide-date.png" alt="" class="img" aria-hidden="true">
+                  <div class="cont">
+                    <p class="tit">기준일자 (시행일) 검색을 지원합니다.</p>
+                    <ul class="list">
+                      <li>행위 당시 또는 재판 당시 시행 중이던 법령을 확인할 수 있습니다.</li>
+                      <li class="point">검색 기준일(@YYMMDD)을 반드시 함께 입력해주세요. 기준일을 생략하거나 @만 입력하면 현행법이 검색됩니다.</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- // 기준일자 안내 -->
+
+                <div class="law-search-area">
+                  <!-- 검색창 -->
+                  <div class="law-search-box">
+                    <h2 class="tit">법령·조문 검색</h2>
+                    <form class="law-search-input" action="javascript:void(0);" role="search">
+                      <div class="input">
+                        <label for="lawKeyword" class="placeholder" aria-hidden="true">법령명·약칭·조문 입력<br>예) 도교 93조 1항 5호의3, @221001 형 250조</label>
+                        <input type="text" id="lawKeyword" title="법령명·약칭·조문 입력" autocomplete="off">
+                      </div>
+                      <button type="submit" class="btn-search" aria-label="검색"></button>
+                    </form>
+                  </div>
+                  <!-- // 검색창 -->
+
+                  <!-- 검색 결과 없음 -->
+                  <div class="law-empty">
+                    <img src="../images/user/law/img-no-result.png" alt="" class="img" aria-hidden="true">
+                    <p class="txt"><em class="keyword">“{검색어}”</em> 로 검색된 결과가 없습니다.</p>
+                  </div>
+                  <!-- // 검색 결과 없음 -->
+
+                  <!-- 검색 결과 -->
+                  <div class="law-result">
+                    <!-- 검색기준일 조문 목록 -->
+                    <div class="law-result-list">
+                      <article class="law-card">
+                        <div class="law-card-head">
+                          <strong class="tit">마약류 관리에 관한 법률 44조</strong>
+                          <div class="tags"><a href="javascript:void(0);" class="tag-doc st-navy">법령전문</a></div>
+                        </div>
+                        <div class="law-card-date">
+                          <p class="date">검색기준일당시 (일부개정, 시행일: 19. 12. 03)</p>
+                          <p class="num">(2019. 12. 3. 법률 제16714호)</p>
+                        </div>
+                        <div class="law-card-body">
+                          <div class="law-article">
+                            <h3 class="tit">제44조(허가 등의 취소와 업무정지)</h3>
+                            <p class="txt">① 마약류취급자, 마약류취급승인자 또는 원료물질수출입업자등이 다음 각 호의 어느 하나에 해당하는 경우에는 해당 허가관청은 이 법에 따른 허가(품목허가를 포함한다), 지정 또는 승인을 취소하거나 1년의 범위에서 그 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명할 수 있다. 다만, 국민보건에 위해를 끼쳤거나 끼칠 우려가 있는 마약, 향정신성의약품 또는 한외마약의 경우에는 그 취급자에게 책임질 사유가 없고 그 약품의 성분ㆍ처방 등을 변경함으로써 그 허가 목적을 달성할 수 있다고 인정되는 경우에는 그 변경만을 명할 수 있다.</p>
+                          </div>
+                          <div class="law-card-links">
+                            <button type="button" class="btn-law-more" data-extra="addenda" aria-expanded="false">[ 부칙 ]</button>
+                            <button type="button" class="btn-law-more" data-extra="reason" aria-expanded="false">[ 재개정 이유 ]</button>
+                          </div>
+                          <div class="law-card-extra" data-extra="addenda">
+                            <h4 class="tit">부칙 &lt;제16714호,2019.12.3&gt;</h4>
+                            <div class="txt">
+                              <p>제1조(시행일) 이 법은 공포한 날부터 시행한다. 다만, 제5조의3, 제11조의2제2항, 제11조의3부터 제11조의5까지의 개정규정과 제11조의6, 제61조제1항제10호 및 제62조제1항제3호(제11조의3부터 제11조의5까지의 개정규정과 관련된 부분만 해당한다)의 개정규정은 공포 후 6개월이 경과한 날부터 시행하고, 제40조의2, 제40조의3 및 제65조의2의 개정규정은 공포 후 1년이 경과한 날부터 시행한다.</p>
+                              <p>제2조(마약류사범에 대한 형벌과 수강명령 등의 병과에 관한 적용례) 제40조의2의 개정규정은 같은 개정규정 시행 후 최초로 제3조, 제4조 또는 제5조를 위반하여 마약류를 투약, 흡연 또는 섭취한 사람부터 적용한다.</p>
+                            </div>
+                          </div>
+                          <div class="law-card-extra" data-extra="reason">
+                            <h4 class="tit">일부개정</h4>
+                            <div class="txt">
+                              <p>◇ 개정이유</p>
+                              <p>마약류의 오남용 예방 및 안전한 사용과 관련하여 객관적인 기준 및 관리 체계를 마련하기 위하여 관련 분야의 담당자 및 외부 전문가로 구성된 마약류안전관리심의위원회를 설치하도록 하고,</p>
+                              <p>2018년부터 시행 중인 마약류 취급 보고 제도를 통해 수집된 마약류 통합정보는 개인정보와 건강정보 등의 민감정보를 포함하고 있는바, 이러한 정보가 엄격하게 관리될 수 있도록 해당 정보에 대한 구체적인 제공 및 활용의 범위를 정하고 업무목적 외 사용을 제한하는 한편,</p>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="law-card">
+                        <div class="law-card-head">
+                          <strong class="tit">마약류 관리에 관한 법률 44조의2</strong>
+                          <div class="tags"><a href="javascript:void(0);" class="tag-doc st-navy">법령전문</a></div>
+                        </div>
+                        <div class="law-card-date">
+                          <p class="date">검색기준일당시 (일부개정, 시행일: 19. 12. 03)</p>
+                          <p class="num">(2019. 12. 3. 법률 제16714호)</p>
+                        </div>
+                        <div class="law-card-body">
+                          <div class="law-article">
+                            <h3 class="tit">제44조(허가 등의 취소와 업무정지)</h3>
+                            <p class="txt">① 마약류취급자, 마약류취급승인자 또는 원료물질수출입업자등이 다음 각 호의 어느 하나에 해당하는 경우에는 해당 허가관청은 이 법에 따른 허가(품목허가를 포함한다), 지정 또는 승인을 취소하거나 1년의 범위에서 그 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명할 수 있다. 다만, 국민보건에 위해를 끼쳤거나 끼칠 우려가 있는 마약, 향정신성의약품 또는 한외마약의 경우에는 그 취급자에게 책임질 사유가 없고 그 약품의 성분ㆍ처방 등을 변경함으로써 그 허가 목적을 달성할 수 있다고 인정되는 경우에는 그 변경만을 명할 수 있다.</p>
+                          </div>
+                          <div class="law-card-links">
+                            <button type="button" class="btn-law-more" data-extra="addenda" aria-expanded="false">[ 부칙 ]</button>
+                            <button type="button" class="btn-law-more" data-extra="reason" aria-expanded="false">[ 재개정 이유 ]</button>
+                          </div>
+                          <div class="law-card-extra" data-extra="addenda">
+                            <h4 class="tit">부칙 &lt;제16714호,2019.12.3&gt;</h4>
+                            <div class="txt">
+                              <p>제1조(시행일) 이 법은 공포한 날부터 시행한다. 다만, 제5조의3, 제11조의2제2항, 제11조의3부터 제11조의5까지의 개정규정과 제11조의6, 제61조제1항제10호 및 제62조제1항제3호(제11조의3부터 제11조의5까지의 개정규정과 관련된 부분만 해당한다)의 개정규정은 공포 후 6개월이 경과한 날부터 시행하고, 제40조의2, 제40조의3 및 제65조의2의 개정규정은 공포 후 1년이 경과한 날부터 시행한다.</p>
+                            </div>
+                          </div>
+                          <div class="law-card-extra" data-extra="reason">
+                            <h4 class="tit">일부개정</h4>
+                            <div class="txt">
+                              <p>◇ 개정이유</p>
+                              <p>마약류의 오남용 예방 및 안전한 사용과 관련하여 객관적인 기준 및 관리 체계를 마련하기 위하여 관련 분야의 담당자 및 외부 전문가로 구성된 마약류안전관리심의위원회를 설치하도록 하고,</p>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="law-card">
+                        <div class="law-card-head">
+                          <strong class="tit">마약류 관리에 관한 법률 30조</strong>
+                          <div class="tags"><a href="javascript:void(0);" class="tag-doc st-navy">법령전문</a></div>
+                        </div>
+                        <div class="law-card-date">
+                          <p class="date">검색기준일당시 (일부개정, 시행일: 19. 12. 03)</p>
+                          <p class="num">(2019. 12. 3. 법률 제16714호)</p>
+                        </div>
+                        <div class="law-card-body">
+                          <div class="law-article">
+                            <h3 class="tit">제44조(허가 등의 취소와 업무정지)</h3>
+                            <p class="txt">① 마약류취급자, 마약류취급승인자 또는 원료물질수출입업자등이 다음 각 호의 어느 하나에 해당하는 경우에는 해당 허가관청은 이 법에 따른 허가(품목허가를 포함한다), 지정 또는 승인을 취소하거나 1년의 범위에서 그 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명할 수 있다. 다만, 국민보건에 위해를 끼쳤거나 끼칠 우려가 있는 마약, 향정신성의약품 또는 한외마약의 경우에는 그 취급자에게 책임질 사유가 없고 그 약품의 성분ㆍ처방 등을 변경함으로써 그 허가 목적을 달성할 수 있다고 인정되는 경우에는 그 변경만을 명할 수 있다.</p>
+                          </div>
+                          <div class="law-card-links">
+                            <button type="button" class="btn-law-more" data-extra="addenda" aria-expanded="false">[ 부칙 ]</button>
+                            <button type="button" class="btn-law-more" data-extra="reason" aria-expanded="false">[ 재개정 이유 ]</button>
+                          </div>
+                          <div class="law-card-extra" data-extra="addenda">
+                            <h4 class="tit">부칙 &lt;제16714호,2019.12.3&gt;</h4>
+                            <div class="txt">
+                              <p>제1조(시행일) 이 법은 공포한 날부터 시행한다.</p>
+                            </div>
+                          </div>
+                          <div class="law-card-extra" data-extra="reason">
+                            <h4 class="tit">일부개정</h4>
+                            <div class="txt">
+                              <p>◇ 개정이유</p>
+                              <p>마약류의 오남용 예방 및 안전한 사용과 관련하여 객관적인 기준 및 관리 체계를 마련하기 위하여 관련 분야의 담당자 및 외부 전문가로 구성된 마약류안전관리심의위원회를 설치하도록 하고,</p>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    <!-- // 검색기준일 조문 목록 -->
+
+                    <!-- 현행 조문 -->
+                    <div class="law-result-current">
+                      <article class="law-card st-current">
+                        <div class="law-card-head">
+                          <strong class="tit">마약류 관리에 관한 법률 44조</strong>
+                          <div class="tags">
+                            <a href="javascript:void(0);" class="tag-doc st-red">조문정보</a>
+                            <a href="javascript:void(0);" class="tag-doc st-blue">법령전체</a>
+                          </div>
+                        </div>
+                        <div class="law-card-date">
+                          <p class="date">현행 (일부개정, 시행일: 19. 12. 03)</p>
+                          <p class="num">(2019. 12. 3. 법률 제16714호)</p>
+                          <p class="notice">마지막으로 개정된 법률이 시행된 이후에 시행된 구법이 있습니다</p>
+                        </div>
+                        <div class="law-card-body">
+                          <div class="law-article">
+                            <h3 class="tit">제44조(허가 등의 취소와 업무정지)</h3>
+                            <p class="txt">① 마약류취급자, 마약류취급승인자 또는 원료물질수출입업자등이 다음 각 호의 어느 하나에 해당하는 경우에는 해당 허가관청은 이 법에 따른 허가(품목허가를 포함한다), 지정 또는 승인을 취소하거나 1년의 범위에서 그 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명할 수 있다. 다만, 국민보건에 위해를 끼쳤거나 끼칠 우려가 있는 마약, 향정신성의약품 또는 한외마약의 경우에는 그 취급자에게 책임질 사유가 없고 그 약품의 성분ㆍ처방 등을 변경함으로써 그 허가 목적을 달성할 수 있다고 인정되는 경우에는 그 변경만을 명할 수 있다. &lt;개정 2013.3.23, 2013.7.30, 2014.3.18, 2015.5.18, 2018.12.11, 2019.12.3, 2021.8.17, 2024.2.6&gt;</p>
+                          </div>
+                          <div class="law-article">
+                            <h3 class="tit">1. 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명하는 경우</h3>
+                            <ul class="txt list">
+                              <li>가. 제5조제1항 및 제2항에 따른 마약류 취급 제한 규정을 위반한 경우</li>
+                              <li>나. 제5조제3항의 조치를 위반한 때</li>
+                              <li>다. 제6조제1항 각 호 외의 부분 후단 및 같은 조 제2항 후단에 따른 변경허가 또는 변경지정을 받지 아니한 경우</li>
+                              <li>라. 제6조의2제1항 후단에 따른 변경허가를 받지 아니한 경우</li>
+                              <li>마. 제7조제2항에 따른 허가증 또는 지정서를 재발급받지 아니한 경우</li>
+                              <li>바. 제9조제2항 및 제3항을 위반하여 마약류를 양도한 경우</li>
+                              <li>사. 삭제</li>
+                              <li>아. 삭제</li>
+                              <li>자. 제11조를 위반하여 보고하지 아니하거나 거짓으로 보고한 경우</li>
+                              <li>차. 제12조를 위반하여 보고하지 아니하거나 사고 마약류 등을 폐기한 경우</li>
+                              <li>카. 제14조를 위반하여 마약류를 광고한 경우</li>
+                              <li>타. 제15조를 위반하여 마약류를 저장한 경우</li>
+                              <li>파. 제16조를 위반하여 마약류를 봉함하지 아니하거나 봉함하지 아니한 마약류를 수수한 경우</li>
+                              <li>하. 제17조를 위반하여 기재를 하지 아니하거나 거짓으로 기재한 경우</li>
+                              <li>거. 삭제</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    <!-- // 현행 조문 -->
+                  </div>
+                  <!-- // 검색 결과 -->
+
+                  <!-- 검색 가이드 안내 -->
+                  <div class="law-search-guide">
+                    <h2 class="tit"><i class="ico-info" aria-hidden="true"></i>검색 가이드 안내</h2>
+                    <div class="guide-list">
+                      <dl>
+                        <dt>기준일자(시행일) 작성 안내</dt>
+                        <dd>
+                          <ul class="list">
+                            <li>@기준일(YYMMDD)형태로 입력합니다.</li>
+                            <li>@만 입력하거나 입력하지 않은 경우 현행법이 검색됩니다.</li>
+                            <li>같은 검색 대상 조항에 대해서는 쉼표로 구분하여 날짜를 입력합니다(@220101, 240615)</li>
+                          </ul>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt>법령명 입력 예시</dt>
+                        <dd>
+                          <p class="txt">약칭·속칭·정확한 법률명, 법률명의 앞 다섯글자 + ‘법’ 입력</p>
+                          <p class="example">입력 예시: 아청, 청소년성보법</p>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt>약칭으로 검색 가능한 법령</dt>
+                        <dd>
+                          <p class="txt">법제처 공식 약칭 및 실무·언론에서 통용되는 명칭(속칭)으로도 검색하실 수 있습니다.</p>
+                          <button type="button" class="btn-guide" onclick="popOpen('#popLawAbbr')">약칭 가이드보기</button>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <!-- // 검색 가이드 안내 -->
+                </div>
+
+              </div>
+            </main>
+          </div>
+        </div>
+    </div>
+    <!-- // 법령검색 -->
   </div>
   <!-- // wrap -->
+
+  <!-- 요지쟁점 원문보기 툴팁 -->
+  <div class="dropdown-menu-layer" id="fileLikMenu" style="display: none;">
+      <ul class="file-list">
+          <li><button type="button"><span>대법원 2017 가단 04</span></button></li>
+          <li><button type="button"><span>대법원 2017 가단 04</span></button></li>
+          <li><button type="button"><span>대법원 2017 가단 04</span></button></li>
+      </ul>
+  </div>
+
+  <!-- 법령명 약칭 검색 가이드 -->
+  <div class="popup-wrap" id="popLawAbbr">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup" style="width:920px;">
+        <div class="pop-header">
+          <h2 class="tit">법령명 약칭 검색 가이드</h2>
+          <div class="right">
+            <button type="button" class="btn-close"><i class="ico-close"></i></button>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="law-abbr-info">
+            <p>효율적인 법령 조회를 위하여 정식 법령명 외에 공식 약칭 및 실무 통용 명칭을 통한 통합 검색을 지원합니다.</p>
+            <p>하단의 명칭 대조표를 확인하시어 신속한 검색 업무에 활용하시기 바랍니다.</p>
+          </div>
+          <div class="data-type1 law-abbr-table">
+            <table>
+              <caption>법령명 약칭 대조표</caption>
+              <colgroup>
+                <col style="width:auto;">
+                <col style="width:240px;">
+                <col style="width:240px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">공식 법령명 (정식 명칭)</th>
+                  <th scope="col">법제처 공식 약칭</th>
+                  <th scope="col">실무 및 통용 명칭 (속칭)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="al-l">형법</td><td>-</td><td>형법</td></tr>
+                <tr><td class="al-l">형사소송법</td><td>-</td><td>형소법</td></tr>
+                <tr><td class="al-l">특정경제범죄 가중처벌 등에 관한 법률</td><td>특정경제범죄법</td><td>특경법</td></tr>
+                <tr><td class="al-l">아동·청소년의 성보호에 관한 법률</td><td>청소년성보호법</td><td>아청법</td></tr>
+                <tr><td class="al-l">도로교통법</td><td>-</td><td>도교법</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination-wrap">
+            <div class="pagination">
+              <button type="button" class="btn-prev"><span class="hidden">이전</span></button>
+              <ul>
+                <li class="on"><button type="button">1</button></li>
+                <li><button type="button">2</button></li>
+                <li><button type="button">3</button></li>
+                <li><button type="button">4</button></li>
+                <li><button type="button">5</button></li>
+              </ul>
+              <button type="button" class="btn-next"><span class="hidden">다음</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-popup st-blue-line" onclick="popClose('#popLawAbbr')">취소</button>
+            <button type="button" class="btn-popup st-blue" onclick="popClose('#popLawAbbr')">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // 법령명 약칭 검색 가이드 -->
 
   <!-- 파일업로드 툴팁메뉴 -->
   <div class="dropdown-menu-layer" id="fileUploadMenu" style="display: none;">
@@ -2676,51 +2988,150 @@ function issueAnswerEffect(){
 </script>
 
 <script>
-// AI채팅 / 요지쟁점 화면 전환 (container-wrap 2개)
+// 법령검색
+// 퍼블리싱 확인용 : 검색어에 결과 샘플(마약류 관리에 관한 법률)의 약칭 '마약'이 들어가면 결과 화면, 그 외에는 결과 없음 화면
+(function(){
+  var RESULT_SAMPLE_KEYWORD = '마약';
+  var $content = $('.law-search-content');
+  var $input = $('#lawKeyword');
+
+  function setState(state){
+    $content.removeClass('is-result is-empty');
+    if (state) $content.addClass(state);
+    $content.scrollTop(0);
+  }
+
+  // 입력값 유무에 따라 placeholder 표시
+  function syncPlaceholder(){
+    $input.closest('.input').toggleClass('is-filled', $.trim($input.val()) !== '');
+  }
+
+  // 검색 기록 추가 (같은 검색어는 맨 위로)
+  function addHistory(keyword){
+    var $list = $('#lawWrap .sidebar .chat-history-wrap .menu-list');
+    if (!$list.length) return;
+    $list.children('li').filter(function(){ return $(this).children('a').text() === keyword; }).remove();
+    var $li = $('<li><a href="javascript:void(0);"></a><button type="button" class="btn-menu-dotting" data-evt="tooltip-menu" data-id="chatHistoryMenu"><span class="hidden">메뉴</span></button></li>');
+    $li.children('a').text(keyword);
+    $list.prepend($li);
+  }
+
+  function search(keyword){
+    keyword = $.trim(keyword);
+    if (!keyword) {
+      customAlert('법령명·약칭·조문을 입력해주세요.', 'alert');
+      $input.trigger('focus');
+      return;
+    }
+    addHistory(keyword);
+
+    if (keyword.indexOf(RESULT_SAMPLE_KEYWORD) > -1) {
+      $input.val(keyword);
+      // 펼쳐둔 부칙·재개정 이유는 접기
+      $('.law-card-extra').removeClass('on');
+      $('.btn-law-more').removeClass('on').attr('aria-expanded', 'false');
+      setState('is-result');
+    } else {
+      $('.law-empty .keyword').text('“' + keyword + '”');
+      $input.val('');
+      setState('is-empty');
+    }
+    syncPlaceholder();
+  }
+
+  // 새 법령검색 : 첫 화면으로
+  function reset(){
+    $input.val('');
+    syncPlaceholder();
+    setState('');
+    $input.trigger('focus');
+  }
+
+  $input.on('input', syncPlaceholder);
+  $('.law-search-input').on('submit', function(e){
+    e.preventDefault();
+    search($input.val());
+  });
+
+  // 부칙 / 재개정 이유 펼치기
+  $(document).on('click', '.btn-law-more', function(){
+    var $card = $(this).closest('.law-card');
+    var $extra = $card.find('.law-card-extra[data-extra="' + $(this).data('extra') + '"]');
+    var open = !$extra.hasClass('on');
+    $extra.toggleClass('on', open);
+    $(this).toggleClass('on', open).attr('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // 사이드바 : 새 법령검색 / 검색 기록
+  $(document).on('click', '#lawWrap .sidebar .gnb > li > a', function(e){
+    e.preventDefault();
+    reset();
+  });
+  $(document).on('click', '#lawWrap .sidebar .chat-history-wrap .menu-list > li > a', function(e){
+    e.preventDefault();
+    search($(this).text());
+  });
+
+
+  // syncPlaceholder();
+})();
+</script>
+
+<script>
+// AI채팅 / 요지쟁점 / 법령검색 화면 전환 (container-wrap 3개)
 var SERVICE_VIEW = {
   chat:  { body:'body-ai-chat', wrap:'#chatWrap' },
-  issue: { body:'body-issue',   wrap:'#issueWrap' }
+  issue: { body:'body-issue',   wrap:'#issueWrap' },
+  law:   { body:'body-law',     wrap:'#lawWrap' }
 };
-var currentView = location.hash === '#issue' ? 'issue' : 'chat';
+var currentView = { '#issue':'issue', '#law':'law' }[location.hash] || 'chat';
 
 function setServiceView(view){
   var v = SERVICE_VIEW[view];
   if (!v) return;
   currentView = view;
 
-  // 참조문서 영역은 AI채팅 전용 → 요지쟁점 전환 시 닫기
+  // 참조문서 영역은 AI채팅 전용 → 다른 화면으로 전환 시 닫기
   var $ref = $('#chatWrap .reference-document-wrap');
   if (view !== 'chat' && $ref.length && !$ref.hasClass('closed')) { $ref.find('.btn-collapse').trigger('click'); }
 
-  $('body').removeClass('body-ai-chat body-issue').addClass(v.body);
-  $('#chatWrap, #issueWrap').hide();
+  $('body').removeClass('body-ai-chat body-issue body-law').addClass(v.body);
+  $('#chatWrap, #issueWrap, #lawWrap').hide();
   $(v.wrap).show();
 
   // 숨김 상태에서 생성된 swiper 크기 재계산
   $(v.wrap).find('.swiper-initialized').each(function(){ if (this.swiper) this.swiper.update(); });
 
-  history.replaceState(null, '', view === 'issue' ? '#issue' : location.pathname + location.search);
+  history.replaceState(null, '', view === 'chat' ? location.pathname + location.search : '#' + view);
 }
 
 // 헤더 탭 클릭
-$(document).on('click', '.gnb-tab li.ai-chat a, .gnb-tab li.issue a', function(e){
+$(document).on('click', '.gnb-tab li.ai-chat a, .gnb-tab li.issue a, .gnb-tab li.law a', function(e){
   e.preventDefault();
-  setServiceView($(this).closest('li').hasClass('issue') ? 'issue' : 'chat');
+  var $li = $(this).closest('li');
+  setServiceView($li.hasClass('issue') ? 'issue' : $li.hasClass('law') ? 'law' : 'chat');
 });
 
-// 사이드바 로드 : 요지쟁점(마크업만) → AI채팅(팝업·스크립트 포함) 순서
+// 사이드바 로드 : 요지쟁점·법령검색(마크업만) → AI채팅(팝업·스크립트 포함) 순서
 // sidebar.html 의 스크립트가 로드 시점에 있는 사이드바 모두에 이벤트를 걸기 때문에 순서 유지
 $.get('sidebar-issue.html', function(data){
   var $nodes = $($.parseHTML(data));
   $('#issueWrap').prepend($nodes.filter('.btn-header-open, .sidebar, .btn-aside-open'));
 
+  $.get('sidebar-law.html', function(data){
+  var $lawNodes = $($.parseHTML(data));
+  $('#lawWrap').prepend($lawNodes.filter('.btn-header-open, .sidebar, .btn-aside-open'));
+
   $.get('sidebar.html', function(data){
     $('#chatWrap').prepend(data);
+    // 팝업·드롭다운 레이어가 #chatWrap 안에 있으면 다른 화면(#chatWrap 숨김)에서 열리지 않으므로 body로 이동
+    $('#chatWrap').children('.dropdown-menu-layer, .popup-wrap').appendTo('body');
     syncSidebar();
+  });
   });
 });
 
-// 사이드바 열림/닫힘 상태를 두 화면이 공유
+// 사이드바 열림/닫힘 상태를 세 화면이 공유
 function syncSidebar(){
   var closed = window.innerWidth <= 1200;
   $('.sidebar').toggleClass('closed', closed);
