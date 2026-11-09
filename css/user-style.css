@@ -223,6 +223,15 @@ body.body-law .container-wrap{border:4px solid transparent;background:linear-gra
     .login-body.st-autumn .login-main-text:after{display:none;}
     .login-body.st-autumn .login-box{transform: translateX(0);background-clip: padding-box;filter: drop-shadow(4px 10px 16px rgba(88, 101, 120, 0.3));}
     .login-body.st-autumn .login-main-text .tit{color:#246BEB;font-weight: 600;font-size: 24px;padding-top:22px;}
+
+
+    .login-body.st-winter .login-wrap{padding-top:50px; background: url('../images/user/bg-login-winter.jpg') no-repeat 50% 50%;background-size:cover;padding-left:800px;}
+    .login-body.st-winter .login-container{position:relative;}
+    .login-body.st-winter .login-main-text{align-items:flex-end;transform: translateX(250px);position:absolute;top:-120px;right:0;height:auto;width:auto;transform: translate(0,0);}
+    .login-body.st-winter .login-main-text .logo{width:152px;height:43px;margin:0;}
+    .login-body.st-winter .login-main-text:after{display:none;}
+    .login-body.st-winter .login-box{transform: translateX(0);background-clip: padding-box;filter: drop-shadow(4px 10px 16px rgba(88, 101, 120, 0.3));}
+    .login-body.st-winter .login-main-text .tit{color:#246BEB;font-weight: 600;font-size: 24px;padding-top:22px;}
 }
 @media screen and (max-width: 1200px) {
     .login-body .login-container{display:flex;flex-direction: column;gap:30px;transform:translateY(-50px);}
