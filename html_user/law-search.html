@@ -45,8 +45,8 @@
                 <!-- // 기준일자 안내 -->
 
                 <div class="law-search-area">
-                  <!-- 검색창 -->
-                  <div class="law-search-box">
+                  <!-- 검색창 (검색 결과 화면에서는 돋보기 버튼 클릭 시 상단 레이어로 노출) -->
+                  <div class="law-search-box" id="lawSearchLayer">
                     <h2 class="tit">법령·조문 검색</h2>
                     <form class="law-search-input" action="javascript:void(0);" role="search">
                       <div class="input">
@@ -217,6 +217,46 @@
                           </div>
                         </div>
                       </article>
+                      <article class="law-card st-current">
+                        <div class="law-card-head">
+                          <strong class="tit">마약류 관리에 관한 법률 44조</strong>
+                          <div class="tags">
+                            <a href="javascript:void(0);" class="tag-doc st-red">조문정보</a>
+                            <a href="javascript:void(0);" class="tag-doc st-blue">법령전체</a>
+                          </div>
+                        </div>
+                        <div class="law-card-date">
+                          <p class="date">현행 (일부개정, 시행일: 19. 12. 03)</p>
+                          <p class="num">(2019. 12. 3. 법률 제16714호)</p>
+                          <p class="notice">마지막으로 개정된 법률이 시행된 이후에 시행된 구법이 있습니다</p>
+                        </div>
+                        <div class="law-card-body">
+                          <div class="law-article">
+                            <h3 class="tit">제44조(허가 등의 취소와 업무정지)</h3>
+                            <p class="txt">① 마약류취급자, 마약류취급승인자 또는 원료물질수출입업자등이 다음 각 호의 어느 하나에 해당하는 경우에는 해당 허가관청은 이 법에 따른 허가(품목허가를 포함한다), 지정 또는 승인을 취소하거나 1년의 범위에서 그 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명할 수 있다. 다만, 국민보건에 위해를 끼쳤거나 끼칠 우려가 있는 마약, 향정신성의약품 또는 한외마약의 경우에는 그 취급자에게 책임질 사유가 없고 그 약품의 성분ㆍ처방 등을 변경함으로써 그 허가 목적을 달성할 수 있다고 인정되는 경우에는 그 변경만을 명할 수 있다. &lt;개정 2013.3.23, 2013.7.30, 2014.3.18, 2015.5.18, 2018.12.11, 2019.12.3, 2021.8.17, 2024.2.6&gt;</p>
+                          </div>
+                          <div class="law-article">
+                            <h3 class="tit">1. 업무 또는 마약류 및 원료물질 취급의 전부 또는 일부의 정지를 명하는 경우</h3>
+                            <ul class="txt list">
+                              <li>가. 제5조제1항 및 제2항에 따른 마약류 취급 제한 규정을 위반한 경우</li>
+                              <li>나. 제5조제3항의 조치를 위반한 때</li>
+                              <li>다. 제6조제1항 각 호 외의 부분 후단 및 같은 조 제2항 후단에 따른 변경허가 또는 변경지정을 받지 아니한 경우</li>
+                              <li>라. 제6조의2제1항 후단에 따른 변경허가를 받지 아니한 경우</li>
+                              <li>마. 제7조제2항에 따른 허가증 또는 지정서를 재발급받지 아니한 경우</li>
+                              <li>바. 제9조제2항 및 제3항을 위반하여 마약류를 양도한 경우</li>
+                              <li>사. 삭제</li>
+                              <li>아. 삭제</li>
+                              <li>자. 제11조를 위반하여 보고하지 아니하거나 거짓으로 보고한 경우</li>
+                              <li>차. 제12조를 위반하여 보고하지 아니하거나 사고 마약류 등을 폐기한 경우</li>
+                              <li>카. 제14조를 위반하여 마약류를 광고한 경우</li>
+                              <li>타. 제15조를 위반하여 마약류를 저장한 경우</li>
+                              <li>파. 제16조를 위반하여 마약류를 봉함하지 아니하거나 봉함하지 아니한 마약류를 수수한 경우</li>
+                              <li>하. 제17조를 위반하여 기재를 하지 아니하거나 거짓으로 기재한 경우</li>
+                              <li>거. 삭제</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </article>
                     </div>
                     <!-- // 현행 조문 -->
                   </div>
@@ -257,6 +297,9 @@
 
               </div>
             </main>
+            <!-- 검색 결과 화면 : 검색창 레이어 열기 버튼 / 딤 -->
+            <div class="law-search-dim" aria-hidden="true"></div>
+            <button type="button" class="btn-law-search" aria-label="검색창 열기" aria-controls="lawSearchLayer" aria-expanded="false"></button>
           </div>
         </div>
     </div>
@@ -339,8 +382,31 @@
   function setState(state){
     $content.removeClass('is-result is-empty');
     if (state) $content.addClass(state);
-    $content.scrollTop(0);
+    toggleSearchLayer(false);
+    $content.add('.law-result-list, .law-result-current').scrollTop(0);
   }
+
+  // 검색 결과 화면 : 돋보기 버튼 클릭 시 상단에 검색창 레이어 노출
+  var $btnSearch = $('.btn-law-search');
+  function toggleSearchLayer(open){
+    $content.toggleClass('is-search-open', open);
+    $('.law-search-dim').toggleClass('on', open);
+    $btnSearch.attr('aria-expanded', open ? 'true' : 'false');
+    if (open) $input.trigger('focus');
+  }
+  $btnSearch.on('click', function(){
+    toggleSearchLayer(!$content.hasClass('is-search-open'));
+  });
+  $('.law-search-dim').on('click', function(){
+    toggleSearchLayer(false);
+    $btnSearch.trigger('focus');
+  });
+  $(document).on('keydown', function(e){
+    if (e.key === 'Escape' && $content.hasClass('is-search-open')) {
+      toggleSearchLayer(false);
+      $btnSearch.trigger('focus');
+    }
+  });
 
   // 입력값 유무에 따라 placeholder 표시
   function syncPlaceholder(){

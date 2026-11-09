@@ -1046,6 +1046,24 @@ header + .data-header{margin-top:60px;}
 .law-search-content.is-result .law-search-input .input.is-filled{height:42px;}
 .law-search-content.is-result .law-search-input .input.is-filled input{top:50%;transform:translateY(-50%);}
 
+/* 검색 결과 : 전체 화면 고정, 좌/우 영역 각각 스크롤 */
+.law-search-content.is-result{overflow:hidden;}
+.law-search-content.is-result .law-search-inner{flex:1;min-height:0;padding:24px 0 0;}
+.law-search-content.is-result .law-search-area{flex:1;min-height:0;}
+.law-search-content.is-result .law-result{flex:1;min-height:0;align-items:stretch;}
+.law-search-content.is-result .law-result-list,
+.law-search-content.is-result .law-result-current{overflow-y:auto;padding:0 8px 24px 0;}
+.law-search-content.is-result .law-result .law-card{flex-shrink:0;}
+
+/* 검색 결과 : 돋보기 버튼 클릭 시 상단 검색창 레이어 */
+.law-search-content.is-result .law-search-box{display:none;position:absolute;top:24px;left:50%;z-index:20;transform:translateX(-50%);}
+.law-search-content.is-result.is-search-open .law-search-box{display:flex;}
+.law-search-dim{display:none;position:absolute;inset:0;z-index:15;background:rgba(0,0,0,0.2);}
+.law-search-dim.on{display:block;}
+.btn-law-search{display:none;position:absolute;right:32px;bottom:32px;z-index:10;width:50px;height:50px;padding:8px;border-radius:50px;background:#0E2B5E url('../images/user/ico-search-white.svg') no-repeat 50% 50%;background-size:25px 25px;box-shadow:0 2px 2px rgba(62,69,80,0.16);}
+.law-search-content.is-result ~ .btn-law-search{display:block;}
+.btn-law-search:hover{background-color:#16408D;}
+
 /* 결과 없음 */
 .law-empty{flex-direction:column;align-items:center;gap:33px;}
 .law-empty .img{display:block;width:260px;height:197px;}
@@ -1070,7 +1088,7 @@ header + .data-header{margin-top:60px;}
 /* 검색 결과 */
 .law-result{align-items:flex-start;gap:24px;}
 .law-result-list{flex:1;min-width:0;display:flex;flex-direction:column;gap:20px;}
-.law-result-current{flex:1;min-width:0;position:sticky;top:24px;}
+.law-result-current{flex:1;min-width:0;display:flex;flex-direction:column;gap:20px;}
 .law-card{display:flex;flex-direction:column;background:#F4F6F9;border:1px solid #B4C4D6;border-radius:10px;box-shadow:0 4px 2px rgba(198,210,226,0.2);}
 .law-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 24px;}
 .law-card-head .tit{font-size:17px;font-weight:700;line-height:1.6;color:#000;}
@@ -1095,7 +1113,7 @@ header + .data-header{margin-top:60px;}
 .law-card-extra .txt{font-size:16px;line-height:1.7;color:#6D7882;}
 .law-card.st-current{background:#fff;border:2px solid #246BEB;box-shadow:none;}
 .law-card.st-current .law-card-date{padding-bottom:24px;}
-.law-card.st-current .law-card-body{gap:32px;max-height:678px;padding:24px 40px 40px;overflow-y:auto;}
+.law-card.st-current .law-card-body{gap:32px;padding:24px 40px 40px;}
 
 /* 약칭 가이드 팝업 */
 .law-abbr-info{padding:32px 24px;background:#EFF5FF;border-radius:8px;font-size:16px;line-height:1.7;color:#1E2124;}
